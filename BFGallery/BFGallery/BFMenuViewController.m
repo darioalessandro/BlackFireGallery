@@ -16,6 +16,7 @@
 #import "BFMenuViewController.h"
 #import "BFMenuAssetsManager.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "BFHorizontalTableViewController.h"
 
 @implementation BFMenuViewController
 @synthesize loadingPicsIndicator;
@@ -45,7 +46,7 @@
     
     NSIndexPath * indexPath= [NSIndexPath indexPathForRow:[[self tableView] numberOfRowsInSection:0]-1 inSection:0];
     [[self tableView] scrollToRowAtIndexPath:indexPath  atScrollPosition:UITableViewScrollPositionTop animated:NO];    
-    [self showGalleryDetailWithIndex:[[self productsArray] count]-1 fromView:self.view];
+//    [self showGalleryDetailWithIndex:[[self productsArray] count]-1 fromView:self.view];
 }
 
 - (void)dealloc
@@ -192,24 +193,31 @@
 -(void)showGalleryDetailWithIndex:(NSInteger)index fromView:(UIView *)originView{
     
     NSString * fileName= nil;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {        
-        fileName= @"BFMenuDetailViewController_iphone";
-    }else{
-        fileName= @"BFMenuDetailViewController_ipad";
-    }
+    fileName= @"BFMenuDetailViewController_iphone_portrait";
     
-    if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
-        fileName= [NSString stringWithFormat:@"%@_landscape", fileName];
-    }else{
-        fileName= [NSString stringWithFormat:@"%@_portrait", fileName];        
-    }
+//    if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
+//        fileName= [NSString stringWithFormat:@"%@_landscape", fileName];
+//    }else{
+//    fileName= [NSString stringWithFormat:@"%@_portrait", fileName];        
+//    }
 
-    BFMenuDetailViewController * controller= [[BFMenuDetailViewController alloc] initWithNibName:fileName bundle:nil];
+    BFHorizontalTableViewController * controller= [[BFHorizontalTableViewController alloc] init];
     [self addChildViewController:controller];
-    [controller setDelegate:self];
-    [controller setInitialRowToShow:[NSIndexPath indexPathForRow:index inSection:0]];
-    [controller showFromCoordinatesInView:originView];
-    self.lastSelectedRow= [NSIndexPath indexPathForRow:index inSection:0];
+    [self.view addSubview:controller.view];
+    controller.view.frame= self.tableView.frame;
+    
+//    BFMenuDetailViewController * controller= [[BFMenuDetailViewController alloc] initWithNibName:fileName bundle:nil];
+//    [self addChildViewController:controller];
+//    self.lastSelectedRow= [NSIndexPath indexPathForRow:index inSection:0];
+//    [self.view addSubview:controller.view];
+//    if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
+//        controller.view.frame= self.tableView.frame;
+//    }
+    NSLog(@"parent frame %@", NSStringFromCGRect([[self view] frame]));
+    NSLog(@"parent frame %@", NSStringFromCGRect([[controller view] frame]));
+//    [controller setDelegate:self];
+//    [controller setInitialRowToShow:[NSIndexPath indexPathForRow:index inSection:0]];
+
 }
 
 -(void)showGalleryWithImageSelected:(UIImageView *)imageView{

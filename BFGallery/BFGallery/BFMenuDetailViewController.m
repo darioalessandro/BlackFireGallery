@@ -24,7 +24,7 @@
     UIImage * initialImage;
     BOOL isFirstImage;
 }
-@synthesize galleryTableView, delegate, initialRowToShow, lastSelectedRow;
+@synthesize galleryTableView, delegate, initialRowToShow;
 
 
 - (void)dealloc
@@ -33,8 +33,6 @@
     if(!initialRowToShow)
         [initialRowToShow release];
     
-    if(!lastSelectedRow)
-        [lastSelectedRow release];
     
     [initialImage release];
     [galleryTableView release];
@@ -61,18 +59,16 @@
 
 -(void)showFromCoordinatesInView:(UIView *)baseView
 {
-   self.lastSelectedRow= self.initialRowToShow;
-    [self.parentViewController.view addSubview:self.view];
-    
-    CGSize originalSize= baseView.frame.size;
-    CGSize tableViewSize= self.galleryTableView.frame.size;
-    CGFloat scale= originalSize.width/tableViewSize.width;
+//    [self.galleryTableView reloadData];
+//    CGSize originalSize= baseView.frame.size;
+//    CGSize tableViewSize= self.galleryTableView.frame.size;
+//    CGFloat scale= originalSize.width/tableViewSize.width;
     NSLog(@"Log %@", NSStringFromCGRect(self.galleryTableView.frame));
-    //self.galleryTableView.center= CGPointMake(convertedRect.origin.x+ convertedRect.size.width/2 , convertedRect.origin.y + convertedRect.size.height/2);
-    CGFloat angle= [self angleForCurrentOrientation];
-    [self.galleryTableView.layer setAnchorPoint:CGPointMake(0.5, 0.5)];
-	self.galleryTableView.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(angle) , scale ,scale);
-    self.galleryTableView.alpha=0.01;
+//    self.galleryTableView.center= CGPointMake(baseView.frame.origin.x+ baseView.frame.size.width/2 , baseView.frame.origin.y + baseView.frame.size.height/2);
+//    CGFloat angle= [self angleForCurrentOrientation];
+//    [self.galleryTableView.layer setAnchorPoint:CGPointMake(0.5, 0.5)];
+//	self.galleryTableView.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(angle) , scale ,scale);
+//    self.galleryTableView.alpha=0.01;
 //	[UIView beginAnimations:nil context:nil];
 //	[UIView setAnimationDuration:kTransitionDuration/2];
 //    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -80,11 +76,14 @@
 //	[UIView setAnimationDidStopSelector:@selector(bounce1AnimationStopped)];
     initialImage= [UIImage imageWithCGImage:[[[delegate menuDetailViewController:self assetAtIndex:self.initialRowToShow.row] defaultRepresentation] fullScreenImage]];
     [initialImage retain];
-	self.galleryTableView.transform = CGAffineTransformScale([self transformForOrientation], 1.0, 1.0);
+//	self.galleryTableView.transform = CGAffineTransformScale([self transformForOrientation], 1.0, 1.0);
     self.galleryTableView.alpha=1;
-    self.galleryTableView.center= CGPointMake(baseView.frame.size.width/2, baseView.frame.size.height/2);
-    [self.view setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.8]];
+//    self.galleryTableView.center= CGPointMake(baseView.frame.size.width/2, baseView.frame.size.height/2);
 //	[UIView commitAnimations];
+}
+
+-(CGAffineTransform)transformForOrientation{
+    return CGAffineTransformMakeRotation(M_PI_2);
 }
 
 - (void)bounce1AnimationStopped
@@ -122,11 +121,6 @@
     return -M_PI_2;
 }
 
-- (CGAffineTransform)transformForOrientation
-{
-    return CGAffineTransformMakeRotation([self angleForCurrentOrientation]);
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -136,48 +130,22 @@
     UITapGestureRecognizer * gestureRecognizer= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissDetailView:)];
     [self.view addGestureRecognizer:gestureRecognizer];
     [gestureRecognizer release];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [self performSelector:@selector(viewWillAppear) withObject:nil afterDelay:1];
     [self.galleryTableView setBackgroundColor:[UIColor clearColor]];
-    [self layoutElements];
-    NSLog(@"Log %@", NSStringFromCGRect(self.galleryTableView.frame));
-}
-
--(void)layoutElements
-{
-    UIInterfaceOrientation orientation= [[UIApplication sharedApplication] statusBarOrientation];
-    if(UIInterfaceOrientationIsLandscape(orientation)){
-        [[self galleryTableView] setFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height)];
-    }else{
-        [[self galleryTableView] setFrame:CGRectMake(0,0,self.view.frame.size.height,self.view.frame.size.width)];
-    }
+    [self.galleryTableView  setTransform:CGAffineTransformMakeRotation(M_PI_2)];
+    [self.view setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.8]];    
 }
 
 -(void)viewWillAppear
 {
     [galleryTableView scrollToRowAtIndexPath:initialRowToShow atScrollPosition:UITableViewScrollPositionMiddle animated:FALSE];
+
 }
 
 - (void)viewDidUnload
 {
     [self setGalleryTableView:nil];
     [super viewDidUnload];
-}
-
--(void)orientationChanged:(NSNotification *)notif
-{
-//    UIInterfaceOrientation orientation= [[UIApplication sharedApplication] statusBarOrientation];
-//    if(UIInterfaceOrientationIsLandscape(orientation)){
-//        [[self galleryTableView] setFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height)];
-//    }else{
-//        [[self galleryTableView] setFrame:CGRectMake(0,0,self.view.frame.size.height,self.view.frame.size.width)];
-//    }
-//    self.galleryTableView.transform = CGAffineTransformScale([self transformForOrientation], 1, 1);
-//    [[self galleryTableView] reloadData];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-	return YES;
 }
 
 #pragma mark - UITableViewDataSource
@@ -189,54 +157,44 @@
     return numberOfRows;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UIInterfaceOrientation orientation= [[UIApplication sharedApplication] statusBarOrientation];
-    CGFloat height=0;
-    if(UIInterfaceOrientationIsLandscape(orientation)){
-        height=self.view.frame.size.height;
-    }else{
-        height=self.view.frame.size.width;
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
+        return self.view.window.frame.size.height;
     }
-    return height;
+    return self.view.window.frame.size.width;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString * cellId= @"CellID";
-    BFMenuGalleryCell * cell= (BFMenuGalleryCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString * cellId= @"sfsdf";
+    UITableViewCell * cell= (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
     if(cell==nil){
-        NSString * fileName= @"BFMenuGalleryCell_ipad";
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            fileName= @"BFMenuGalleryCell_iphone";
-        }
-        
-        if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
-            fileName= [NSString stringWithFormat:@"%@_landscape", fileName];
-        }else{
-            fileName= [NSString stringWithFormat:@"%@_portrait", fileName];
-        }
-        cell= [[[NSBundle mainBundle] loadNibNamed:fileName owner:nil options:nil] objectAtIndex:0];
-        [cell setSelectedBackgroundView:[[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)] autorelease]];
+        cell= [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        //[[[NSBundle mainBundle] loadNibNamed:@"BFMenuGalleryCell_iphone_portrait" owner:nil options:nil] objectAtIndex:0];
+        [cell setTransform:CGAffineTransformMakeRotation(-M_PI_2)];
+        [cell setSelectedBackgroundView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)]];
+        [cell setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2]];
     }
-    self.lastSelectedRow=indexPath;
-    [cell.contentView setTransform:CGAffineTransformMakeRotation(M_PI_2)];
+    
+    [[cell imageView] setFrame:cell.frame];
     if(delegate){
         ALAsset * asset=[delegate menuDetailViewController:self assetAtIndex:indexPath.row];
         UIImage * image=[delegate menuDetailViewController:self imageAtIndex:indexPath.row];
         if(isFirstImage==TRUE && indexPath.row!=initialRowToShow.row){
             isFirstImage=FALSE;
-            [cell.dishImageView setImage:initialImage];
+//            [cell fillWithImage:initialImage];
+            [[cell imageView] setImage:image];
             return cell;
         }
-            if(asset)
-                [cell fillWithAsset:asset];
-            else if(image){
-                [cell fillWithImage:image];
-            }
-    }
+        if(asset){
+//            [cell fillWithAsset:asset];
+            UIImage * image= [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]];
+            [[cell imageView] setImage:image];
+        }
         
-            
+        else if(image){
+//            [cell fillWithImage:image];
+        }
+    }
     return cell;
 }
 
@@ -284,25 +242,6 @@
 	//self.view.alpha = 100;
 	[self.view removeFromSuperview];
 	[self release];
-}
-
--(void)showView
-{
-	[self showLoginForm];	
-}
-
--(void)showLoginForm
-{
-	UIWindow * keyWindow= [[UIApplication sharedApplication] keyWindow];
-	self.view.center=keyWindow.center;
-	[keyWindow addSubview:self.view];
-	self.view.transform = CGAffineTransformScale([self transformForOrientation], 0.001, 0.001);
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:kTransitionDuration/1.5];
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(bounce1AnimationStopped)];
-	self.view.transform = CGAffineTransformScale([self transformForOrientation], 1.1, 1.1);
-	[UIView commitAnimations];		
 }
 
 

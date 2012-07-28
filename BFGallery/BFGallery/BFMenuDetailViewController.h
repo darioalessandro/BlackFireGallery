@@ -31,18 +31,12 @@
     id <BFMenuDetailViewControllerDelegate> delegate;
     UITableView *galleryTableView;
     NSIndexPath * initialRowToShow;
-    NSIndexPath * lastSelectedRow;
 }
+
 @property (nonatomic, retain) NSIndexPath * initialRowToShow;
-@property (nonatomic, retain) NSIndexPath * lastSelectedRow;
 @property (nonatomic, retain) IBOutlet UITableView *galleryTableView;
 @property (nonatomic, assign) id <BFMenuDetailViewControllerDelegate> delegate;
 
--(void)showFromCoordinatesInView:(UIView *)baseView;
-- (CGAffineTransform)transformForOrientation;
--(void)showLoginForm;
--(void)showView;
-- (CGFloat)angleForCurrentOrientation;
 
 
 @end

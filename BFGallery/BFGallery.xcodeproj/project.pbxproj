@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8714D4EF15C3CF33000A6007 /* BFHorizontalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8714D4ED15C3CF33000A6007 /* BFHorizontalTableViewController.m */; };
 		8717826D15C3ABA80068C775 /* BFMenuDetailViewController_iphone_portrait.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717826C15C3ABA80068C775 /* BFMenuDetailViewController_iphone_portrait.xib */; };
-		8717826F15C3ACA40068C775 /* BFMenuDetailViewController_iphone_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717826E15C3ACA40068C775 /* BFMenuDetailViewController_iphone_landscape.xib */; };
 		8717827115C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717827015C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib */; };
 		87CE41C41571A6300011E130 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C31571A6300011E130 /* UIKit.framework */; };
 		87CE41C61571A6300011E130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C51571A6300011E130 /* Foundation.framework */; };
@@ -52,8 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8714D4EC15C3CF33000A6007 /* BFHorizontalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFHorizontalTableViewController.h; sourceTree = "<group>"; };
+		8714D4ED15C3CF33000A6007 /* BFHorizontalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFHorizontalTableViewController.m; sourceTree = "<group>"; };
+		8714D4EE15C3CF33000A6007 /* BFHorizontalTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFHorizontalTableViewController.xib; sourceTree = "<group>"; };
 		8717826C15C3ABA80068C775 /* BFMenuDetailViewController_iphone_portrait.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFMenuDetailViewController_iphone_portrait.xib; sourceTree = "<group>"; };
-		8717826E15C3ACA40068C775 /* BFMenuDetailViewController_iphone_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFMenuDetailViewController_iphone_landscape.xib; sourceTree = "<group>"; };
 		8717827015C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFMenuGalleryCell_iphone_landscape.xib; path = assets/BFMenuGalleryCell_iphone_landscape.xib; sourceTree = "<group>"; };
 		87CE41BF1571A6300011E130 /* BFGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CE41C31571A6300011E130 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -147,7 +149,6 @@
 				87CE42081571A74A0011E130 /* BFMenuDetailViewController.h */,
 				87CE42091571A74A0011E130 /* BFMenuDetailViewController.m */,
 				87CE42371571B5C10011E130 /* BFMenuDetailViewController_ipad.xib */,
-				8717826E15C3ACA40068C775 /* BFMenuDetailViewController_iphone_landscape.xib */,
 				8717826C15C3ABA80068C775 /* BFMenuDetailViewController_iphone_portrait.xib */,
 			);
 			name = GalleryDetailsViewController;
@@ -192,6 +193,9 @@
 				87CE41FF1571A74A0011E130 /* BFMenuAssetsManager.m */,
 				8717826915C3857D0068C775 /* Cells */,
 				8717826B15C385C30068C775 /* GalleryDetailsViewController */,
+				8714D4EC15C3CF33000A6007 /* BFHorizontalTableViewController.h */,
+				8714D4ED15C3CF33000A6007 /* BFHorizontalTableViewController.m */,
+				8714D4EE15C3CF33000A6007 /* BFHorizontalTableViewController.xib */,
 				87CE420E1571A74A0011E130 /* BFMenuViewController.h */,
 				87CE420F1571A74A0011E130 /* BFMenuViewController.m */,
 				87CE423B1571B5C10011E130 /* BFMenuViewController.xib */,
@@ -338,7 +342,6 @@
 				87CE42431571B5C10011E130 /* BFMenuGalleryCell_iphone_portrait.xib in Resources */,
 				87CE42441571B5C10011E130 /* BFMenuViewController.xib in Resources */,
 				8717826D15C3ABA80068C775 /* BFMenuDetailViewController_iphone_portrait.xib in Resources */,
-				8717826F15C3ACA40068C775 /* BFMenuDetailViewController_iphone_landscape.xib in Resources */,
 				8717827115C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +385,7 @@
 				87CE421F1571A74A0011E130 /* BFMenuGalleryCell.m in Sources */,
 				87CE42201571A74A0011E130 /* BFMenuViewController.m in Sources */,
 				87CE42221571A74A0011E130 /* BFViewController.m in Sources */,
+				8714D4EF15C3CF33000A6007 /* BFHorizontalTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
