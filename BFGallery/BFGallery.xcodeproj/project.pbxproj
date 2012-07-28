@@ -10,6 +10,8 @@
 		8714D4EF15C3CF33000A6007 /* BFHorizontalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8714D4ED15C3CF33000A6007 /* BFHorizontalTableViewController.m */; };
 		8717826D15C3ABA80068C775 /* BFMenuDetailViewController_iphone_portrait.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717826C15C3ABA80068C775 /* BFMenuDetailViewController_iphone_portrait.xib */; };
 		8717827115C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717827015C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib */; };
+		876A4BED15C4555300BD333F /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 876A4BEC15C4555300BD333F /* 1.png */; };
+		876A4BEF15C456D300BD333F /* IMG_0625.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 876A4BEE15C456D300BD333F /* IMG_0625.JPG */; };
 		87CE41C41571A6300011E130 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C31571A6300011E130 /* UIKit.framework */; };
 		87CE41C61571A6300011E130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C51571A6300011E130 /* Foundation.framework */; };
 		87CE41C81571A6300011E130 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C71571A6300011E130 /* CoreGraphics.framework */; };
@@ -57,6 +59,8 @@
 		8714D4EE15C3CF33000A6007 /* BFHorizontalTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFHorizontalTableViewController.xib; sourceTree = "<group>"; };
 		8717826C15C3ABA80068C775 /* BFMenuDetailViewController_iphone_portrait.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFMenuDetailViewController_iphone_portrait.xib; sourceTree = "<group>"; };
 		8717827015C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFMenuGalleryCell_iphone_landscape.xib; path = assets/BFMenuGalleryCell_iphone_landscape.xib; sourceTree = "<group>"; };
+		876A4BEC15C4555300BD333F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		876A4BEE15C456D300BD333F /* IMG_0625.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0625.JPG; sourceTree = "<group>"; };
 		87CE41BF1571A6300011E130 /* BFGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CE41C31571A6300011E130 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87CE41C51571A6300011E130 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -195,6 +199,8 @@
 				8717826B15C385C30068C775 /* GalleryDetailsViewController */,
 				8714D4EC15C3CF33000A6007 /* BFHorizontalTableViewController.h */,
 				8714D4ED15C3CF33000A6007 /* BFHorizontalTableViewController.m */,
+				876A4BEC15C4555300BD333F /* 1.png */,
+				876A4BEE15C456D300BD333F /* IMG_0625.JPG */,
 				8714D4EE15C3CF33000A6007 /* BFHorizontalTableViewController.xib */,
 				87CE420E1571A74A0011E130 /* BFMenuViewController.h */,
 				87CE420F1571A74A0011E130 /* BFMenuViewController.m */,
@@ -343,6 +349,8 @@
 				87CE42441571B5C10011E130 /* BFMenuViewController.xib in Resources */,
 				8717826D15C3ABA80068C775 /* BFMenuDetailViewController_iphone_portrait.xib in Resources */,
 				8717827115C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib in Resources */,
+				876A4BED15C4555300BD333F /* 1.png in Resources */,
+				876A4BEF15C456D300BD333F /* IMG_0625.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

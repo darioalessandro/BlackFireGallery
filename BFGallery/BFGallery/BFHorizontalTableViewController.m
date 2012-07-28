@@ -73,7 +73,10 @@
         [cell setTransform:CGAffineTransformMakeRotation(-M_PI_2)];
         [cell setSelectedBackgroundView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)]];
         [cell setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2]];
+        [[cell imageView] setContentMode:UIViewContentModeScaleAspectFit];
     }
+    NSLog(@"frame %@", NSStringFromCGRect([[cell imageView] frame]));
+    [[cell imageView] setImage:[UIImage imageNamed:@"IMG_0625.JPG"]];
     [[cell textLabel] setText:@"asfsdf"];
     return cell;
 }
