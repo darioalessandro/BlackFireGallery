@@ -33,11 +33,12 @@
     NSIndexPath * initialRowToShow;
 }
 
+@property (retain, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, retain) NSIndexPath * initialRowToShow;
 @property (nonatomic, retain) IBOutlet UITableView *galleryTableView;
 @property (nonatomic, assign) id <BFMenuDetailViewControllerDelegate> delegate;
 
-
+-(void)showFromCoordinatesInView:(UIView *)baseView;
 
 @end
 

@@ -19,7 +19,7 @@
 #import "BFViewController.h"
 #import "BFMenuCell.h"
 
-@interface BFMenuViewController : BFViewController <UITableViewDelegate, UITableViewDataSource, BFMenuDetailViewControllerDelegate>{
+@interface BFMenuViewController : BFViewController <BFMenuDetailViewControllerDelegate>{
     NSArray * productsArray;
     BOOL isShowingGallery;
     NSIndexPath * lastSelectedRow;

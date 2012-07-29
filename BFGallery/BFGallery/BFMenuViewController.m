@@ -16,7 +16,6 @@
 #import "BFMenuViewController.h"
 #import "BFMenuAssetsManager.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "BFHorizontalTableViewController.h"
 
 @implementation BFMenuViewController
 @synthesize loadingPicsIndicator;
@@ -193,30 +192,18 @@
 -(void)showGalleryDetailWithIndex:(NSInteger)index fromView:(UIView *)originView{
     
     NSString * fileName= nil;
-    fileName= @"BFMenuDetailViewController_iphone_portrait";
-    
-//    if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
-//        fileName= [NSString stringWithFormat:@"%@_landscape", fileName];
-//    }else{
-//    fileName= [NSString stringWithFormat:@"%@_portrait", fileName];        
-//    }
-
-    BFHorizontalTableViewController * controller= [[BFHorizontalTableViewController alloc] init];
+    fileName= @"BFMenuDetailViewController";
+        
+    BFMenuDetailViewController * controller= [[BFMenuDetailViewController alloc] initWithNibName:fileName bundle:nil];
     [self addChildViewController:controller];
+    self.lastSelectedRow= [NSIndexPath indexPathForRow:index inSection:0];
     [self.view addSubview:controller.view];
-    controller.view.frame= self.tableView.frame;
-    
-//    BFMenuDetailViewController * controller= [[BFMenuDetailViewController alloc] initWithNibName:fileName bundle:nil];
-//    [self addChildViewController:controller];
-//    self.lastSelectedRow= [NSIndexPath indexPathForRow:index inSection:0];
-//    [self.view addSubview:controller.view];
-//    if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
-//        controller.view.frame= self.tableView.frame;
-//    }
-    NSLog(@"parent frame %@", NSStringFromCGRect([[self view] frame]));
-    NSLog(@"parent frame %@", NSStringFromCGRect([[controller view] frame]));
-//    [controller setDelegate:self];
-//    [controller setInitialRowToShow:[NSIndexPath indexPathForRow:index inSection:0]];
+    if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
+        controller.view.frame= self.tableView.frame;
+    }
+    [controller setDelegate:self];
+    [controller setInitialRowToShow:[NSIndexPath indexPathForRow:index inSection:0]];
+    [controller showFromCoordinatesInView:self.view];
 
 }
 

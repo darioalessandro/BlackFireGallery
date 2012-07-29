@@ -33,19 +33,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "BFGallery/BFMenuDetailViewController.m"
-         timestampString = "365185850.411023"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "156"
-         endingLineNumber = "156"
-         landmarkName = "-tableView:numberOfRowsInSection:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "BFGallery/BFHorizontalTableViewController.m"
          timestampString = "365181706.62997"
          startingColumnNumber = "9223372036854775807"
@@ -56,29 +43,16 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BFGallery/BFMenuDetailViewController.m"
-         timestampString = "365185850.411023"
+         timestampString = "365229115.15733"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "157"
-         endingLineNumber = "157"
-         landmarkName = "-tableView:numberOfRowsInSection:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "BFGallery/BFMenuViewController.m"
-         timestampString = "365186168.980864"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "201"
-         endingLineNumber = "201"
-         landmarkName = "-showGalleryDetailWithIndex:fromView:"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
+         landmarkName = "-showFromCoordinatesInView:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
