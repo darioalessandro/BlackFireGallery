@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BFGallery/BFAppDelegate.m"
-         timestampString = "365180713.074703"
+         timestampString = "365291257.673407"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
+         startingLineNumber = "22"
+         endingLineNumber = "22"
          landmarkName = "-application:didFinishLaunchingWithOptions:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BFGallery/BFAppDelegate.m"
-         timestampString = "365180713.074703"
+         timestampString = "365291257.673407"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
+         startingLineNumber = "19"
+         endingLineNumber = "19"
          landmarkName = "-application:didFinishLaunchingWithOptions:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -52,7 +52,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "79"
          endingLineNumber = "79"
-         landmarkName = "-showFromCoordinatesInView:"
+         landmarkName = "-bounce1AnimationStopped"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

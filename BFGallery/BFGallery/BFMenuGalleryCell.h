@@ -22,9 +22,9 @@
     UITextView *dishDescription;
     UILabel *dishName;
 }
-@property (nonatomic, retain) IBOutlet UILabel *dishName;
-@property (nonatomic, retain) IBOutlet UIImageView *dishImageView;
-@property (nonatomic, retain) IBOutlet UITextView *dishDescription;
+@property (nonatomic, strong) IBOutlet UILabel *dishName;
+@property (nonatomic, strong) IBOutlet UIImageView *dishImageView;
+@property (nonatomic, strong) IBOutlet UITextView *dishDescription;
 
 -(void)fillWithAsset:(ALAsset *)asset;
 -(void)fillWithImage:(UIImage *)image;

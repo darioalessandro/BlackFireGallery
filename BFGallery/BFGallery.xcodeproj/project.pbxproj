@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8717826D15C3ABA80068C775 /* BFMenuDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717826C15C3ABA80068C775 /* BFMenuDetailViewController.xib */; };
 		8717827115C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717827015C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib */; };
+		8784BE1415C5FE68004F6FEA /* BFMenuDetailViewController_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8784BE1315C5FE68004F6FEA /* BFMenuDetailViewController_ipad.xib */; };
 		87CE41C41571A6300011E130 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C31571A6300011E130 /* UIKit.framework */; };
 		87CE41C61571A6300011E130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C51571A6300011E130 /* Foundation.framework */; };
 		87CE41C81571A6300011E130 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C71571A6300011E130 /* CoreGraphics.framework */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		8717826C15C3ABA80068C775 /* BFMenuDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFMenuDetailViewController.xib; sourceTree = "<group>"; };
 		8717827015C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFMenuGalleryCell_iphone_landscape.xib; path = assets/BFMenuGalleryCell_iphone_landscape.xib; sourceTree = "<group>"; };
+		8784BE1315C5FE68004F6FEA /* BFMenuDetailViewController_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFMenuDetailViewController_ipad.xib; sourceTree = "<group>"; };
 		87CE41BF1571A6300011E130 /* BFGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CE41C31571A6300011E130 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87CE41C51571A6300011E130 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -142,6 +144,7 @@
 			children = (
 				87CE42081571A74A0011E130 /* BFMenuDetailViewController.h */,
 				87CE42091571A74A0011E130 /* BFMenuDetailViewController.m */,
+				8784BE1315C5FE68004F6FEA /* BFMenuDetailViewController_ipad.xib */,
 				8717826C15C3ABA80068C775 /* BFMenuDetailViewController.xib */,
 			);
 			name = GalleryDetailsViewController;
@@ -332,6 +335,7 @@
 				87CE42441571B5C10011E130 /* BFMenuViewController.xib in Resources */,
 				8717826D15C3ABA80068C775 /* BFMenuDetailViewController.xib in Resources */,
 				8717827115C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib in Resources */,
+				8784BE1415C5FE68004F6FEA /* BFMenuDetailViewController_ipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +471,7 @@
 		87CE41F81571A6320011E130 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -481,6 +486,7 @@
 		87CE41F91571A6320011E130 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BFGallery/BFGallery-Prefix.pch";

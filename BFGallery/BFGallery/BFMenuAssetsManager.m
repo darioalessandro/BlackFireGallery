@@ -29,6 +29,15 @@ static BFMenuAssetsManager * _hiddenInstance= nil;
     return self;
 }
 
++ (ALAssetsLibrary *)defaultAssetsLibrary {
+    static dispatch_once_t pred = 0;
+    static ALAssetsLibrary *library = nil;
+    dispatch_once(&pred, ^{
+        library = [[ALAssetsLibrary alloc] init];
+    });
+    return library;
+}
+
 +(BFMenuAssetsManager *)sharedInstance{
     if(_hiddenInstance==nil){
         _hiddenInstance= [BFMenuAssetsManager new];
@@ -38,7 +47,7 @@ static BFMenuAssetsManager * _hiddenInstance= nil;
 
 -(void)readUserImagesFromLibrary{
     
-    ALAssetsLibrary *al = [[ALAssetsLibrary alloc] init];
+    ALAssetsLibrary *al = [BFMenuAssetsManager defaultAssetsLibrary];
     
     
     [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos | ALAssetsGroupLibrary
@@ -55,7 +64,6 @@ static BFMenuAssetsManager * _hiddenInstance= nil;
           }];
          if(group==nil){
             [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:pics];
-             [pics autorelease];
          }
      }
             failureBlock:^(NSError *error) { NSLog(@"error %@", error.description);}

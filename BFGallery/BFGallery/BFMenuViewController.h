@@ -25,12 +25,16 @@
     NSIndexPath * lastSelectedRow;
 }
 
--(UINavigationController *)navController;
-@property (retain, nonatomic)  NSIndexPath * lastSelectedRow;
-@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *loadingPicsIndicator;
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
+
+    -(void)showGalleryWithImageSelected:(UIImageView *)imageView;
+    -(BFMenuCell *)getCell;
+    -(void)showLastPic:(id)caller;
+    -(void)showGalleryDetailWithIndex:(NSInteger)index fromView:(UIView *)originView;
+
+@property (strong, nonatomic) NSIndexPath * lastSelectedRow;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingPicsIndicator;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic, assign) BOOL isShowingGallery;
-@property(nonatomic, retain) NSArray * productsArray;
--(void)showGalleryWithImageSelected:(UIImageView *)imageView;
--(BFMenuCell *)getCell;
+@property(nonatomic, strong) NSArray * productsArray;
+
 @end

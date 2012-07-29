@@ -19,8 +19,8 @@
 @interface BFMenuCell : UITableViewCell {
 
 }
-@property (retain, nonatomic) IBOutletCollection(UILabel) NSArray *labels;
-@property (retain, nonatomic) IBOutletCollection(UIImageView) NSArray *imageViews;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labels;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imageViews;
 
 
 @end

@@ -31,12 +31,5 @@
     [dishImageView setImage:image];
 }
 
-- (void)dealloc
-{
-    [dishImageView release];
-    [dishName release];
-    [dishDescription release];
-    [super dealloc];
-}
 
 @end

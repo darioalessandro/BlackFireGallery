@@ -30,14 +30,8 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    if(!initialRowToShow)
-        [initialRowToShow release];
     
     
-    [initialImage release];
-    [galleryTableView release];
-    [imageView release];
-    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,7 +118,6 @@
     isFirstImage=TRUE;
     UITapGestureRecognizer * gestureRecognizer= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissDetailView:)];
     [self.view addGestureRecognizer:gestureRecognizer];
-    [gestureRecognizer release];
     [self.view setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.8]];    
 }
 
@@ -171,7 +164,6 @@
 {
 	//self.view.alpha = 100;
 	[self.view removeFromSuperview];
-	[self release];
 }
 
 

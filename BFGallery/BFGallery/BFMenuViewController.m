@@ -42,22 +42,9 @@
 -(void)showLastPic:(id)caller{
     if(![[self productsArray] count]>0)
         return;
-    
-    NSIndexPath * indexPath= [NSIndexPath indexPathForRow:[[self tableView] numberOfRowsInSection:0]-1 inSection:0];
-    [[self tableView] scrollToRowAtIndexPath:indexPath  atScrollPosition:UITableViewScrollPositionTop animated:NO];    
-//    [self showGalleryDetailWithIndex:[[self productsArray] count]-1 fromView:self.view];
+
 }
 
-- (void)dealloc
-{
-    if(lastSelectedRow){
-        [lastSelectedRow release];
-    }
-    [productsArray release];
-    [tableView release];
-    [loadingPicsIndicator release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -82,9 +69,7 @@
     id array= [notif object];
     self.productsArray=array;
     [self.tableView reloadData];
-
     [[self tableView] setHidden:NO];
-    [self performSelector:@selector(showLastPic:) withObject:nil afterDelay:0.0];
     [self.loadingPicsIndicator stopAnimating];
 }
 
@@ -139,7 +124,7 @@
     if(cell==nil){
         cell= [[[NSBundle mainBundle] loadNibNamed:fileName owner:nil options:nil] objectAtIndex:0];
         
-        [cell setSelectedBackgroundView:[[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)] autorelease]];
+        [cell setSelectedBackgroundView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)]];
     }
     return cell;
 }
@@ -156,14 +141,12 @@
             ALAsset * image= [self.productsArray objectAtIndex:index0+j];
             UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectedImage:)];            
             [[[cell imageViews] objectAtIndex:j] addGestureRecognizer:tap];            
-            [tap release];
             
             [[[cell imageViews] objectAtIndex:j] setImage:[UIImage imageWithCGImage:[image thumbnail]]];            
             [[[cell imageViews] objectAtIndex:j] setTag:index0+j];
             
             UIPinchGestureRecognizer * pinch= [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchSelectedImage:)];            
             [[[cell imageViews] objectAtIndex:j] addGestureRecognizer:pinch];            
-            [pinch release];
         }else{
             [[[cell imageViews] objectAtIndex:j] setHidden:TRUE];
         }
@@ -193,6 +176,10 @@
     
     NSString * fileName= nil;
     fileName= @"BFMenuDetailViewController";
+    
+    if (![[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        fileName= [NSString stringWithFormat:@"%@_ipad", fileName];
+    }
         
     BFMenuDetailViewController * controller= [[BFMenuDetailViewController alloc] initWithNibName:fileName bundle:nil];
     [self addChildViewController:controller];

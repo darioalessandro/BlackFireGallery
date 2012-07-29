@@ -28,10 +28,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -59,11 +55,9 @@
     UIBarButtonItem * item= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(closeModalView:)];
     [[self navigationController] setToolbarHidden:FALSE];
     [[[self navigationController] navigationItem] setHidesBackButton:TRUE];
-    [self setToolbarItems:[NSArray arrayWithObject:item]];
+    [self setToolbarItems:@[item]];
     [item setStyle:UIBarButtonItemStyleDone];
     [[[self navigationController] toolbar] setBarStyle:UIBarStyleBlackTranslucent];
-    [[[self navigationController] toolbar] setBarStyle:UIBarStyleBlack];
-    [item release];
 }
 
 - (void)viewDidUnload

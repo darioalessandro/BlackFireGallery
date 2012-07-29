@@ -21,5 +21,5 @@ static NSString * const kAddedAssetsToLibrary= @"AddedAssetsToLibrary";
 
 -(void)readUserImagesFromLibrary;
 +(BFMenuAssetsManager *)sharedInstance;
-@property(nonatomic, retain) NSMutableArray * pics;
+@property(nonatomic, strong) NSMutableArray * pics;
 @end

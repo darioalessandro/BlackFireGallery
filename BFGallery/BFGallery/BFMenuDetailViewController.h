@@ -28,15 +28,15 @@
 @end
 
 @interface BFMenuDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    id <BFMenuDetailViewControllerDelegate> delegate;
+    id <BFMenuDetailViewControllerDelegate> __weak delegate;
     UITableView *galleryTableView;
     NSIndexPath * initialRowToShow;
 }
 
-@property (retain, nonatomic) IBOutlet UIImageView *imageView;
-@property (nonatomic, retain) NSIndexPath * initialRowToShow;
-@property (nonatomic, retain) IBOutlet UITableView *galleryTableView;
-@property (nonatomic, assign) id <BFMenuDetailViewControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) NSIndexPath * initialRowToShow;
+@property (nonatomic, strong) IBOutlet UITableView *galleryTableView;
+@property (nonatomic, weak) id <BFMenuDetailViewControllerDelegate> delegate;
 
 -(void)showFromCoordinatesInView:(UIView *)baseView;
 
