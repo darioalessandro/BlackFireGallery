@@ -49,21 +49,21 @@ static BFMenuAssetsManager * _hiddenInstance= nil;
     
     ALAssetsLibrary *al = [BFMenuAssetsManager defaultAssetsLibrary];
     
-    
+    self.pics= nil;
     [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos | ALAssetsGroupLibrary
                       usingBlock:^(ALAssetsGroup *group, BOOL *stop)
      {
-         if(!pics){
-             pics= [[NSMutableArray alloc] init];
+         if(!self.pics){
+             self.pics= [[NSMutableArray alloc] init];
          }
          [group enumerateAssetsUsingBlock:^(ALAsset *asset, NSUInteger index, BOOL *stop)
           {
               if (asset!=nil) {
-                  [pics addObject:asset];
+                  [self.pics addObject:asset];
               }
           }];
          if(group==nil){
-            [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:pics];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
          }
      }
             failureBlock:^(NSError *error) { NSLog(@"error %@", error.description);}

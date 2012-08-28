@@ -42,7 +42,6 @@
 -(void)closeModalView:(id)sender{
 
     if(self.navigationController){
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"ShowOverlayViewController" object:nil];
         [self.navigationController popViewControllerAnimated:NO];
     }else{
         [self dismissModalViewControllerAnimated:YES];
@@ -52,19 +51,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIBarButtonItem * item= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(closeModalView:)];
-    [[self navigationController] setToolbarHidden:FALSE];
-    [[[self navigationController] navigationItem] setHidesBackButton:TRUE];
-    [self setToolbarItems:@[item]];
-    [item setStyle:UIBarButtonItemStyleDone];
     [[[self navigationController] toolbar] setBarStyle:UIBarStyleBlackTranslucent];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

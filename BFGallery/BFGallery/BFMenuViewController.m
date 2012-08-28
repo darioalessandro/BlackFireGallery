@@ -45,7 +45,6 @@
 
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -217,6 +216,7 @@
 #pragma mark - SRMenuDetailViewControllerDelegate
 
 -(NSDictionary *)menuDetailViewController:(BFMenuDetailViewController *)menuDetailViewController assetAtIndex:(NSInteger)index{
+
     return [productsArray objectAtIndex:index];
 }
 

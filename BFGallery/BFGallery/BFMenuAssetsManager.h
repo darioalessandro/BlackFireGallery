@@ -16,7 +16,7 @@
 static NSString * const kAddedAssetsToLibrary= @"AddedAssetsToLibrary";
 
 @interface BFMenuAssetsManager : NSObject{
-    NSMutableArray * pics;
+
 }
 
 -(void)readUserImagesFromLibrary;

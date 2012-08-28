@@ -24,8 +24,6 @@
     BOOL isShowingGallery;
     NSIndexPath * lastSelectedRow;
 }
-
-
     -(void)showGalleryWithImageSelected:(UIImageView *)imageView;
     -(BFMenuCell *)getCell;
     -(void)showLastPic:(id)caller;

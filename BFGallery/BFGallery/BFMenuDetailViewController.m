@@ -27,6 +27,12 @@
 @synthesize galleryTableView, delegate, initialRowToShow;
 
 
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self= [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mustDismissGalleryDetails:) name:@"MustDismissGalleryDetails" object:nil];
+    return self;
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -43,6 +49,10 @@
 }
 
 #pragma mark - dismissCallback
+
+-(void)mustDismissGalleryDetails:(NSNotification *)notification{
+    [self dismissDetailView:nil];
+}
 
 -(void)dismissDetailView:(UITapGestureRecognizer *)tapRecognizer
 {
