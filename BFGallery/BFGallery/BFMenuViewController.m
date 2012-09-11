@@ -14,13 +14,21 @@
  */
 
 #import "BFMenuViewController.h"
-#import "BFMenuAssetsManager.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+
 
 @implementation BFMenuViewController
 @synthesize loadingPicsIndicator;
 @synthesize tableView, lastSelectedRow;
 @synthesize productsArray, isShowingGallery;
+
+-(id)initWithMediaProvider:(BFMenuAssetsManagerProvider)mediaProvider{
+    self= [super init];
+    if(self){
+        self.mediaProvider=mediaProvider;
+    }
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +36,7 @@
     if (self) {
         if(!productsArray){
             isShowingGallery=FALSE;
-            [[[self navigationController] navigationItem] setHidesBackButton:TRUE];
+            self.mediaProvider=BFMenuAssetsManagerProviderPhotoLibrary;
         }
     }
     return self;
@@ -36,7 +44,8 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [loadingPicsIndicator startAnimating];
-    [[BFMenuAssetsManager sharedInstance] readUserImagesFromLibrary];
+    [[BFMenuAssetsManager sharedInstance] setSearchCriteria:self.searchCriteria];
+    [[BFMenuAssetsManager sharedInstance] readImagesFromProvider:self.mediaProvider];
 }
 
 -(void)showLastPic:(id)caller{
@@ -59,8 +68,8 @@
 {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAddedAssets:) name:kAddedAssetsToLibrary object:nil];
-    [[[self navigationController] navigationItem] setHidesBackButton:TRUE];
-    [[[self navigationController] navigationBar] setHidden:TRUE];
+//    [[[self navigationController] navigationItem] setHidesBackButton:TRUE];
+//    [[[self navigationController] navigationBar] setHidden:TRUE];
     [[self tableView] setHidden:TRUE];
 }
 
@@ -137,11 +146,22 @@
     
     for(int j=0;j<numberOfImageViewsInCell;j++){
         if(count>index0+j){
-            ALAsset * image= [self.productsArray objectAtIndex:index0+j];
+            ALAsset * image=nil;
+            UIImage * thumbnail=nil;
+            
+            if(self.mediaProvider==BFMenuAssetsManagerProviderPhotoLibrary){
+                image= [self.productsArray objectAtIndex:index0+j];
+                thumbnail= [UIImage imageWithCGImage:[image thumbnail]];
+            }else{
+                thumbnail= [self.productsArray objectAtIndex:index0+j];
+            }
+            
             UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectedImage:)];            
             [[[cell imageViews] objectAtIndex:j] addGestureRecognizer:tap];            
             
-            [[[cell imageViews] objectAtIndex:j] setImage:[UIImage imageWithCGImage:[image thumbnail]]];            
+            [[[cell imageViews] objectAtIndex:j] setImage:thumbnail];
+            
+            [[[cell imageViews] objectAtIndex:j] setImage:thumbnail];
             [[[cell imageViews] objectAtIndex:j] setTag:index0+j];
             
             UIPinchGestureRecognizer * pinch= [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchSelectedImage:)];            
@@ -203,7 +223,9 @@
 }
 
 -(void)didSelectedImage:(UITapGestureRecognizer *)tap{
-    [self showGalleryWithImageSelected:(UIImageView *)[tap view]];
+   // [self showGalleryWithImageSelected:(UIImageView *)[tap view]];
+    [[self delegate] didSelectedImage:[(UIImageView *)[tap view] image]];
+    [self.navigationController popViewControllerAnimated:TRUE]; 
 }
 
 #pragma mark - UITableViewDelegate

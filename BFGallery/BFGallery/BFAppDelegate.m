@@ -9,6 +9,7 @@
 #import "BFAppDelegate.h"
 
 #import "BFMenuViewController.h"
+#import "BFMenuAssetsManager.h"
 
 @implementation BFAppDelegate
 
@@ -17,7 +18,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[BFMenuViewController alloc] initWithNibName:@"BFMenuViewController" bundle:nil];
+    self.viewController = [[BFMenuViewController alloc] initWithMediaProvider:BFMenuAssetsManagerProviderFlickr];
+    self.viewController.searchCriteria=@"sun";
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

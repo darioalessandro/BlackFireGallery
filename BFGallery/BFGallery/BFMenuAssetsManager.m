@@ -16,6 +16,7 @@
 #import "BFMenuAssetsManager.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
+
 static BFMenuAssetsManager * _hiddenInstance= nil;
 
 @implementation BFMenuAssetsManager
@@ -45,6 +46,16 @@ static BFMenuAssetsManager * _hiddenInstance= nil;
     return _hiddenInstance;
 }
 
+-(void)readImagesFromProvider:(BFMenuAssetsManagerProvider)provider{
+    if(provider==BFMenuAssetsManagerProviderPhotoLibrary){
+        [self readUserImagesFromLibrary];
+    }else if(provider==BFMenuAssetsManagerProviderFlickr){
+        FlickrRequest * request=[FlickrRequest new];
+        [request performFlickrRequestWithCriteria:self.searchCriteria delegate:self];
+        
+    }
+}
+
 -(void)readUserImagesFromLibrary{
     
     ALAssetsLibrary *al = [BFMenuAssetsManager defaultAssetsLibrary];
@@ -68,5 +79,18 @@ static BFMenuAssetsManager * _hiddenInstance= nil;
      }
             failureBlock:^(NSError *error) { NSLog(@"error %@", error.description);}
      ];
+}
+
+#pragma mark -
+#pragma Flickr
+
+- (void)didFinishParsing:(FlickrImageParser *)parser{
+    self.pics= (NSMutableArray *)parser.images;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+}
+
+- (void)parseErrorOccurred:(FlickrImageParser *)parser{
+    UIAlertView * alert= [[UIAlertView alloc] initWithTitle:@"FLickr" message:parser.error.description delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+    [alert show];
 }
 @end

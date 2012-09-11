@@ -64,7 +64,13 @@
 
 -(void)showFromCoordinatesInView:(UIView *)baseView
 {
-    initialImage= [UIImage imageWithCGImage:[[[delegate menuDetailViewController:self assetAtIndex:self.initialRowToShow.row] defaultRepresentation] fullScreenImage]];
+    id asset= [delegate menuDetailViewController:self assetAtIndex:self.initialRowToShow.row];
+    
+    if([asset isMemberOfClass:[UIImage class]]){
+        initialImage= asset;
+    }else{
+        initialImage= [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]];
+    }
     [self.imageView setImage:initialImage];
     CGSize originalSize= baseView.frame.size;
     CGSize tableViewSize= self.imageView.frame.size;
@@ -174,6 +180,13 @@
 {
 	//self.view.alpha = 100;
 	[self.view removeFromSuperview];
+}
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return self.imageView;
 }
 
 

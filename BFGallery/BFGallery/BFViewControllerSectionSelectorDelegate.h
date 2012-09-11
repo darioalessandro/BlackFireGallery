@@ -19,5 +19,5 @@
 @protocol BFViewControllerSectionSelectorDelegate <NSObject>
 
 -(void)srViewController:(UIViewController *)controller didSelectedSectionAtIndex:(NSInteger)index;
-
+-(void)didSelectedImage:(UIImage *)image;
 @end

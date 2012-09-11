@@ -27,7 +27,7 @@
 
 @end
 
-@interface BFMenuDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface BFMenuDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate> {
     id <BFMenuDetailViewControllerDelegate> __weak delegate;
     UITableView *galleryTableView;
     NSIndexPath * initialRowToShow;

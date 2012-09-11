@@ -13,13 +13,20 @@
  limitations under the License.
  */
 
+#import "FlickrRequest.h"
+
 static NSString * const kAddedAssetsToLibrary= @"AddedAssetsToLibrary";
 
-@interface BFMenuAssetsManager : NSObject{
+typedef enum{
+    BFMenuAssetsManagerProviderPhotoLibrary=0,
+    BFMenuAssetsManagerProviderFlickr,
+}BFMenuAssetsManagerProvider;
+
+@interface BFMenuAssetsManager : NSObject <FlickrImageParserDelegate>{
 
 }
-
--(void)readUserImagesFromLibrary;
+@property(strong)NSString * searchCriteria;
+-(void)readImagesFromProvider:(BFMenuAssetsManagerProvider)provider;
 +(BFMenuAssetsManager *)sharedInstance;
 @property(nonatomic, strong) NSMutableArray * pics;
 @end
