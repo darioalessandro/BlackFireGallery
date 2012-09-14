@@ -14,12 +14,12 @@
  */
 
 
-#import "BFMenuDetailViewController.h"
+#import "BFGFullSizeViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #define kTransitionDuration 0.5
 
 
-@implementation BFMenuDetailViewController{
+@implementation BFGFullSizeViewController{
     UIImage * initialImage;
     BOOL isFirstImage;
 }

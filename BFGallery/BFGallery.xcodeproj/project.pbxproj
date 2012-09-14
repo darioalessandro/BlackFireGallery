@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8717826D15C3ABA80068C775 /* BFMenuDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717826C15C3ABA80068C775 /* BFMenuDetailViewController.xib */; };
-		8717827115C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717827015C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib */; };
-		8784BE1415C5FE68004F6FEA /* BFMenuDetailViewController_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8784BE1315C5FE68004F6FEA /* BFMenuDetailViewController_ipad.xib */; };
+		8717826D15C3ABA80068C775 /* BFGFullSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717826C15C3ABA80068C775 /* BFGFullSizeViewController.xib */; };
+		8717827115C3C1670068C775 /* BFGCell_iphone_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717827015C3C1670068C775 /* BFGCell_iphone_landscape.xib */; };
+		8784BE1415C5FE68004F6FEA /* BFGFullSizeViewController_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8784BE1315C5FE68004F6FEA /* BFGFullSizeViewController_ipad.xib */; };
 		87CE41C41571A6300011E130 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C31571A6300011E130 /* UIKit.framework */; };
 		87CE41C61571A6300011E130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C51571A6300011E130 /* Foundation.framework */; };
 		87CE41C81571A6300011E130 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C71571A6300011E130 /* CoreGraphics.framework */; };
@@ -22,22 +22,23 @@
 		87CE41E91571A6320011E130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C51571A6300011E130 /* Foundation.framework */; };
 		87CE41F11571A6320011E130 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87CE41EF1571A6320011E130 /* InfoPlist.strings */; };
 		87CE41F41571A6320011E130 /* BFGalleryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE41F31571A6320011E130 /* BFGalleryTests.m */; };
-		87CE42141571A74A0011E130 /* BFMenuAssetsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE41FF1571A74A0011E130 /* BFMenuAssetsManager.m */; };
-		87CE42191571A74A0011E130 /* BFMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE42051571A74A0011E130 /* BFMenuCell.m */; };
-		87CE421C1571A74A0011E130 /* BFMenuDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE42091571A74A0011E130 /* BFMenuDetailViewController.m */; };
-		87CE421F1571A74A0011E130 /* BFMenuGalleryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE420D1571A74A0011E130 /* BFMenuGalleryCell.m */; };
-		87CE42201571A74A0011E130 /* BFMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE420F1571A74A0011E130 /* BFMenuViewController.m */; };
+		87CE42141571A74A0011E130 /* BFGAssetsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE41FF1571A74A0011E130 /* BFGAssetsManager.m */; };
+		87CE42191571A74A0011E130 /* BFGFullSizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE42051571A74A0011E130 /* BFGFullSizeCell.m */; };
+		87CE421C1571A74A0011E130 /* BFGFullSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE42091571A74A0011E130 /* BFGFullSizeViewController.m */; };
+		87CE421F1571A74A0011E130 /* BFGCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE420D1571A74A0011E130 /* BFGCell.m */; };
+		87CE42201571A74A0011E130 /* BFGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE420F1571A74A0011E130 /* BFGalleryViewController.m */; };
 		87CE42221571A74A0011E130 /* BFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE42121571A74A0011E130 /* BFViewController.m */; };
 		87CE42271571A7B60011E130 /* SushiLabDB.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42251571A7B60011E130 /* SushiLabDB.plist */; };
 		87CE42291571A8490011E130 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE42281571A8490011E130 /* AssetsLibrary.framework */; };
 		87CE422B1571B12F0011E130 /* flechas.png in Resources */ = {isa = PBXBuildFile; fileRef = 87CE422A1571B12F0011E130 /* flechas.png */; };
-		87CE423C1571B5C10011E130 /* BFMenuCell_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42331571B5C10011E130 /* BFMenuCell_ipad.xib */; };
-		87CE423D1571B5C10011E130 /* BFMenuCell_ipad_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42341571B5C10011E130 /* BFMenuCell_ipad_landscape.xib */; };
-		87CE423E1571B5C10011E130 /* BFMenuCell_iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42351571B5C10011E130 /* BFMenuCell_iphone.xib */; };
-		87CE423F1571B5C10011E130 /* BFMenuCell_iphone_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42361571B5C10011E130 /* BFMenuCell_iphone_landscape.xib */; };
-		87CE42421571B5C10011E130 /* BFMenuGalleryCell_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42391571B5C10011E130 /* BFMenuGalleryCell_ipad.xib */; };
-		87CE42431571B5C10011E130 /* BFMenuGalleryCell_iphone_portrait.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE423A1571B5C10011E130 /* BFMenuGalleryCell_iphone_portrait.xib */; };
-		87CE42441571B5C10011E130 /* BFMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE423B1571B5C10011E130 /* BFMenuViewController.xib */; };
+		87CE423C1571B5C10011E130 /* BFGFullSizeCell_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42331571B5C10011E130 /* BFGFullSizeCell_ipad.xib */; };
+		87CE423D1571B5C10011E130 /* BFGFullSizeCell_ipad_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42341571B5C10011E130 /* BFGFullSizeCell_ipad_landscape.xib */; };
+		87CE423E1571B5C10011E130 /* BFGFullSizeCell_iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42351571B5C10011E130 /* BFGFullSizeCell_iphone.xib */; };
+		87CE423F1571B5C10011E130 /* BFGFullSizeCell_iphone_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42361571B5C10011E130 /* BFGFullSizeCell_iphone_landscape.xib */; };
+		87CE42421571B5C10011E130 /* BFGCell_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42391571B5C10011E130 /* BFGCell_ipad.xib */; };
+		87CE42431571B5C10011E130 /* BFGCell_iphone_portrait.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE423A1571B5C10011E130 /* BFGCell_iphone_portrait.xib */; };
+		87CE42441571B5C10011E130 /* BFGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE423B1571B5C10011E130 /* BFGalleryViewController.xib */; };
+		EB33F0501602FA4C001F06C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */; };
 		EB5D503F15FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */; };
 		EB5D504015FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */; };
 		EB5D504115FF2E0800AB1CD7 /* FlickrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503E15FF2E0800AB1CD7 /* FlickrRequest.m */; };
@@ -67,9 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8717826C15C3ABA80068C775 /* BFMenuDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFMenuDetailViewController.xib; sourceTree = "<group>"; };
-		8717827015C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFMenuGalleryCell_iphone_landscape.xib; path = assets/BFMenuGalleryCell_iphone_landscape.xib; sourceTree = "<group>"; };
-		8784BE1315C5FE68004F6FEA /* BFMenuDetailViewController_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFMenuDetailViewController_ipad.xib; sourceTree = "<group>"; };
+		8717826C15C3ABA80068C775 /* BFGFullSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFGFullSizeViewController.xib; sourceTree = "<group>"; };
+		8717827015C3C1670068C775 /* BFGCell_iphone_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGCell_iphone_landscape.xib; path = assets/BFGCell_iphone_landscape.xib; sourceTree = "<group>"; };
+		8784BE1315C5FE68004F6FEA /* BFGFullSizeViewController_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFGFullSizeViewController_ipad.xib; sourceTree = "<group>"; };
 		87CE41BF1571A6300011E130 /* BFGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CE41C31571A6300011E130 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87CE41C51571A6300011E130 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,7 +80,7 @@
 		87CE41CF1571A6300011E130 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		87CE41D11571A6300011E130 /* BFGallery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BFGallery-Prefix.pch"; sourceTree = "<group>"; };
 		87CE41D21571A6300011E130 /* BFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFAppDelegate.h; sourceTree = "<group>"; };
-		87CE41D31571A6300011E130 /* BFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFAppDelegate.m; sourceTree = "<group>"; };
+		87CE41D31571A6300011E130 /* BFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		87CE41D51571A6300011E130 /* BFGallery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BFGallery.entitlements; sourceTree = "<group>"; };
 		87CE41E51571A6320011E130 /* BFGalleryTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFGalleryTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CE41E61571A6320011E130 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -87,30 +88,31 @@
 		87CE41F01571A6320011E130 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		87CE41F21571A6320011E130 /* BFGalleryTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFGalleryTests.h; sourceTree = "<group>"; };
 		87CE41F31571A6320011E130 /* BFGalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFGalleryTests.m; sourceTree = "<group>"; };
-		87CE41FE1571A74A0011E130 /* BFMenuAssetsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFMenuAssetsManager.h; sourceTree = "<group>"; };
-		87CE41FF1571A74A0011E130 /* BFMenuAssetsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFMenuAssetsManager.m; sourceTree = "<group>"; };
-		87CE42041571A74A0011E130 /* BFMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFMenuCell.h; sourceTree = "<group>"; };
-		87CE42051571A74A0011E130 /* BFMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFMenuCell.m; sourceTree = "<group>"; };
-		87CE42081571A74A0011E130 /* BFMenuDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFMenuDetailViewController.h; sourceTree = "<group>"; };
-		87CE42091571A74A0011E130 /* BFMenuDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFMenuDetailViewController.m; sourceTree = "<group>"; };
-		87CE420C1571A74A0011E130 /* BFMenuGalleryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFMenuGalleryCell.h; sourceTree = "<group>"; };
-		87CE420D1571A74A0011E130 /* BFMenuGalleryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFMenuGalleryCell.m; sourceTree = "<group>"; };
-		87CE420E1571A74A0011E130 /* BFMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFMenuViewController.h; sourceTree = "<group>"; };
-		87CE420F1571A74A0011E130 /* BFMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFMenuViewController.m; sourceTree = "<group>"; };
+		87CE41FE1571A74A0011E130 /* BFGAssetsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BFGAssetsManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		87CE41FF1571A74A0011E130 /* BFGAssetsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGAssetsManager.m; sourceTree = "<group>"; };
+		87CE42041571A74A0011E130 /* BFGFullSizeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGFullSizeCell.h; sourceTree = "<group>"; };
+		87CE42051571A74A0011E130 /* BFGFullSizeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGFullSizeCell.m; sourceTree = "<group>"; };
+		87CE42081571A74A0011E130 /* BFGFullSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGFullSizeViewController.h; sourceTree = "<group>"; };
+		87CE42091571A74A0011E130 /* BFGFullSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGFullSizeViewController.m; sourceTree = "<group>"; };
+		87CE420C1571A74A0011E130 /* BFGCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGCell.h; sourceTree = "<group>"; };
+		87CE420D1571A74A0011E130 /* BFGCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGCell.m; sourceTree = "<group>"; };
+		87CE420E1571A74A0011E130 /* BFGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGalleryViewController.h; sourceTree = "<group>"; };
+		87CE420F1571A74A0011E130 /* BFGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGalleryViewController.m; sourceTree = "<group>"; };
 		87CE42111571A74A0011E130 /* BFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
 		87CE42121571A74A0011E130 /* BFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFViewController.m; sourceTree = "<group>"; };
 		87CE42131571A74A0011E130 /* BFViewControllerSectionSelectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewControllerSectionSelectorDelegate.h; sourceTree = "<group>"; };
 		87CE42251571A7B60011E130 /* SushiLabDB.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SushiLabDB.plist; sourceTree = "<group>"; };
 		87CE42281571A8490011E130 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		87CE422A1571B12F0011E130 /* flechas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flechas.png; path = ../flechas.png; sourceTree = "<group>"; };
-		87CE42331571B5C10011E130 /* BFMenuCell_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFMenuCell_ipad.xib; path = assets/BFMenuCell_ipad.xib; sourceTree = "<group>"; };
-		87CE42341571B5C10011E130 /* BFMenuCell_ipad_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFMenuCell_ipad_landscape.xib; path = assets/BFMenuCell_ipad_landscape.xib; sourceTree = "<group>"; };
-		87CE42351571B5C10011E130 /* BFMenuCell_iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFMenuCell_iphone.xib; path = assets/BFMenuCell_iphone.xib; sourceTree = "<group>"; };
-		87CE42361571B5C10011E130 /* BFMenuCell_iphone_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFMenuCell_iphone_landscape.xib; path = assets/BFMenuCell_iphone_landscape.xib; sourceTree = "<group>"; };
-		87CE42391571B5C10011E130 /* BFMenuGalleryCell_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFMenuGalleryCell_ipad.xib; path = assets/BFMenuGalleryCell_ipad.xib; sourceTree = "<group>"; };
-		87CE423A1571B5C10011E130 /* BFMenuGalleryCell_iphone_portrait.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFMenuGalleryCell_iphone_portrait.xib; path = assets/BFMenuGalleryCell_iphone_portrait.xib; sourceTree = "<group>"; };
-		87CE423B1571B5C10011E130 /* BFMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFMenuViewController.xib; path = assets/BFMenuViewController.xib; sourceTree = "<group>"; };
+		87CE42331571B5C10011E130 /* BFGFullSizeCell_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGFullSizeCell_ipad.xib; path = assets/BFGFullSizeCell_ipad.xib; sourceTree = "<group>"; };
+		87CE42341571B5C10011E130 /* BFGFullSizeCell_ipad_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGFullSizeCell_ipad_landscape.xib; path = assets/BFGFullSizeCell_ipad_landscape.xib; sourceTree = "<group>"; };
+		87CE42351571B5C10011E130 /* BFGFullSizeCell_iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGFullSizeCell_iphone.xib; path = assets/BFGFullSizeCell_iphone.xib; sourceTree = "<group>"; };
+		87CE42361571B5C10011E130 /* BFGFullSizeCell_iphone_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGFullSizeCell_iphone_landscape.xib; path = assets/BFGFullSizeCell_iphone_landscape.xib; sourceTree = "<group>"; };
+		87CE42391571B5C10011E130 /* BFGCell_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGCell_ipad.xib; path = assets/BFGCell_ipad.xib; sourceTree = "<group>"; };
+		87CE423A1571B5C10011E130 /* BFGCell_iphone_portrait.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGCell_iphone_portrait.xib; path = assets/BFGCell_iphone_portrait.xib; sourceTree = "<group>"; };
+		87CE423B1571B5C10011E130 /* BFGalleryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGalleryViewController.xib; path = assets/BFGalleryViewController.xib; sourceTree = "<group>"; };
 		EB0079EE15FF2FE700B6F742 /* SharedConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedConstants.h; sourceTree = "<group>"; };
+		EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EB5D503B15FF2E0800AB1CD7 /* FlickrImageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrImageParser.h; sourceTree = "<group>"; };
 		EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrImageParser.m; sourceTree = "<group>"; };
 		EB5D503D15FF2E0800AB1CD7 /* FlickrRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrRequest.h; sourceTree = "<group>"; };
@@ -158,17 +160,17 @@
 		8717826915C3857D0068C775 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				87CE420C1571A74A0011E130 /* BFMenuGalleryCell.h */,
-				87CE420D1571A74A0011E130 /* BFMenuGalleryCell.m */,
-				87CE42391571B5C10011E130 /* BFMenuGalleryCell_ipad.xib */,
-				87CE423A1571B5C10011E130 /* BFMenuGalleryCell_iphone_portrait.xib */,
-				8717827015C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib */,
-				87CE42041571A74A0011E130 /* BFMenuCell.h */,
-				87CE42051571A74A0011E130 /* BFMenuCell.m */,
-				87CE42331571B5C10011E130 /* BFMenuCell_ipad.xib */,
-				87CE42351571B5C10011E130 /* BFMenuCell_iphone.xib */,
-				87CE42341571B5C10011E130 /* BFMenuCell_ipad_landscape.xib */,
-				87CE42361571B5C10011E130 /* BFMenuCell_iphone_landscape.xib */,
+				87CE420C1571A74A0011E130 /* BFGCell.h */,
+				87CE420D1571A74A0011E130 /* BFGCell.m */,
+				87CE42391571B5C10011E130 /* BFGCell_ipad.xib */,
+				87CE423A1571B5C10011E130 /* BFGCell_iphone_portrait.xib */,
+				8717827015C3C1670068C775 /* BFGCell_iphone_landscape.xib */,
+				87CE42041571A74A0011E130 /* BFGFullSizeCell.h */,
+				87CE42051571A74A0011E130 /* BFGFullSizeCell.m */,
+				87CE42331571B5C10011E130 /* BFGFullSizeCell_ipad.xib */,
+				87CE42351571B5C10011E130 /* BFGFullSizeCell_iphone.xib */,
+				87CE42341571B5C10011E130 /* BFGFullSizeCell_ipad_landscape.xib */,
+				87CE42361571B5C10011E130 /* BFGFullSizeCell_iphone_landscape.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -176,10 +178,10 @@
 		8717826B15C385C30068C775 /* GalleryDetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				87CE42081571A74A0011E130 /* BFMenuDetailViewController.h */,
-				87CE42091571A74A0011E130 /* BFMenuDetailViewController.m */,
-				8784BE1315C5FE68004F6FEA /* BFMenuDetailViewController_ipad.xib */,
-				8717826C15C3ABA80068C775 /* BFMenuDetailViewController.xib */,
+				87CE42081571A74A0011E130 /* BFGFullSizeViewController.h */,
+				87CE42091571A74A0011E130 /* BFGFullSizeViewController.m */,
+				8784BE1315C5FE68004F6FEA /* BFGFullSizeViewController_ipad.xib */,
+				8717826C15C3ABA80068C775 /* BFGFullSizeViewController.xib */,
 			);
 			name = GalleryDetailsViewController;
 			sourceTree = "<group>";
@@ -187,6 +189,7 @@
 		87CE41B41571A6300011E130 = {
 			isa = PBXGroup;
 			children = (
+				EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */,
 				87CE41C91571A6300011E130 /* BFGallery */,
 				87CE41EC1571A6320011E130 /* BFGalleryTests */,
 				87CE41C21571A6300011E130 /* Frameworks */,
@@ -233,13 +236,13 @@
 			isa = PBXGroup;
 			children = (
 				87CE42321571B5C00011E130 /* assets */,
-				87CE41FE1571A74A0011E130 /* BFMenuAssetsManager.h */,
-				87CE41FF1571A74A0011E130 /* BFMenuAssetsManager.m */,
+				87CE41FE1571A74A0011E130 /* BFGAssetsManager.h */,
+				87CE41FF1571A74A0011E130 /* BFGAssetsManager.m */,
 				8717826915C3857D0068C775 /* Cells */,
 				8717826B15C385C30068C775 /* GalleryDetailsViewController */,
-				87CE420E1571A74A0011E130 /* BFMenuViewController.h */,
-				87CE420F1571A74A0011E130 /* BFMenuViewController.m */,
-				87CE423B1571B5C10011E130 /* BFMenuViewController.xib */,
+				87CE420E1571A74A0011E130 /* BFGalleryViewController.h */,
+				87CE420F1571A74A0011E130 /* BFGalleryViewController.m */,
+				87CE423B1571B5C10011E130 /* BFGalleryViewController.xib */,
 				87CE42111571A74A0011E130 /* BFViewController.h */,
 				87CE42121571A74A0011E130 /* BFViewController.m */,
 				87CE42131571A74A0011E130 /* BFViewControllerSectionSelectorDelegate.h */,
@@ -386,16 +389,17 @@
 				87CE41D61571A6300011E130 /* BFGallery.entitlements in Resources */,
 				87CE42271571A7B60011E130 /* SushiLabDB.plist in Resources */,
 				87CE422B1571B12F0011E130 /* flechas.png in Resources */,
-				87CE423C1571B5C10011E130 /* BFMenuCell_ipad.xib in Resources */,
-				87CE423D1571B5C10011E130 /* BFMenuCell_ipad_landscape.xib in Resources */,
-				87CE423E1571B5C10011E130 /* BFMenuCell_iphone.xib in Resources */,
-				87CE423F1571B5C10011E130 /* BFMenuCell_iphone_landscape.xib in Resources */,
-				87CE42421571B5C10011E130 /* BFMenuGalleryCell_ipad.xib in Resources */,
-				87CE42431571B5C10011E130 /* BFMenuGalleryCell_iphone_portrait.xib in Resources */,
-				87CE42441571B5C10011E130 /* BFMenuViewController.xib in Resources */,
-				8717826D15C3ABA80068C775 /* BFMenuDetailViewController.xib in Resources */,
-				8717827115C3C1670068C775 /* BFMenuGalleryCell_iphone_landscape.xib in Resources */,
-				8784BE1415C5FE68004F6FEA /* BFMenuDetailViewController_ipad.xib in Resources */,
+				87CE423C1571B5C10011E130 /* BFGFullSizeCell_ipad.xib in Resources */,
+				87CE423D1571B5C10011E130 /* BFGFullSizeCell_ipad_landscape.xib in Resources */,
+				87CE423E1571B5C10011E130 /* BFGFullSizeCell_iphone.xib in Resources */,
+				87CE423F1571B5C10011E130 /* BFGFullSizeCell_iphone_landscape.xib in Resources */,
+				87CE42421571B5C10011E130 /* BFGCell_ipad.xib in Resources */,
+				87CE42431571B5C10011E130 /* BFGCell_iphone_portrait.xib in Resources */,
+				87CE42441571B5C10011E130 /* BFGalleryViewController.xib in Resources */,
+				8717826D15C3ABA80068C775 /* BFGFullSizeViewController.xib in Resources */,
+				8717827115C3C1670068C775 /* BFGCell_iphone_landscape.xib in Resources */,
+				8784BE1415C5FE68004F6FEA /* BFGFullSizeViewController_ipad.xib in Resources */,
+				EB33F0501602FA4C001F06C2 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,11 +436,11 @@
 			files = (
 				87CE41D01571A6300011E130 /* main.m in Sources */,
 				87CE41D41571A6300011E130 /* BFAppDelegate.m in Sources */,
-				87CE42141571A74A0011E130 /* BFMenuAssetsManager.m in Sources */,
-				87CE42191571A74A0011E130 /* BFMenuCell.m in Sources */,
-				87CE421C1571A74A0011E130 /* BFMenuDetailViewController.m in Sources */,
-				87CE421F1571A74A0011E130 /* BFMenuGalleryCell.m in Sources */,
-				87CE42201571A74A0011E130 /* BFMenuViewController.m in Sources */,
+				87CE42141571A74A0011E130 /* BFGAssetsManager.m in Sources */,
+				87CE42191571A74A0011E130 /* BFGFullSizeCell.m in Sources */,
+				87CE421C1571A74A0011E130 /* BFGFullSizeViewController.m in Sources */,
+				87CE421F1571A74A0011E130 /* BFGCell.m in Sources */,
+				87CE42201571A74A0011E130 /* BFGalleryViewController.m in Sources */,
 				87CE42221571A74A0011E130 /* BFViewController.m in Sources */,
 				EB5D503F15FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */,
 				EB5D504115FF2E0800AB1CD7 /* FlickrRequest.m in Sources */,

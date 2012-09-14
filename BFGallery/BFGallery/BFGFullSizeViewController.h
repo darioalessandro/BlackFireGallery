@@ -16,19 +16,19 @@
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
-@class BFMenuDetailViewController;
-@protocol BFMenuDetailViewControllerDelegate <NSObject>
--(NSInteger)numberOfViewsInMenuDetailViewController:(BFMenuDetailViewController *)menuDetailViewController;
--(void)didKilledDetailViewController:(BFMenuDetailViewController *)menu;
+@class BFGFullSizeViewController;
+@protocol BFGFullSizeViewControllerDelegate <NSObject>
+-(NSInteger)numberOfViewsInMenuDetailViewController:(BFGFullSizeViewController *)menuDetailViewController;
+-(void)didKilledDetailViewController:(BFGFullSizeViewController *)menu;
 
 @optional
--(ALAsset *)menuDetailViewController:(BFMenuDetailViewController *)menuDetailViewController assetAtIndex:(NSInteger)index;
--(UIImage *)menuDetailViewController:(BFMenuDetailViewController *)menuDetailViewController imageAtIndex:(NSInteger)index;
+-(ALAsset *)menuDetailViewController:(BFGFullSizeViewController *)menuDetailViewController assetAtIndex:(NSInteger)index;
+-(UIImage *)menuDetailViewController:(BFGFullSizeViewController *)menuDetailViewController imageAtIndex:(NSInteger)index;
 
 @end
 
-@interface BFMenuDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate> {
-    id <BFMenuDetailViewControllerDelegate> __weak delegate;
+@interface BFGFullSizeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate> {
+    id <BFGFullSizeViewControllerDelegate> __weak delegate;
     UITableView *galleryTableView;
     NSIndexPath * initialRowToShow;
 }
@@ -36,7 +36,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) NSIndexPath * initialRowToShow;
 @property (nonatomic, strong) IBOutlet UITableView *galleryTableView;
-@property (nonatomic, weak) id <BFMenuDetailViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <BFGFullSizeViewControllerDelegate> delegate;
 
 -(void)showFromCoordinatesInView:(UIView *)baseView;
 

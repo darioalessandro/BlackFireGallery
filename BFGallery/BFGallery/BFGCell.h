@@ -13,23 +13,21 @@
  limitations under the License.
  */
 
-#import "BFMenuGalleryCell.h"
+#import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
-
-@implementation BFMenuGalleryCell
-@synthesize dishName;
-@synthesize dishImageView;
-@synthesize dishDescription;
-
--(void)fillWithAsset:(ALAsset *)asset{
-    UIImage * image= [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]];
-    [dishImageView setImage:image];
+@interface BFGCell : UITableViewCell {
+    
+    UIImageView *dishImageView;
+    UITextView *dishDescription;
+    UILabel *dishName;
 }
+@property (nonatomic, strong) IBOutlet UILabel *dishName;
+@property (nonatomic, strong) IBOutlet UIImageView *dishImageView;
+@property (nonatomic, strong) IBOutlet UITextView *dishDescription;
 
--(void)fillWithImage:(UIImage *)image{
-    [dishImageView setImage:image];
-}
+-(void)fillWithAsset:(ALAsset *)asset;
+-(void)fillWithImage:(UIImage *)image;
 
 
 @end

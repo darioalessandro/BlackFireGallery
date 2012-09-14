@@ -17,10 +17,10 @@
 #import "BFViewControllerSectionSelectorDelegate.h"
 
 @interface BFViewController : UIViewController {
-    id <BFViewControllerSectionSelectorDelegate>__weak delegate;
+
 }
 
 - (IBAction)didPressedSectionButton:(id)sender;
-@property(nonatomic, weak)     id <BFViewControllerSectionSelectorDelegate>delegate;
+@property(nonatomic, weak)id <BFViewControllerSectionSelectorDelegate>delegate;
 
 @end

@@ -13,13 +13,13 @@
  limitations under the License.
  */
 
-#import "BFMenuAssetsManager.h"
+#import "BFGAssetsManager.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
 
-static BFMenuAssetsManager * _hiddenInstance= nil;
+static BFGAssetsManager * _hiddenInstance= nil;
 
-@implementation BFMenuAssetsManager
+@implementation BFGAssetsManager
 
 -(id)init{
     self= [super init];
@@ -39,17 +39,17 @@ static BFMenuAssetsManager * _hiddenInstance= nil;
     return library;
 }
 
-+(BFMenuAssetsManager *)sharedInstance{
++(BFGAssetsManager *)sharedInstance{
     if(_hiddenInstance==nil){
-        _hiddenInstance= [BFMenuAssetsManager new];
+        _hiddenInstance= [BFGAssetsManager new];
     }
     return _hiddenInstance;
 }
 
--(void)readImagesFromProvider:(BFMenuAssetsManagerProvider)provider{
-    if(provider==BFMenuAssetsManagerProviderPhotoLibrary){
+-(void)readImagesFromProvider:(BFGAssetsManagerProvider)provider{
+    if(provider==BFGAssetsManagerProviderPhotoLibrary){
         [self readUserImagesFromLibrary];
-    }else if(provider==BFMenuAssetsManagerProviderFlickr){
+    }else if(provider==BFGAssetsManagerProviderFlickr){
         FlickrRequest * request=[FlickrRequest new];
         [request performFlickrRequestWithCriteria:self.searchCriteria delegate:self];
         
@@ -58,7 +58,7 @@ static BFMenuAssetsManager * _hiddenInstance= nil;
 
 -(void)readUserImagesFromLibrary{
     
-    ALAssetsLibrary *al = [BFMenuAssetsManager defaultAssetsLibrary];
+    ALAssetsLibrary *al = [BFGAssetsManager defaultAssetsLibrary];
     
     self.pics= nil;
     [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos | ALAssetsGroupLibrary

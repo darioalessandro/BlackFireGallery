@@ -13,21 +13,14 @@
  limitations under the License.
  */
 
-#import "BFMenuCell.h"
-#import "BFMenuDetailViewController.h"
-
-@implementation BFMenuCell
-@synthesize labels;
-@synthesize imageViews;
+#import <UIKit/UIKit.h>
 
 
+@interface BFGFullSizeCell : UITableViewCell {
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labels;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imageViews;
 
 
 @end

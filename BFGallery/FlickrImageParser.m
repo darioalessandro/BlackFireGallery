@@ -16,7 +16,7 @@
 - (id)initWithData:(NSData *)data  criteria:(NSString *) criteria delegate:(id <FlickrImageParserDelegate>)theDelegate{
 	self= [super init];
 	if(self){
-		dataToParse= [[NSData alloc] initWithData:data];
+		self.dataToParse= [[NSData alloc] initWithData:data];
 		delegate= theDelegate;
         [self setSearchCriteria:criteria];
 	}
@@ -24,7 +24,7 @@
 }
 
 - (NSArray *)parseArray{
-NSString * responseString = [[NSString alloc] initWithData:dataToParse encoding:NSUTF8StringEncoding];
+NSString * responseString = [[NSString alloc] initWithData:self.dataToParse encoding:NSUTF8StringEncoding];
 	NSArray * URLArray=nil;
 	NSArray * queryResult= [self resultsFromString:responseString];
 	if(queryResult){

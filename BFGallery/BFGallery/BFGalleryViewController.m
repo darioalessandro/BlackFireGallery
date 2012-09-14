@@ -13,16 +13,16 @@
  limitations under the License.
  */
 
-#import "BFMenuViewController.h"
+#import "BFGalleryViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
 
-@implementation BFMenuViewController
+@implementation BFGalleryViewController
 @synthesize loadingPicsIndicator;
 @synthesize tableView, lastSelectedRow;
-@synthesize productsArray, isShowingGallery;
+@synthesize productsArray, isShowingFullSizwGallery;
 
--(id)initWithMediaProvider:(BFMenuAssetsManagerProvider)mediaProvider{
+-(id)initWithMediaProvider:(BFGAssetsManagerProvider)mediaProvider{
     self= [super init];
     if(self){
         self.mediaProvider=mediaProvider;
@@ -35,8 +35,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         if(!productsArray){
-            isShowingGallery=FALSE;
-            self.mediaProvider=BFMenuAssetsManagerProviderPhotoLibrary;
+            isShowingFullSizwGallery=FALSE;
+            self.mediaProvider=BFGAssetsManagerProviderPhotoLibrary;
         }
     }
     return self;
@@ -44,8 +44,8 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [loadingPicsIndicator startAnimating];
-    [[BFMenuAssetsManager sharedInstance] setSearchCriteria:self.searchCriteria];
-    [[BFMenuAssetsManager sharedInstance] readImagesFromProvider:self.mediaProvider];
+    [[BFGAssetsManager sharedInstance] setSearchCriteria:self.searchCriteria];
+    [[BFGAssetsManager sharedInstance] readImagesFromProvider:self.mediaProvider];
 }
 
 -(void)showLastPic:(id)caller{
@@ -116,8 +116,8 @@
     return 146;
 }
 
--(BFMenuCell *)getCell{
-    NSString * fileName= @"BFMenuCell";
+-(BFGFullSizeCell *)getCell{
+    NSString * fileName= @"BFGFullSizeCell";
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         fileName= [NSString stringWithFormat:@"%@_iphone", fileName];
     }else{
@@ -128,7 +128,7 @@
         fileName= [NSString stringWithFormat:@"%@_landscape", fileName];
     }
     
-    BFMenuCell * cell= (BFMenuCell *)[self.tableView dequeueReusableCellWithIdentifier:fileName];
+    BFGFullSizeCell * cell= (BFGFullSizeCell *)[self.tableView dequeueReusableCellWithIdentifier:fileName];
     if(cell==nil){
         cell= [[[NSBundle mainBundle] loadNibNamed:fileName owner:nil options:nil] objectAtIndex:0];
         
@@ -138,7 +138,7 @@
 }
                                                                                         
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    BFMenuCell * cell= [self getCell];
+    BFGFullSizeCell * cell= [self getCell];
     int numberOfImageViewsInCell= [[cell imageViews] count];
     int index0= indexPath.row * numberOfImageViewsInCell;
 
@@ -149,7 +149,7 @@
             ALAsset * image=nil;
             UIImage * thumbnail=nil;
             
-            if(self.mediaProvider==BFMenuAssetsManagerProviderPhotoLibrary){
+            if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary){
                 image= [self.productsArray objectAtIndex:index0+j];
                 thumbnail= [UIImage imageWithCGImage:[image thumbnail]];
             }else{
@@ -180,13 +180,13 @@
         [[PinchedView superview] bringSubviewToFront:[pinch view]];
     }else if([pinch state]==UIGestureRecognizerStateEnded || [pinch state]==UIGestureRecognizerStateFailed){
         if([pinch scale]>1.5){
-            [self showGalleryWithImageSelected:(UIImageView *)[pinch view]];
+            [self showFullSizeGalleryWithImageSelected:(UIImageView *)[pinch view]];
         }
         [[pinch view] setTransform:CGAffineTransformMakeScale(1, 1)];
     }else if([pinch state]== UIGestureRecognizerStateChanged){
         [PinchedView setTransform:CGAffineTransformMakeScale(pinch.scale, pinch.scale)]; 
         if([pinch scale]>1.5){
-            [self showGalleryWithImageSelected:(UIImageView *)[pinch view]];
+            [self showFullSizeGalleryWithImageSelected:(UIImageView *)[pinch view]];
         }
     }
 }
@@ -194,13 +194,13 @@
 -(void)showGalleryDetailWithIndex:(NSInteger)index fromView:(UIView *)originView{
     
     NSString * fileName= nil;
-    fileName= @"BFMenuDetailViewController";
+    fileName= @"BFGFullSizeViewController";
     
     if (![[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         fileName= [NSString stringWithFormat:@"%@_ipad", fileName];
     }
         
-    BFMenuDetailViewController * controller= [[BFMenuDetailViewController alloc] initWithNibName:fileName bundle:nil];
+    BFGFullSizeViewController * controller= [[BFGFullSizeViewController alloc] initWithNibName:fileName bundle:nil];
     [self addChildViewController:controller];
     self.lastSelectedRow= [NSIndexPath indexPathForRow:index inSection:0];
     [self.view addSubview:controller.view];
@@ -209,21 +209,21 @@
     }
     [controller setDelegate:self];
     [controller setInitialRowToShow:[NSIndexPath indexPathForRow:index inSection:0]];
-    [controller showFromCoordinatesInView:self.view];
+    [controller showFromCoordinatesInView:originView];
 
 }
 
--(void)showGalleryWithImageSelected:(UIImageView *)imageView{
-    if(isShowingGallery==TRUE)
+-(void)showFullSizeGalleryWithImageSelected:(UIImageView *)imageView{
+    if(isShowingFullSizwGallery==TRUE)
         return;
     
-    isShowingGallery=TRUE;
+    isShowingFullSizwGallery=TRUE;
     NSInteger index= [imageView tag];
     [self showGalleryDetailWithIndex:index fromView:imageView];
 }
 
 -(void)didSelectedImage:(UITapGestureRecognizer *)tap{
-   // [self showGalleryWithImageSelected:(UIImageView *)[tap view]];
+    [self showFullSizeGalleryWithImageSelected:(UIImageView *)[tap view]];
     [[self delegate] didSelectedImage:[(UIImageView *)[tap view] image]];
     [self.navigationController popViewControllerAnimated:TRUE]; 
 }
@@ -237,20 +237,19 @@
 
 #pragma mark - SRMenuDetailViewControllerDelegate
 
--(NSDictionary *)menuDetailViewController:(BFMenuDetailViewController *)menuDetailViewController assetAtIndex:(NSInteger)index{
-
+-(NSDictionary *)menuDetailViewController:(BFGFullSizeViewController *)menuDetailViewController assetAtIndex:(NSInteger)index{
     return [productsArray objectAtIndex:index];
 }
 
--(NSInteger)numberOfViewsInMenuDetailViewController:(BFMenuDetailViewController *)menuDetailViewController{
+-(NSInteger)numberOfViewsInMenuDetailViewController:(BFGFullSizeViewController *)menuDetailViewController{
     return [self.productsArray count];
 }
 
--(void)didKilledDetailViewController:(BFMenuDetailViewController *)menu{
-    isShowingGallery=FALSE;
+-(void)didKilledDetailViewController:(BFGFullSizeViewController *)menu{
+    isShowingFullSizwGallery=FALSE;
 }
 
--(UIImage *)menuDetailViewController:(BFMenuDetailViewController *)menuDetailViewController imageAtIndex:(NSInteger)index{
+-(UIImage *)menuDetailViewController:(BFGFullSizeViewController *)menuDetailViewController imageAtIndex:(NSInteger)index{
     return nil;
 }
 

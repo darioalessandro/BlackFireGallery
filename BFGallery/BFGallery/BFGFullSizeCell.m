@@ -13,20 +13,12 @@
  limitations under the License.
  */
 
-#import "FlickrRequest.h"
+#import "BFGFullSizeCell.h"
+#import "BFGFullSizeViewController.h"
 
-static NSString * const kAddedAssetsToLibrary= @"AddedAssetsToLibrary";
+@implementation BFGFullSizeCell
+@synthesize labels;
+@synthesize imageViews;
 
-typedef enum{
-    BFMenuAssetsManagerProviderPhotoLibrary=0,
-    BFMenuAssetsManagerProviderFlickr,
-}BFMenuAssetsManagerProvider;
 
-@interface BFMenuAssetsManager : NSObject <FlickrImageParserDelegate>{
-
-}
-@property(strong)NSString * searchCriteria;
--(void)readImagesFromProvider:(BFMenuAssetsManagerProvider)provider;
-+(BFMenuAssetsManager *)sharedInstance;
-@property(nonatomic, strong) NSMutableArray * pics;
 @end

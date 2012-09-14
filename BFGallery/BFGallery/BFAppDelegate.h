@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class BFMenuViewController;
+@class BFGalleryViewController;
 
 @interface BFAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) BFMenuViewController *viewController;
+@property (strong, nonatomic) BFGalleryViewController *viewController;
 
 @end

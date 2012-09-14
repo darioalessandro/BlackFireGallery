@@ -18,16 +18,13 @@
 @end
 
 @interface FlickrImageParser : NSOperation {
-	NSData * dataToParse;
-	id __unsafe_unretained delegate;
-    NSString * searchCriteria;
-    NSArray * images;
-    NSError * error;
+
 }
 
 @property(nonatomic, strong)    NSError * error;
 @property(nonatomic, strong)    NSArray * images;
 @property(nonatomic, strong)    NSString * searchCriteria;
+@property(nonatomic, strong)    NSData * dataToParse;
 @property(unsafe_unretained, atomic) id delegate;
 
 - (id)initWithData:(NSData *)data criteria:(NSString *) criteria delegate:(id <FlickrImageParserDelegate>)theDelegate;

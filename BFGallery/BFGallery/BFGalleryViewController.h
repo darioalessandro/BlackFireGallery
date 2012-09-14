@@ -14,28 +14,28 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "BFMenuDetailViewController.h"
+#import "BFGFullSizeViewController.h"
 #import "BFViewControllerSectionSelectorDelegate.h"
 #import "BFViewController.h"
-#import "BFMenuCell.h"
-#import "BFMenuAssetsManager.h"
+#import "BFGFullSizeCell.h"
+#import "BFGAssetsManager.h"
 
-@interface BFMenuViewController : BFViewController <BFMenuDetailViewControllerDelegate>{
+@interface BFGalleryViewController : BFViewController <BFGFullSizeViewControllerDelegate>{
     NSArray * productsArray;
-    BOOL isShowingGallery;
+    BOOL isShowingFullSizwGallery;
     NSIndexPath * lastSelectedRow;
 }
-    -(void)showGalleryWithImageSelected:(UIImageView *)imageView;
-    -(BFMenuCell *)getCell;
+    -(void)showFullSizeGalleryWithImageSelected:(UIImageView *)imageView;
+    -(BFGFullSizeCell *)getCell;
     -(void)showLastPic:(id)caller;
     -(void)showGalleryDetailWithIndex:(NSInteger)index fromView:(UIView *)originView;
-    -(id)initWithMediaProvider:(BFMenuAssetsManagerProvider)mediaProvider;
+    -(id)initWithMediaProvider:(BFGAssetsManagerProvider)mediaProvider;
 @property (strong, nonatomic) NSIndexPath * lastSelectedRow;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingPicsIndicator;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property(nonatomic, assign) BOOL isShowingGallery;
+@property(nonatomic, assign) BOOL isShowingFullSizwGallery;
 @property(nonatomic, strong) NSArray * productsArray;
 @property(nonatomic) NSString * searchCriteria;
 //NOTE: This method should be defined before showing the controller.
-@property(nonatomic) BFMenuAssetsManagerProvider mediaProvider;
+@property(nonatomic) BFGAssetsManagerProvider mediaProvider;
 @end

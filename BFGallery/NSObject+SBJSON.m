@@ -38,7 +38,6 @@
     if (!json)
 		NSLog(@"-JSONFragment failed. Error trace is: %@", [jsonWriter errorTrace]);
     
-
     return json;
 }
 

@@ -13,14 +13,20 @@
  limitations under the License.
  */
 
-#import <UIKit/UIKit.h>
+#import "FlickrRequest.h"
 
+static NSString * const kAddedAssetsToLibrary= @"AddedAssetsToLibrary";
 
-@interface BFMenuCell : UITableViewCell {
+typedef enum{
+    BFGAssetsManagerProviderPhotoLibrary=0,
+    BFGAssetsManagerProviderFlickr,
+}BFGAssetsManagerProvider;
+
+@interface BFGAssetsManager : NSObject <FlickrImageParserDelegate>{
 
 }
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labels;
-@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imageViews;
-
-
+@property(strong)NSString * searchCriteria;
+-(void)readImagesFromProvider:(BFGAssetsManagerProvider)provider;
++(BFGAssetsManager *)sharedInstance;
+@property(nonatomic, strong) NSMutableArray * pics;
 @end
