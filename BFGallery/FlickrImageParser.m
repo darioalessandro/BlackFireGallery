@@ -30,13 +30,19 @@ NSString * responseString = [[NSString alloc] initWithData:self.dataToParse enco
 	if(queryResult){
 		NSMutableArray * mutableImagesArray= [NSMutableArray array];
 		for(NSDictionary * photoDict in queryResult){
-			NSString * photoURLString = [NSString stringWithFormat:mediumImagesURLFormat, 
+			NSString * photoURLString = [NSString stringWithFormat:littleImagesURLFormat, 
 										 [photoDict objectForKey:@"farm"], [photoDict objectForKey:@"server"], 
 										 [photoDict objectForKey:@"id"], [photoDict objectForKey:@"secret"]];
 			NSData * data= [NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]];
-			UIImage * image= [UIImage imageWithData:data];
-			if(image)
+//			UIImage * _image= [UIImage imageWithData:data];
+            UIImage * image= [UIImage imageWithData:data scale:0.1];
+			if(image){
 				[mutableImagesArray addObject:image];
+                if(delegate){
+                    self.images= [NSArray arrayWithArray:mutableImagesArray];
+                    [self.delegate performSelectorOnMainThread:@selector(parserDidDownloadImage:)withObject:self waitUntilDone:YES];
+                }
+            }
 		}
 		if([mutableImagesArray count]>0){
 			URLArray= [NSArray arrayWithArray:mutableImagesArray]; //Inmutable copy to prevent nasty stuff when using NSOperations

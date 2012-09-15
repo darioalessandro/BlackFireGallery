@@ -15,6 +15,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#define kMustDismissGalleryDetails @"MustDismissGalleryDetails"
 
 @class BFGFullSizeViewController;
 @protocol BFGFullSizeViewControllerDelegate <NSObject>
@@ -39,6 +40,7 @@
 @property (nonatomic, weak) id <BFGFullSizeViewControllerDelegate> delegate;
 
 -(void)showFromCoordinatesInView:(UIView *)baseView;
+- (void)postDismissCleanup;
 
 @end
 

@@ -27,30 +27,22 @@
 @synthesize galleryTableView, delegate, initialRowToShow;
 
 
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
     self= [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mustDismissGalleryDetails:) name:@"MustDismissGalleryDetails" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mustDismissGalleryDetails:) name:kMustDismissGalleryDetails object:nil];
     return self;
 }
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - dismissCallback
 
--(void)mustDismissGalleryDetails:(NSNotification *)notification{
+-(void)mustDismissGalleryDetails:(NSNotification *)notification
+{
     [self dismissDetailView:nil];
 }
 
@@ -59,7 +51,8 @@
     if(delegate){
         [delegate didKilledDetailViewController:self];
     }
-    [self removeCleanAndCutTicket:FALSE ];
+    [self dismissAndDispose];
+
 }
 
 -(void)showFromCoordinatesInView:(UIView *)baseView
@@ -75,42 +68,31 @@
     CGSize originalSize= baseView.frame.size;
     CGSize tableViewSize= self.imageView.frame.size;
     CGFloat scale= originalSize.width/tableViewSize.width;
-    self.imageView.center= CGPointMake(baseView.frame.origin.x+ baseView.frame.size.width/2 , baseView.frame.origin.y + baseView.frame.size.height/2);
+    self.imageView.center= [self.view convertPoint:baseView.center fromView:baseView.superview];
+
     [self.imageView.layer setAnchorPoint:CGPointMake(0.5, 0.5)];
 	self.imageView.transform = CGAffineTransformMakeScale( scale, scale);
     self.imageView.alpha=0.01;
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:kTransitionDuration/2];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(bounce1AnimationStopped)];
-
-	self.imageView.transform = CGAffineTransformMakeScale( 1.0, 1.0);
-    self.imageView.alpha=1;
-    self.imageView.center= CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
-	[UIView commitAnimations];
+    [self presentFullScreenImage];
 }
 
-- (void)bounce1AnimationStopped
+-(void)presentFullScreenImage
 {
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:kTransitionDuration/3];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];    
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(bounce2AnimationStopped)];
-	self.imageView.transform = CGAffineTransformMakeScale( 0.95, 0.95);
-	[UIView commitAnimations];
-}
-
-- (void)bounce2AnimationStopped
-{
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:kTransitionDuration/2];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];    
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(bounce3AnimationStopped)];
-	self.imageView.transform = CGAffineTransformMakeScale( 1.0, 1.0);
-	[UIView commitAnimations];
+    [UIView animateWithDuration:kTransitionDuration/2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.imageView.transform = CGAffineTransformMakeScale( 1.0, 1.0);
+        self.imageView.alpha=1;
+        self.imageView.center= CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+    }completion:^(BOOL finished){
+        [UIView animateWithDuration:kTransitionDuration/3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            self.imageView.transform = CGAffineTransformMakeScale( 0.95, 0.95);
+        }completion:^(BOOL finished){
+            [UIView animateWithDuration:kTransitionDuration/2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                self.imageView.transform = CGAffineTransformMakeScale( 1.0, 1.0);
+            }completion:^(BOOL finished){
+                
+            }];
+        }];
+    }];
 }
 
 - (CGFloat)angleForCurrentOrientation
@@ -134,7 +116,16 @@
     isFirstImage=TRUE;
     UITapGestureRecognizer * gestureRecognizer= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissDetailView:)];
     [self.view addGestureRecognizer:gestureRecognizer];
-    [self.view setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.8]];    
+    [self.view setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.8]];
+    [self configureScrollView];
+}
+
+-(void)configureScrollView
+{
+    UIScrollView * scroll= (UIScrollView *)self.view;
+    [scroll setMinimumZoomScale:1];
+    [scroll setMaximumZoomScale:10];
+    scroll.delegate=self;
 }
 
 - (void)viewDidUnload
@@ -148,37 +139,17 @@
 #pragma mark -
 #pragma mark Actions
 
--(void)removeCleanAndCutTicket:(BOOL)cutTicket
+-(void)dismissAndDispose
 {
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:kTransitionDuration ];
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(removeAndClean2)];
-	[UIView commitAnimations];
-}
-
--(void)removeAndClean
-{
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:kTransitionDuration ];
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(removeAndClean2)];
-	[UIView commitAnimations];
-}
-
--(void)removeAndClean2
-{
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:kTransitionDuration];
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(postDismissCleanup)];
-	self.view.alpha = 0;
-	[UIView commitAnimations];
+    [UIView animateWithDuration:kTransitionDuration animations:^{
+        self.view.alpha = 0;
+    }completion:^(BOOL finished){
+        [self postDismissCleanup];
+    }];
 }
 
 - (void)postDismissCleanup
 {
-	//self.view.alpha = 100;
 	[self.view removeFromSuperview];
 }
 

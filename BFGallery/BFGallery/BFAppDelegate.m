@@ -18,8 +18,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderPhotoLibrary];
-    self.viewController.searchCriteria=@"sun";
+    self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFlickr];
+    self.viewController.searchCriteria=@"gears of war, santiago";
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

@@ -22,10 +22,9 @@ static BFGAssetsManager * _hiddenInstance= nil;
 @implementation BFGAssetsManager
 
 -(id)init{
-    self= [super init];
-    if(self!=nil){
-        
-        //This stupid duplicated step is to avoid a warning message.
+    self=[super init];
+    if(self){
+        self.pics= [NSMutableArray array];
     }
     return self;
 }
@@ -84,9 +83,12 @@ static BFGAssetsManager * _hiddenInstance= nil;
 #pragma mark -
 #pragma Flickr
 
+- (void)parserDidDownloadImage:(FlickrImageParser *)parser{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:parser.images];
+}
+
 - (void)didFinishParsing:(FlickrImageParser *)parser{
-    self.pics= (NSMutableArray *)parser.images;
-    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:parser.images];
 }
 
 - (void)parseErrorOccurred:(FlickrImageParser *)parser{

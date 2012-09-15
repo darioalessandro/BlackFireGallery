@@ -14,6 +14,7 @@
 
 @protocol FlickrImageParserDelegate
 - (void)didFinishParsing:(FlickrImageParser *)parser;
+- (void)parserDidDownloadImage:(FlickrImageParser *)parser;
 - (void)parseErrorOccurred:(FlickrImageParser *)parser;
 @end
 
