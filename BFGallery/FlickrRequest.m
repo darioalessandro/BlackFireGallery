@@ -16,21 +16,35 @@
 -(void)performFlickrRequestWithCriteria:(NSString *)criteria delegate:(id <FlickrImageParserDelegate>)del{
     [self setSearchCriteria:criteria];
     [self setDelegate:del];
-    NSLog(@"searchCriteria %@", searchCriteria);
-    
-	NSString * flickrURLRequest=[NSString stringWithFormat:flickrSearchMethodString, OBJECTIVE_FLICKR_API_KEY, searchCriteria];
-    
-        NSLog(@"flickrURLRequest %@", flickrURLRequest);
+    self.page=-1;
+    self.queue = [[NSOperationQueue alloc] init];
+    [self getNextPage];
+}
+
+-(void)getNextPageIfNeeded{
+    if (self.queue && self.queue.operationCount>0) {
+        NSLog(@"there's an operation in progress");
+    }else if(self.queue && self.queue.operationCount==0){
+        [self getNextPage];
+        NSLog(@"downloading more stuff");
+    }
+}
+
+-(void)getNextPage{
+    self.page++;
+    NSString * flickrURLRequest=[NSString stringWithFormat:flickrSearchMethodString, OBJECTIVE_FLICKR_API_KEY, searchCriteria, self.page];
     
     NSString * encodedReq=[flickrURLRequest stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    NSLog(@"encodedReq %@", encodedReq);
     
 	NSMutableURLRequest *req = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:encodedReq]
 															cachePolicy:NSURLRequestReloadIgnoringCacheData
 														timeoutInterval:20];
 	[req setHTTPMethod:@"GET"];
 	
+    if(theConnection){
+        [theConnection cancel];
+        theConnection=nil;
+    }
 	theConnection = [[NSURLConnection alloc] initWithRequest:req delegate:self];
     
 	if (theConnection) {
@@ -65,12 +79,6 @@
 	[receivedData setLength:0];
 }
 
-- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse{
-	//	NSLog(@"request %@", [request allHTTPHeaderFields]);
-	//	NSLog(@"body %s", [[request HTTPBody] bytes]);	
-	return request;
-}
-
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
 	[receivedData appendData:data];
 }
@@ -81,20 +89,16 @@
 												   delegate:self
 										  cancelButtonTitle:@"OK" otherButtonTitles:nil];
 	[alert show];
-	
 	self.receivedData = nil;
-	//	[(UIActivityIndicatorView *)[self viewWithTag:1001] stopAnimating];
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	
-	[connection cancel];  // stop connecting; no more delegate messages
+	[connection cancel];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	//	NSLog(@"datos %s", [self.receivedData bytes]);
-	self.queue = [[NSOperationQueue alloc] init];
 	NSData * data= self.receivedData;
     FlickrImageParser *parser = [[FlickrImageParser alloc] initWithData:data criteria:self.searchCriteria delegate:self.delegate];
-    [queue addOperation:parser]; // this will start the "FlickrImageParser"
+    [queue addOperation:parser];
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 

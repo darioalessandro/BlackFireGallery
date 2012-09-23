@@ -20,7 +20,7 @@
 #import "BFGFullSizeCell.h"
 #import "BFGAssetsManager.h"
 
-@interface BFGalleryViewController : BFViewController <BFGFullSizeViewControllerDelegate>{
+@interface BFGalleryViewController : BFViewController <BFGFullSizeViewControllerDelegate, UIScrollViewDelegate, UISearchBarDelegate>{
     NSArray * productsArray;
     BOOL isShowingFullSizwGallery;
     NSIndexPath * lastSelectedRow;
@@ -38,4 +38,6 @@
 @property(nonatomic) NSString * searchCriteria;
 //NOTE: This method should be defined before showing the controller.
 @property(nonatomic) BFGAssetsManagerProvider mediaProvider;
+@property (strong, nonatomic) IBOutlet UISearchBar * bar;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *tableActivityIndicator;
 @end

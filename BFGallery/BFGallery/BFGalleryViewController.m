@@ -48,6 +48,14 @@
     [[BFGAssetsManager sharedInstance] readImagesFromProvider:self.mediaProvider];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary){
+        [self.bar setHidden:TRUE];
+        [self.tableActivityIndicator setHidden:TRUE];
+    }
+}
+
 -(void)showLastPic:(id)caller{
     if(![[self productsArray] count]>0)
         return;
@@ -63,7 +71,7 @@
 //    [[[self navigationController] navigationItem] setHidesBackButton:TRUE];
 //    [[[self navigationController] navigationBar] setHidden:TRUE];
 //    [[self tableView] setHidden:TRUE];
-    [[self tableView] setHidden:NO];    
+    [[self tableView] setHidden:NO];
 }
 
 -(void)didAddedAssets:(NSNotification *)notif{
@@ -78,6 +86,7 @@
 {
     [self setTableView:nil];
     [self setLoadingPicsIndicator:nil];
+    [self setTableActivityIndicator:nil];
     [super viewDidUnload];
 }
 
@@ -91,7 +100,15 @@
     [self.tableView reloadData];
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UITableViewDataSource & scrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(scrollView.contentOffset.y + scrollView.frame.size.height>=scrollView.contentSize.height){
+        if(self.mediaProvider==BFGAssetsManagerProviderFlickr){
+            [[BFGAssetsManager sharedInstance] getMoreImages];
+        }
+    }
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSInteger numberOfImages= [[[self getCell] imageViews] count];
@@ -244,6 +261,20 @@
 
 -(UIImage *)menuDetailViewController:(BFGFullSizeViewController *)menuDetailViewController imageAtIndex:(NSInteger)index{
     return nil;
+}
+
+#pragma mark -
+#pragma mark UISearchBarDelegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+    [[BFGAssetsManager sharedInstance] setSearchCriteria:[searchBar text]];
+    [[BFGAssetsManager sharedInstance] readImagesFromProvider:BFGAssetsManagerProviderFlickr];
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
 }
 
 @end

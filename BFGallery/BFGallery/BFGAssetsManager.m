@@ -49,9 +49,21 @@ static BFGAssetsManager * _hiddenInstance= nil;
     if(provider==BFGAssetsManagerProviderPhotoLibrary){
         [self readUserImagesFromLibrary];
     }else if(provider==BFGAssetsManagerProviderFlickr){
-        FlickrRequest * request=[FlickrRequest new];
-        [request performFlickrRequestWithCriteria:self.searchCriteria delegate:self];
-        
+        if(flickr){
+            flickr.delegate=nil;
+        }
+        self.pics= [NSMutableArray array];
+        flickr=[FlickrRequest new];
+        [flickr performFlickrRequestWithCriteria:self.searchCriteria delegate:self];
+    }
+    _provider=provider;
+}
+
+-(void)getMoreImages{
+    if(_provider==BFGAssetsManagerProviderPhotoLibrary){
+    
+    }else if(_provider==BFGAssetsManagerProviderFlickr){
+        [flickr getNextPageIfNeeded];
     }
 }
 
@@ -84,11 +96,13 @@ static BFGAssetsManager * _hiddenInstance= nil;
 #pragma Flickr
 
 - (void)parserDidDownloadImage:(FlickrImageParser *)parser{
-    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:parser.images];
+    
+    [self.pics addObject:[parser.images lastObject]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
 }
 
 - (void)didFinishParsing:(FlickrImageParser *)parser{
-    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:parser.images];
+    NSLog(@"- (void)didFinishParsing:(FlickrImageParser *)parser");
 }
 
 - (void)parseErrorOccurred:(FlickrImageParser *)parser{

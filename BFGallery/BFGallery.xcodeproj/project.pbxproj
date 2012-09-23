@@ -209,19 +209,7 @@
 		87CE41C21571A6300011E130 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB5D504515FF2E5100AB1CD7 /* JSON.h */,
-				EB5D504615FF2E5100AB1CD7 /* NSObject+SBJSON.h */,
-				EB5D504715FF2E5100AB1CD7 /* NSObject+SBJSON.m */,
-				EB5D504815FF2E5100AB1CD7 /* NSString+SBJSON.h */,
-				EB5D504915FF2E5100AB1CD7 /* NSString+SBJSON.m */,
-				EB5D504A15FF2E5100AB1CD7 /* SBJSON.h */,
-				EB5D504B15FF2E5100AB1CD7 /* SBJSON.m */,
-				EB5D504C15FF2E5100AB1CD7 /* SBJsonBase.h */,
-				EB5D504D15FF2E5100AB1CD7 /* SBJsonBase.m */,
-				EB5D504E15FF2E5100AB1CD7 /* SBJsonParser.h */,
-				EB5D504F15FF2E5100AB1CD7 /* SBJsonParser.m */,
-				EB5D505015FF2E5100AB1CD7 /* SBJsonWriter.h */,
-				EB5D505115FF2E5100AB1CD7 /* SBJsonWriter.m */,
+				EB33F05216043E55001F06C2 /* JSON */,
 				EB5D504415FF2E1400AB1CD7 /* FlickrBS */,
 				87CE42281571A8490011E130 /* AssetsLibrary.framework */,
 				87CE41C31571A6300011E130 /* UIKit.framework */,
@@ -240,9 +228,7 @@
 				87CE41FF1571A74A0011E130 /* BFGAssetsManager.m */,
 				8717826915C3857D0068C775 /* Cells */,
 				8717826B15C385C30068C775 /* GalleryDetailsViewController */,
-				87CE420E1571A74A0011E130 /* BFGalleryViewController.h */,
-				87CE420F1571A74A0011E130 /* BFGalleryViewController.m */,
-				87CE423B1571B5C10011E130 /* BFGalleryViewController.xib */,
+				EB33F05116043E1E001F06C2 /* GalleryViewController */,
 				87CE42111571A74A0011E130 /* BFViewController.h */,
 				87CE42121571A74A0011E130 /* BFViewController.m */,
 				87CE42131571A74A0011E130 /* BFViewControllerSectionSelectorDelegate.h */,
@@ -299,6 +285,36 @@
 				87CE422A1571B12F0011E130 /* flechas.png */,
 			);
 			path = assets;
+			sourceTree = "<group>";
+		};
+		EB33F05116043E1E001F06C2 /* GalleryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				87CE420E1571A74A0011E130 /* BFGalleryViewController.h */,
+				87CE420F1571A74A0011E130 /* BFGalleryViewController.m */,
+				87CE423B1571B5C10011E130 /* BFGalleryViewController.xib */,
+			);
+			name = GalleryViewController;
+			sourceTree = "<group>";
+		};
+		EB33F05216043E55001F06C2 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				EB5D504515FF2E5100AB1CD7 /* JSON.h */,
+				EB5D504615FF2E5100AB1CD7 /* NSObject+SBJSON.h */,
+				EB5D504715FF2E5100AB1CD7 /* NSObject+SBJSON.m */,
+				EB5D504815FF2E5100AB1CD7 /* NSString+SBJSON.h */,
+				EB5D504915FF2E5100AB1CD7 /* NSString+SBJSON.m */,
+				EB5D504A15FF2E5100AB1CD7 /* SBJSON.h */,
+				EB5D504B15FF2E5100AB1CD7 /* SBJSON.m */,
+				EB5D504C15FF2E5100AB1CD7 /* SBJsonBase.h */,
+				EB5D504D15FF2E5100AB1CD7 /* SBJsonBase.m */,
+				EB5D504E15FF2E5100AB1CD7 /* SBJsonParser.h */,
+				EB5D504F15FF2E5100AB1CD7 /* SBJsonParser.m */,
+				EB5D505015FF2E5100AB1CD7 /* SBJsonWriter.h */,
+				EB5D505115FF2E5100AB1CD7 /* SBJsonWriter.m */,
+			);
+			name = JSON;
 			sourceTree = "<group>";
 		};
 		EB5D504415FF2E1400AB1CD7 /* FlickrBS */ = {

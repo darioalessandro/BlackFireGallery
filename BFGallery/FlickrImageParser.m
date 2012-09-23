@@ -34,8 +34,7 @@ NSString * responseString = [[NSString alloc] initWithData:self.dataToParse enco
 										 [photoDict objectForKey:@"farm"], [photoDict objectForKey:@"server"], 
 										 [photoDict objectForKey:@"id"], [photoDict objectForKey:@"secret"]];
 			NSData * data= [NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]];
-//			UIImage * _image= [UIImage imageWithData:data];
-            UIImage * image= [UIImage imageWithData:data scale:0.1];
+			UIImage * image= [UIImage imageWithData:data];
 			if(image){
 				[mutableImagesArray addObject:image];
                 if(delegate){
@@ -45,7 +44,7 @@ NSString * responseString = [[NSString alloc] initWithData:self.dataToParse enco
             }
 		}
 		if([mutableImagesArray count]>0){
-			URLArray= [NSArray arrayWithArray:mutableImagesArray]; //Inmutable copy to prevent nasty stuff when using NSOperations
+			URLArray= [NSArray arrayWithArray:mutableImagesArray];
 		}
 	}
 	
@@ -65,7 +64,6 @@ NSString * responseString = [[NSString alloc] initWithData:self.dataToParse enco
 			self.error= [NSError errorWithDomain:[NSString stringWithFormat:@"No matches for criteria"]  code:401 userInfo:nil];
 			[self.delegate performSelectorOnMainThread:@selector(parseErrorOccurred:)withObject:self waitUntilDone:FALSE];
 		}
-
     }
 }
 

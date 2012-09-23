@@ -23,10 +23,12 @@ typedef enum{
 }BFGAssetsManagerProvider;
 
 @interface BFGAssetsManager : NSObject <FlickrImageParserDelegate>{
-
+    FlickrRequest * flickr;
+    BFGAssetsManagerProvider _provider;
 }
 @property(strong)NSString * searchCriteria;
 -(void)readImagesFromProvider:(BFGAssetsManagerProvider)provider;
+-(void)getMoreImages;
 +(BFGAssetsManager *)sharedInstance;
 @property(nonatomic, strong) NSMutableArray * pics;
 @end
