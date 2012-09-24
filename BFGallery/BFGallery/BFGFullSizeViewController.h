@@ -38,6 +38,7 @@
 @property (nonatomic, strong) NSIndexPath * initialRowToShow;
 @property (nonatomic, strong) IBOutlet UITableView *galleryTableView;
 @property (nonatomic, weak) id <BFGFullSizeViewControllerDelegate> delegate;
+@property (nonatomic, weak) UIView * originView;
 
 -(void)showFromCoordinatesInView:(UIView *)baseView;
 - (void)postDismissCleanup;

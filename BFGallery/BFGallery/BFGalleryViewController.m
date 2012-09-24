@@ -69,10 +69,6 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAddedAssets:) name:kAddedAssetsToLibrary object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDeniedAccessToAssets:) name:kUserDeniedAccessToPics object:nil];
-    
-//    [[[self navigationController] navigationItem] setHidesBackButton:TRUE];
-//    [[[self navigationController] navigationBar] setHidden:TRUE];
-//    [[self tableView] setHidden:TRUE];
     [[self tableView] setHidden:NO];
 }
 
@@ -165,10 +161,10 @@
         fileName= [NSString stringWithFormat:@"%@_landscape", fileName];
     }
     
-    BFGFullSizeCell * cell= (BFGFullSizeCell *)[self.tableView dequeueReusableCellWithIdentifier:fileName];
+    BFGFullSizeCell * cell= (BFGFullSizeCell *)[self.tableView dequeueReusableCellWithIdentifier:@"ff"
+                                                ];
     if(cell==nil){
         cell= [[[NSBundle mainBundle] loadNibNamed:fileName owner:nil options:nil] objectAtIndex:0];
-        
         [cell setSelectedBackgroundView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)]];
     }
     return cell;
@@ -211,6 +207,23 @@
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 44;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary)
+        return 0;
+    
+    return 80;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView * view= [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    [view setBackgroundColor:[UIColor clearColor]];
+    return view;
+}
+
 -(void)pinchSelectedImage:(UIPinchGestureRecognizer *)pinch{
     UIView * PinchedView= [pinch view];
     if([pinch state]==UIGestureRecognizerStateBegan){
@@ -246,7 +259,10 @@
     }
     [controller setDelegate:self];
     [controller setInitialRowToShow:[NSIndexPath indexPathForRow:index inSection:0]];
-    [controller showFromCoordinatesInView:originView];
+    dispatch_async(dispatch_get_current_queue(), ^{
+        [controller showFromCoordinatesInView:originView];
+    });
+    
 
 }
 

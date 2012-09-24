@@ -25,6 +25,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
     self=[super init];
     if(self){
         self.pics= [NSMutableArray array];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldRefreshImagesFromUserLibrary:) name:ALAssetsLibraryChangedNotification object:nil];
     }
     return self;
 }
@@ -67,12 +68,16 @@ static BFGAssetsManager * _hiddenInstance= nil;
     }
 }
 
+-(void)shouldRefreshImagesFromUserLibrary:(NSNotification *)notif{
+    [self readUserImagesFromLibrary];
+}
+
 -(void)readUserImagesFromLibrary{
     
     ALAssetsLibrary *al = [BFGAssetsManager defaultAssetsLibrary];
     
     self.pics= nil;
-    [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos | ALAssetsGroupLibrary
+    [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos | ALAssetsGroupLibrary 
                       usingBlock:^(ALAssetsGroup *group, BOOL *stop)
      {
          if(!self.pics){

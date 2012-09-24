@@ -49,6 +49,26 @@
 							<object class="IBUIView" id="1005767931">
 								<reference key="NSNextResponder" ref="123056855"/>
 								<int key="NSvFlags">292</int>
+								<object class="NSMutableArray" key="NSSubviews">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="IBUISearchBar" id="526087338">
+										<reference key="NSNextResponder" ref="1005767931"/>
+										<int key="NSvFlags">290</int>
+										<string key="NSFrameSize">{768, 44}</string>
+										<reference key="NSSuperview" ref="1005767931"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="74771243"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<int key="IBUIContentMode">3</int>
+										<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+										<int key="IBBarStyle">2</int>
+										<string key="IBPlaceholder">search criteria</string>
+										<bool key="IBShowsCancelButton">YES</bool>
+										<object class="IBUITextInputTraits" key="IBTextInputTraits">
+											<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										</object>
+									</object>
+								</object>
 								<string key="NSFrameSize">{768, 44}</string>
 								<reference key="NSSuperview" ref="123056855"/>
 								<reference key="NSWindow"/>
@@ -96,6 +116,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEgMAA</bytes>
 						</object>
+						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<bool key="IBUIAlwaysBounceVertical">YES</bool>
@@ -113,28 +134,10 @@
 						<string key="NSFrame">{{374, 492}, {20, 20}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<bool key="IBUIAnimating">YES</bool>
-					</object>
-					<object class="IBUISearchBar" id="526087338">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">290</int>
-						<string key="NSFrameSize">{768, 44}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="74771243"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<int key="IBUIContentMode">3</int>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBBarStyle">2</int>
-						<string key="IBPlaceholder">search criteria</string>
-						<bool key="IBShowsCancelButton">YES</bool>
-						<object class="IBUITextInputTraits" key="IBTextInputTraits">
-							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						</object>
 					</object>
 				</object>
 				<string key="NSFrame">{{0, 20}, {768, 1004}}</string>
@@ -252,7 +255,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="74771243"/>
 							<reference ref="123056855"/>
-							<reference ref="526087338"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -281,19 +283,23 @@
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">27</int>
-						<reference key="object" ref="526087338"/>
-						<reference key="parent" ref="766721923"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">32</int>
 						<reference key="object" ref="1005767931"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="526087338"/>
+						</object>
 						<reference key="parent" ref="123056855"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">33</int>
 						<reference key="object" ref="54973594"/>
 						<reference key="parent" ref="72874392"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">27</int>
+						<reference key="object" ref="526087338"/>
+						<reference key="parent" ref="1005767931"/>
 					</object>
 				</object>
 			</object>

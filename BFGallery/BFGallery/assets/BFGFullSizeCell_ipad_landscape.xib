@@ -152,6 +152,7 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 				<reference key="IBUIContentView" ref="291682781"/>
+				<string key="IBUIReuseIdentifier">BFGFullSizeCell_ipad_landscape</string>
 				<real value="146" key="IBUIRowHeight"/>
 			</object>
 		</object>

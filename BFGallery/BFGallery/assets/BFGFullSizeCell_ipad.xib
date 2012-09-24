@@ -85,6 +85,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{601, 8}, {130, 130}}</string>
 								<reference key="NSSuperview" ref="992930771"/>
+								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">1</int>
@@ -127,6 +128,7 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 				<reference key="IBUIContentView" ref="992930771"/>
+				<string key="IBUIReuseIdentifier">BFGFullSizeCell_ipad</string>
 				<real value="146" key="IBUIRowHeight"/>
 			</object>
 		</object>

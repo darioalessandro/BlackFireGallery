@@ -73,12 +73,14 @@
     [self.imageView.layer setAnchorPoint:CGPointMake(0.5, 0.5)];
 	self.imageView.transform = CGAffineTransformMakeScale( scale, scale);
     self.imageView.alpha=0.01;
-    [self presentFullScreenImage];
+    [self presentFullScreenImageFromView:baseView];
 }
 
--(void)presentFullScreenImage
+-(void)presentFullScreenImageFromView:(UIView *)baseView
 {
-    [UIView animateWithDuration:kTransitionDuration/2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    self.originView=baseView;
+   self.originView.alpha=0.01;
+    [UIView animateWithDuration:kTransitionDuration/1.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.imageView.transform = CGAffineTransformMakeScale( 1.0, 1.0);
         self.imageView.alpha=1;
         self.imageView.center= CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
@@ -141,7 +143,9 @@
 
 -(void)dismissAndDispose
 {
+ 
     [UIView animateWithDuration:kTransitionDuration animations:^{
+        self.originView.alpha=1;
         self.view.alpha = 0;
     }completion:^(BOOL finished){
         [self postDismissCleanup];
