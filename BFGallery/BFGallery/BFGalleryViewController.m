@@ -20,7 +20,7 @@
 @implementation BFGalleryViewController
 @synthesize loadingPicsIndicator;
 @synthesize tableView, lastSelectedRow;
-@synthesize productsArray, isShowingFullSizwGallery;
+@synthesize productsArray, isShowingFullSizeGallery;
 
 -(id)initWithMediaProvider:(BFGAssetsManagerProvider)mediaProvider{
     self= [super init];
@@ -35,7 +35,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         if(!productsArray){
-            isShowingFullSizwGallery=FALSE;
+            isShowingFullSizeGallery=FALSE;
             self.mediaProvider=BFGAssetsManagerProviderPhotoLibrary;
         }
     }
@@ -251,10 +251,10 @@
 }
 
 -(void)showFullSizeGalleryWithImageSelected:(UIImageView *)imageView{
-    if(isShowingFullSizwGallery==TRUE)
+    if(isShowingFullSizeGallery==TRUE)
         return;
     
-    isShowingFullSizwGallery=TRUE;
+    isShowingFullSizeGallery=TRUE;
     NSInteger index= [imageView tag];
     [self showGalleryDetailWithIndex:index fromView:imageView];
 }
@@ -262,7 +262,7 @@
 -(void)didSelectedImage:(UITapGestureRecognizer *)tap{
     [self showFullSizeGalleryWithImageSelected:(UIImageView *)[tap view]];
     [[self delegate] didSelectedImage:[(UIImageView *)[tap view] image]];
-    [self.navigationController popViewControllerAnimated:TRUE]; 
+    //[self.navigationController popViewControllerAnimated:TRUE];
 }
 
 #pragma mark - UITableViewDelegate
@@ -283,7 +283,7 @@
 }
 
 -(void)didKilledDetailViewController:(BFGFullSizeViewController *)menu{
-    isShowingFullSizwGallery=FALSE;
+    isShowingFullSizeGallery=FALSE;
 }
 
 -(UIImage *)menuDetailViewController:(BFGFullSizeViewController *)menuDetailViewController imageAtIndex:(NSInteger)index{

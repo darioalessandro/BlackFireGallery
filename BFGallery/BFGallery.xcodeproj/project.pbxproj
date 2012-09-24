@@ -91,7 +91,7 @@
 		87CE41F01571A6320011E130 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		87CE41F21571A6320011E130 /* BFGalleryTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFGalleryTests.h; sourceTree = "<group>"; };
 		87CE41F31571A6320011E130 /* BFGalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFGalleryTests.m; sourceTree = "<group>"; };
-		87CE41FE1571A74A0011E130 /* BFGAssetsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BFGAssetsManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		87CE41FE1571A74A0011E130 /* BFGAssetsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BFGAssetsManager.h; sourceTree = "<group>"; };
 		87CE41FF1571A74A0011E130 /* BFGAssetsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGAssetsManager.m; sourceTree = "<group>"; };
 		87CE42041571A74A0011E130 /* BFGFullSizeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGFullSizeCell.h; sourceTree = "<group>"; };
 		87CE42051571A74A0011E130 /* BFGFullSizeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGFullSizeCell.m; sourceTree = "<group>"; };

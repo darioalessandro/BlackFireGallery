@@ -22,7 +22,7 @@
 
 @interface BFGalleryViewController : BFViewController <BFGFullSizeViewControllerDelegate, UIScrollViewDelegate, UISearchBarDelegate>{
     NSArray * productsArray;
-    BOOL isShowingFullSizwGallery;
+    BOOL isShowingFullSizeGallery;
     NSIndexPath * lastSelectedRow;
 }
     -(void)showFullSizeGalleryWithImageSelected:(UIImageView *)imageView;
@@ -33,9 +33,9 @@
 @property (strong, nonatomic) NSIndexPath * lastSelectedRow;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingPicsIndicator;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property(nonatomic, assign) BOOL isShowingFullSizwGallery;
+@property(nonatomic, assign) BOOL isShowingFullSizeGallery;
 @property(nonatomic, strong) NSArray * productsArray;
-@property(nonatomic) NSString * searchCriteria;
+@property(nonatomic,  strong) NSString * searchCriteria;
 //NOTE: This method should be defined before showing the controller.
 @property(nonatomic) BFGAssetsManagerProvider mediaProvider;
 @property (strong, nonatomic) IBOutlet UISearchBar * bar;
