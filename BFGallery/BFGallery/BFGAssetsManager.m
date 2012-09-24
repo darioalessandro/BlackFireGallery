@@ -88,7 +88,9 @@ static BFGAssetsManager * _hiddenInstance= nil;
             [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
          }
      }
-            failureBlock:^(NSError *error) { NSLog(@"error %@", error.description);}
+            failureBlock:^(NSError *error) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:kUserDeniedAccessToPics object:self];
+            }
      ];
 }
 

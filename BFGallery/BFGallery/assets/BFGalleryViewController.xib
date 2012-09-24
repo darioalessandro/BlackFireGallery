@@ -113,6 +113,7 @@
 						<string key="NSFrame">{{374, 492}, {20, 20}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -339,7 +340,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">35</int>
+			<int key="maxID">40</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -353,6 +354,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>bar</string>
 							<string>loadingPicsIndicator</string>
+							<string>noAccessToCamView</string>
 							<string>tableActivityIndicator</string>
 							<string>tableView</string>
 						</object>
@@ -360,6 +362,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UISearchBar</string>
 							<string>UIActivityIndicatorView</string>
+							<string>UIView</string>
 							<string>UIActivityIndicatorView</string>
 							<string>UITableView</string>
 						</object>
@@ -370,6 +373,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>bar</string>
 							<string>loadingPicsIndicator</string>
+							<string>noAccessToCamView</string>
 							<string>tableActivityIndicator</string>
 							<string>tableView</string>
 						</object>
@@ -382,6 +386,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">loadingPicsIndicator</string>
 								<string key="candidateClassName">UIActivityIndicatorView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">noAccessToCamView</string>
+								<string key="candidateClassName">UIView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">tableActivityIndicator</string>

@@ -16,6 +16,7 @@
 #import "FlickrRequest.h"
 
 static NSString * const kAddedAssetsToLibrary= @"AddedAssetsToLibrary";
+static NSString * const kUserDeniedAccessToPics= @"kUserDeniedAccessToPics";
 
 typedef enum{
     BFGAssetsManagerProviderPhotoLibrary=0,

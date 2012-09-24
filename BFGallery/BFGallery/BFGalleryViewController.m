@@ -68,13 +68,39 @@
 {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAddedAssets:) name:kAddedAssetsToLibrary object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDeniedAccessToAssets:) name:kUserDeniedAccessToPics object:nil];
+    
 //    [[[self navigationController] navigationItem] setHidesBackButton:TRUE];
 //    [[[self navigationController] navigationBar] setHidden:TRUE];
 //    [[self tableView] setHidden:TRUE];
     [[self tableView] setHidden:NO];
 }
 
+-(void)userDeniedAccessToAssets:(NSNotification *)notif{
+    [self showDeniedAccessToAssetsView];
+}
+
+-(void)showDeniedAccessToAssetsView{
+    if(self.noAccessToCamView==nil){
+        NSString * nibName=@"BFDeniedAccessToAssetsView";
+        if([[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPad){
+            nibName= [NSString stringWithFormat:@"%@ipad", nibName];
+        }
+        self.noAccessToCamView= [[[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil] objectAtIndex:0];
+    }
+    [self.loadingPicsIndicator stopAnimating];
+    [self.view addSubview:self.noAccessToCamView];
+}
+
+-(void)dismissDeniedAccessToAssetsView{
+    if(self.noAccessToCamView){
+        [self.noAccessToCamView removeFromSuperview];
+        self.noAccessToCamView=nil;
+    }
+}
+
 -(void)didAddedAssets:(NSNotification *)notif{
+    [self dismissDeniedAccessToAssetsView];
     id array= [notif object];
     self.productsArray=array;
     [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
@@ -87,6 +113,7 @@
     [self setTableView:nil];
     [self setLoadingPicsIndicator:nil];
     [self setTableActivityIndicator:nil];
+    [self setNoAccessToCamView:nil];
     [super viewDidUnload];
 }
 

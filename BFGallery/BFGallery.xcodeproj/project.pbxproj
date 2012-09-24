@@ -38,6 +38,9 @@
 		87CE42421571B5C10011E130 /* BFGCell_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42391571B5C10011E130 /* BFGCell_ipad.xib */; };
 		87CE42431571B5C10011E130 /* BFGCell_iphone_portrait.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE423A1571B5C10011E130 /* BFGCell_iphone_portrait.xib */; };
 		87CE42441571B5C10011E130 /* BFGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE423B1571B5C10011E130 /* BFGalleryViewController.xib */; };
+		EB134C3F160FDC0400C193BF /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = EB134C3E160FDC0400C193BF /* lock.png */; };
+		EB134C42160FE04900C193BF /* BFDeniedAccessToAssetsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB134C41160FE04900C193BF /* BFDeniedAccessToAssetsView.xib */; };
+		EB134C44160FE08700C193BF /* BFDeniedAccessToAssetsViewipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB134C43160FE08700C193BF /* BFDeniedAccessToAssetsViewipad.xib */; };
 		EB33F0501602FA4C001F06C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */; };
 		EB5D503F15FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */; };
 		EB5D504015FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */; };
@@ -112,6 +115,9 @@
 		87CE423A1571B5C10011E130 /* BFGCell_iphone_portrait.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGCell_iphone_portrait.xib; path = assets/BFGCell_iphone_portrait.xib; sourceTree = "<group>"; };
 		87CE423B1571B5C10011E130 /* BFGalleryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGalleryViewController.xib; path = assets/BFGalleryViewController.xib; sourceTree = "<group>"; };
 		EB0079EE15FF2FE700B6F742 /* SharedConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedConstants.h; sourceTree = "<group>"; };
+		EB134C3E160FDC0400C193BF /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lock.png; path = ../lock.png; sourceTree = "<group>"; };
+		EB134C41160FE04900C193BF /* BFDeniedAccessToAssetsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFDeniedAccessToAssetsView.xib; sourceTree = "<group>"; };
+		EB134C43160FE08700C193BF /* BFDeniedAccessToAssetsViewipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFDeniedAccessToAssetsViewipad.xib; sourceTree = "<group>"; };
 		EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EB5D503B15FF2E0800AB1CD7 /* FlickrImageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrImageParser.h; sourceTree = "<group>"; };
 		EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrImageParser.m; sourceTree = "<group>"; };
@@ -282,6 +288,7 @@
 		87CE42321571B5C00011E130 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				EB134C3E160FDC0400C193BF /* lock.png */,
 				87CE422A1571B12F0011E130 /* flechas.png */,
 			);
 			path = assets;
@@ -293,6 +300,8 @@
 				87CE420E1571A74A0011E130 /* BFGalleryViewController.h */,
 				87CE420F1571A74A0011E130 /* BFGalleryViewController.m */,
 				87CE423B1571B5C10011E130 /* BFGalleryViewController.xib */,
+				EB134C41160FE04900C193BF /* BFDeniedAccessToAssetsView.xib */,
+				EB134C43160FE08700C193BF /* BFDeniedAccessToAssetsViewipad.xib */,
 			);
 			name = GalleryViewController;
 			sourceTree = "<group>";
@@ -416,6 +425,9 @@
 				8717827115C3C1670068C775 /* BFGCell_iphone_landscape.xib in Resources */,
 				8784BE1415C5FE68004F6FEA /* BFGFullSizeViewController_ipad.xib in Resources */,
 				EB33F0501602FA4C001F06C2 /* Default-568h@2x.png in Resources */,
+				EB134C3F160FDC0400C193BF /* lock.png in Resources */,
+				EB134C42160FE04900C193BF /* BFDeniedAccessToAssetsView.xib in Resources */,
+				EB134C44160FE08700C193BF /* BFDeniedAccessToAssetsViewipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

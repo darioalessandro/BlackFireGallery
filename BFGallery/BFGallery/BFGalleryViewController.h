@@ -40,4 +40,5 @@
 @property(nonatomic) BFGAssetsManagerProvider mediaProvider;
 @property (strong, nonatomic) IBOutlet UISearchBar * bar;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *tableActivityIndicator;
+@property (strong, nonatomic) IBOutlet UIView *noAccessToCamView;
 @end
