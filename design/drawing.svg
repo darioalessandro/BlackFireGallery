@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg3032"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="drawing.svg">
+  <defs
+     id="defs3034">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective3040" />
+    <inkscape:perspective
+       id="perspective3299"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3307">
+      <rect
+         style="fill:#e6e6e6;fill-opacity:0.4896266;stroke:none"
+         id="rect3309"
+         width="353.33334"
+         height="343.0918"
+         x="-35.845413"
+         y="122.94183" />
+    </clipPath>
+    <inkscape:perspective
+       id="perspective2891"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2974"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2986">
+      <rect
+         style="fill:#e6e6e6;fill-opacity:0.4896266;stroke:none"
+         id="rect2988"
+         width="284.96649"
+         height="360.56985"
+         x="415.81845"
+         y="196.00876" />
+    </clipPath>
+    <filter
+       id="filter3609"
+       x="-0.25"
+       width="1.5"
+       y="-0.25"
+       height="1.5"
+       inkscape:menu="Non realistic 3D shaders"
+       inkscape:menu-tooltip="Non realistic chrome shader with strong speculars"
+       inkscape:label="Chrome"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur3611"
+         result="result8"
+         stdDeviation="4" />
+      <feComposite
+         id="feComposite3613"
+         in2="result8"
+         in="result8"
+         operator="xor"
+         result="result6" />
+      <feDisplacementMap
+         id="feDisplacementMap3615"
+         in2="result6"
+         result="result4"
+         scale="80"
+         yChannelSelector="A"
+         xChannelSelector="A"
+         in="result6" />
+      <feComposite
+         id="feComposite3617"
+         in2="result4"
+         k1="3"
+         in="result8"
+         operator="arithmetic"
+         result="result2" />
+      <feComposite
+         id="feComposite3619"
+         in2="result2"
+         operator="in"
+         in="result2"
+         result="fbSourceGraphic" />
+    </filter>
+    <filter
+       id="filter3625"
+       inkscape:menu-tooltip="In and out glow with a possible offset and colorizable flood"
+       inkscape:menu="Shadows and Glows"
+       inkscape:label="Cutout Glow"
+       color-interpolation-filters="sRGB">
+      <feOffset
+         id="feOffset3627"
+         dy="3"
+         dx="3" />
+      <feGaussianBlur
+         id="feGaussianBlur3629"
+         result="result8"
+         stdDeviation="3" />
+      <feFlood
+         id="feFlood3631"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="1"
+         in="result8"
+         result="result10" />
+      <feComposite
+         id="feComposite3633"
+         in2="SourceGraphic"
+         operator="in"
+         in="result10"
+         result="result9" />
+      <feBlend
+         id="feBlend3635"
+         in2="result9"
+         mode="normal"
+         in="result8" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.495319"
+     inkscape:cx="302.33009"
+     inkscape:cy="285.42014"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1036"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3037">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect2821"
+       width="592.27869"
+       height="402.18661"
+       x="-16.010509"
+       y="550.23773" />
+    <g
+       id="g2990"
+       transform="translate(18.374323,364.80798)"
+       style="fill:#ffffff"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"
+       inkscape:export-filename="/Users/dariolencina/Documents/MyiOSProjects/BlackFireGallery/design/lock.png">
+      <path
+         style="fill:#ffffff"
+         d="m 266.6243,514.4095 -3.73531,-3.4233 0,-62.6537 0,-62.6536 3.64208,-3.3376 c 2.94602,-2.6997 4.76165,-3.4634 9.5,-3.9956 3.22186,-0.3618 6.42042,-0.8361 7.10792,-1.054 0.95028,-0.3012 1.25,-5.6888 1.25,-22.46967 0,-26.97939 1.06961,-33.27455 8.13183,-47.85982 4.24639,-8.76985 6.28306,-11.64024 13.19482,-18.59614 9.24938,-9.30845 18.32555,-15.08218 30.17335,-19.19451 7.31846,-2.54022 9.23529,-2.77677 22.5,-2.77677 13.26471,0 15.18154,0.23655 22.5,2.77677 17.97054,6.23751 34.25672,19.81585 42.17324,35.16124 7.96402,15.43748 8.6023,18.75904 9.09309,47.32003 0.30692,17.86127 0.77364,25.42537 1.58438,25.67747 0.63211,0.1966 3.78535,0.6536 7.00721,1.0154 4.73835,0.5322 6.55398,1.2959 9.5,3.9956 l 3.64208,3.3376 0,62.6536 0,62.6537 -3.73531,3.4233 -3.73532,3.4233 -88.02937,0 -88.02937,0 -3.73532,-3.4233 z M 403.16065,357.42583 c 0.14942,-10.94884 -0.18819,-22.42384 -0.75024,-25.5 -2.50361,-13.70264 -11.47387,-25.24203 -24.7057,-31.78156 -7.59417,-3.75324 -7.88927,-3.81147 -19.31572,-3.81147 -11.42645,0 -11.72155,0.0582 -19.31572,3.81147 -13.14515,6.49669 -22.14843,18.01574 -24.679,31.57502 -1.11745,5.98754 -1.39484,44.39061 -0.32834,45.45711 0.37232,0.3723 20.50982,0.5598 44.75,0.4167 l 44.07306,-0.2603 0.27166,-19.90697 z"
+         id="path3004"
+         sodipodi:nodetypes="cccccssssssssssssccccccccccssssssccc" />
+    </g>
+    <g
+       inkscape:export-filename="/Users/dariolencina/Documents/MyiOSProjects/BlackFireGallery/design/lock.png"
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       style="fill:#ffffff;filter:url(#filter3625)"
+       transform="translate(-239.76457,339.39534)"
+       id="g3621">
+      <path
+         sodipodi:nodetypes="cccccssssssssssssccccccccccssssssccc"
+         id="path3623"
+         d="m 266.6243,514.4095 -3.73531,-3.4233 0,-62.6537 0,-62.6536 3.64208,-3.3376 c 2.94602,-2.6997 4.76165,-3.4634 9.5,-3.9956 3.22186,-0.3618 6.42042,-0.8361 7.10792,-1.054 0.95028,-0.3012 1.25,-5.6888 1.25,-22.46967 0,-26.97939 1.06961,-33.27455 8.13183,-47.85982 4.24639,-8.76985 6.28306,-11.64024 13.19482,-18.59614 9.24938,-9.30845 18.32555,-15.08218 30.17335,-19.19451 7.31846,-2.54022 9.23529,-2.77677 22.5,-2.77677 13.26471,0 15.18154,0.23655 22.5,2.77677 17.97054,6.23751 34.25672,19.81585 42.17324,35.16124 7.96402,15.43748 8.6023,18.75904 9.09309,47.32003 0.30692,17.86127 0.77364,25.42537 1.58438,25.67747 0.63211,0.1966 3.78535,0.6536 7.00721,1.0154 4.73835,0.5322 6.55398,1.2959 9.5,3.9956 l 3.64208,3.3376 0,62.6536 0,62.6537 -3.73531,3.4233 -3.73532,3.4233 -88.02937,0 -88.02937,0 -3.73532,-3.4233 z M 403.16065,357.42583 c 0.14942,-10.94884 -0.18819,-22.42384 -0.75024,-25.5 -2.50361,-13.70264 -11.47387,-25.24203 -24.7057,-31.78156 -7.59417,-3.75324 -7.88927,-3.81147 -19.31572,-3.81147 -11.42645,0 -11.72155,0.0582 -19.31572,3.81147 -13.14515,6.49669 -22.14843,18.01574 -24.679,31.57502 -1.11745,5.98754 -1.39484,44.39061 -0.32834,45.45711 0.37232,0.3723 20.50982,0.5598 44.75,0.4167 l 44.07306,-0.2603 0.27166,-19.90697 z"
+         style="fill:#ffffff" />
+    </g>
+    <g
+       inkscape:export-filename="/Users/dariolencina/Documents/MyiOSProjects/BlackFireGallery/design/lock.png"
+       inkscape:export-ydpi="180"
+       inkscape:export-xdpi="180"
+       style="fill:#ffffff"
+       transform="translate(18.374323,364.80798)"
+       id="g3637">
+      <path
+         sodipodi:nodetypes="cccccssssssssssssccccccccccssssssccc"
+         id="path3639"
+         d="m 266.6243,514.4095 -3.73531,-3.4233 0,-62.6537 0,-62.6536 3.64208,-3.3376 c 2.94602,-2.6997 4.76165,-3.4634 9.5,-3.9956 3.22186,-0.3618 6.42042,-0.8361 7.10792,-1.054 0.95028,-0.3012 1.25,-5.6888 1.25,-22.46967 0,-26.97939 1.06961,-33.27455 8.13183,-47.85982 4.24639,-8.76985 6.28306,-11.64024 13.19482,-18.59614 9.24938,-9.30845 18.32555,-15.08218 30.17335,-19.19451 7.31846,-2.54022 9.23529,-2.77677 22.5,-2.77677 13.26471,0 15.18154,0.23655 22.5,2.77677 17.97054,6.23751 34.25672,19.81585 42.17324,35.16124 7.96402,15.43748 8.6023,18.75904 9.09309,47.32003 0.30692,17.86127 0.77364,25.42537 1.58438,25.67747 0.63211,0.1966 3.78535,0.6536 7.00721,1.0154 4.73835,0.5322 6.55398,1.2959 9.5,3.9956 l 3.64208,3.3376 0,62.6536 0,62.6537 -3.73531,3.4233 -3.73532,3.4233 -88.02937,0 -88.02937,0 -3.73532,-3.4233 z M 403.16065,357.42583 c 0.14942,-10.94884 -0.18819,-22.42384 -0.75024,-25.5 -2.50361,-13.70264 -11.47387,-25.24203 -24.7057,-31.78156 -7.59417,-3.75324 -7.88927,-3.81147 -19.31572,-3.81147 -11.42645,0 -11.72155,0.0582 -19.31572,3.81147 -13.14515,6.49669 -22.14843,18.01574 -24.679,31.57502 -1.11745,5.98754 -1.39484,44.39061 -0.32834,45.45711 0.37232,0.3723 20.50982,0.5598 44.75,0.4167 l 44.07306,-0.2603 0.27166,-19.90697 z"
+         style="fill:#ffffff" />
+    </g>
+  </g>
+</svg>
