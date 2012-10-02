@@ -30,6 +30,17 @@
     return self;
 }
 
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil mediaProvider:(BFGAssetsManagerProvider)mediaProvider{
+    self= [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        if(!productsArray){
+            isShowingFullSizeGallery=FALSE;
+            self.mediaProvider=mediaProvider;
+        }
+    }
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -53,6 +64,8 @@
     if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary){
         [self.bar setHidden:TRUE];
         [self.tableActivityIndicator setHidden:TRUE];
+    }else if(self.mediaProvider==BFGAssetsManagerProviderFlickr){
+        self.bar.text= self.searchCriteria;
     }
 }
 
@@ -212,10 +225,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary)
         return 0;
-    
-    return 80;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
@@ -277,8 +287,6 @@
 
 -(void)didSelectedImage:(UITapGestureRecognizer *)tap{
     [self showFullSizeGalleryWithImageSelected:(UIImageView *)[tap view]];
-    [[self delegate] didSelectedImage:[(UIImageView *)[tap view] image]];
-    //[self.navigationController popViewControllerAnimated:TRUE];
 }
 
 #pragma mark - UITableViewDelegate

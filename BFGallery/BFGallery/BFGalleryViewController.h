@@ -30,6 +30,7 @@
     -(void)showLastPic:(id)caller;
     -(void)showGalleryDetailWithIndex:(NSInteger)index fromView:(UIView *)originView;
     -(id)initWithMediaProvider:(BFGAssetsManagerProvider)mediaProvider;
+    -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil mediaProvider:(BFGAssetsManagerProvider)mediaProvider;
 @property (strong, nonatomic) NSIndexPath * lastSelectedRow;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingPicsIndicator;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

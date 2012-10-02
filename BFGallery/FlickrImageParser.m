@@ -30,7 +30,7 @@ NSString * responseString = [[NSString alloc] initWithData:self.dataToParse enco
 	if(queryResult){
 		NSMutableArray * mutableImagesArray= [NSMutableArray array];
 		for(NSDictionary * photoDict in queryResult){
-			NSString * photoURLString = [NSString stringWithFormat:littleImagesURLFormat, 
+			NSString * photoURLString = [NSString stringWithFormat:mediumImagesURLFormat, 
 										 [photoDict objectForKey:@"farm"], [photoDict objectForKey:@"server"], 
 										 [photoDict objectForKey:@"id"], [photoDict objectForKey:@"secret"]];
 			NSData * data= [NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]];
@@ -52,7 +52,6 @@ NSString * responseString = [[NSString alloc] initWithData:self.dataToParse enco
 		responseString=nil;
 	return URLArray;
 }
-
 
 - (void)main{
 	[self setImages:[self parseArray]];

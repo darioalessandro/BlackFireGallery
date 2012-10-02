@@ -17,7 +17,7 @@
 
 
 @implementation BFViewController
-@synthesize delegate;
+
 
 #pragma mark - View lifecycle
 
@@ -36,8 +36,8 @@
 }
 
 - (IBAction)didPressedSectionButton:(id)sender{
-    if([delegate conformsToProtocol:@protocol(BFViewControllerSectionSelectorDelegate)]){
-        [delegate srViewController:self didSelectedSectionAtIndex:[sender tag]];
+    if([_delegate conformsToProtocol:@protocol(BFViewControllerSectionSelectorDelegate)]){
+        [_delegate srViewController:self didSelectedSectionAtIndex:[sender tag]];
     }
 }
 
