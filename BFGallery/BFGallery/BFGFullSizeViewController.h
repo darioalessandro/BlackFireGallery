@@ -32,6 +32,7 @@
     id <BFGFullSizeViewControllerDelegate> __weak delegate;
     UITableView *galleryTableView;
     NSIndexPath * initialRowToShow;
+    NSOperationQueue * queue;
 }
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;

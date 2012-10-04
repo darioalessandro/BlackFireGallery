@@ -8,6 +8,7 @@
 
 #import "FlickrImageParser.h"
 #import "SharedConstants.h"
+#import "FlickrImage.h"
 
 @implementation FlickrImageParser
 
@@ -30,16 +31,24 @@ NSString * responseString = [[NSString alloc] initWithData:self.dataToParse enco
 	if(queryResult){
 		NSMutableArray * mutableImagesArray= [NSMutableArray array];
 		for(NSDictionary * photoDict in queryResult){
-			NSString * photoURLString = [NSString stringWithFormat:mediumImagesURLFormat, 
+			NSString * fullSizeImageURL = [NSString stringWithFormat:mediumImagesURLFormat, 
 										 [photoDict objectForKey:@"farm"], [photoDict objectForKey:@"server"], 
 										 [photoDict objectForKey:@"id"], [photoDict objectForKey:@"secret"]];
-			NSData * data= [NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]];
-			UIImage * image= [UIImage imageWithData:data];
-			if(image){
-				[mutableImagesArray addObject:image];
+            
+            NSString * thumbnailURL= [NSString stringWithFormat:littleImagesURLFormat,
+                                      [photoDict objectForKey:@"farm"], [photoDict objectForKey:@"server"],
+                                      [photoDict objectForKey:@"id"], [photoDict objectForKey:@"secret"]];
+            
+            FlickrImage * flickrImage= [FlickrImage new];
+            [flickrImage setThumbnailServerPath:[NSURL URLWithString:thumbnailURL]];
+            [flickrImage setFullSizeImageServerPath:[NSURL URLWithString:fullSizeImageURL]];
+            [flickrImage setSearchCriteria:self.searchCriteria];
+            [flickrImage setTitle:[photoDict objectForKey:@"title"]];
+			if(flickrImage){
+				[mutableImagesArray addObject:flickrImage];
                 if(delegate){
                     self.images= [NSArray arrayWithArray:mutableImagesArray];
-                    [self.delegate performSelectorOnMainThread:@selector(parserDidDownloadImage:)withObject:self waitUntilDone:YES];
+                    [self.delegate performSelectorOnMainThread:@selector(parserDidDownloadImage:)withObject:self waitUntilDone:NO];
                 }
             }
 		}

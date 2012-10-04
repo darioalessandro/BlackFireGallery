@@ -17,7 +17,7 @@
 #import "BFGFullSizeViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #define kTransitionDuration 0.5
-
+#import "FlickrImage.h"
 
 @implementation BFGFullSizeViewController{
     UIImage * initialImage;
@@ -31,6 +31,7 @@
 {
     self= [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mustDismissGalleryDetails:) name:kMustDismissGalleryDetails object:nil];
+    queue= [NSOperationQueue new];
     return self;
 }
 
@@ -59,8 +60,16 @@
 {
     id asset= [delegate menuDetailViewController:self assetAtIndex:self.initialRowToShow.row];
     
-    if([asset isMemberOfClass:[UIImage class]]){
-        initialImage= asset;
+    if([asset isMemberOfClass:[FlickrImage class]]){
+        FlickrImage * img= asset;
+        if(![img fullSizeImage]){
+            initialImage=[img thumbnail];
+            [img loadFullSizeImageWithQueue:queue setResultInImageView:self.imageView];
+        }else{
+            initialImage=[img fullSizeImage];
+        }
+
+        
     }else{
         initialImage= [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]];
     }

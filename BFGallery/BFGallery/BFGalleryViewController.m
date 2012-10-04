@@ -15,7 +15,7 @@
 
 #import "BFGalleryViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-
+#import "FlickrImage.h"
 
 @implementation BFGalleryViewController
 @synthesize loadingPicsIndicator;
@@ -199,7 +199,8 @@
                 image= [self.productsArray objectAtIndex:index0+j];
                 thumbnail= [UIImage imageWithCGImage:[image thumbnail]];
             }else{
-                thumbnail= [self.productsArray objectAtIndex:index0+j];
+                FlickrImage * image=[self.productsArray objectAtIndex:index0+j];
+                thumbnail= [image thumbnail];
             }
             
             UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectedImage:)];            

@@ -84,7 +84,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-	UIAlertView * alert= [[UIAlertView alloc] initWithTitle:@"Dario:" 
+	UIAlertView * alert= [[UIAlertView alloc] initWithTitle:@"Connection did fail:" 
 													message:[error description]
 												   delegate:self
 										  cancelButtonTitle:@"OK" otherButtonTitles:nil];

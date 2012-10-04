@@ -15,7 +15,7 @@
 
 #import "BFGAssetsManager.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-
+#import "FlickrImage.h"
 
 static BFGAssetsManager * _hiddenInstance= nil;
 
@@ -103,13 +103,23 @@ static BFGAssetsManager * _hiddenInstance= nil;
 #pragma Flickr
 
 - (void)parserDidDownloadImage:(FlickrImageParser *)parser{
-    
-    [self.pics addObject:[parser.images lastObject]];
-    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+
 }
 
 - (void)didFinishParsing:(FlickrImageParser *)parser{
-    NSLog(@"- (void)didFinishParsing:(FlickrImageParser *)parser");
+//    [self.pics addObject:parser.images];
+    NSOperationQueue * queue = [[NSOperationQueue alloc] init];
+    for (FlickrImage * img in parser.images){
+        NSURLRequest * request= [NSURLRequest requestWithURL:img.thumbnailServerPath];
+        [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse * resp, NSData * data, NSError * error){
+            if(!error){
+                img.thumbnail=[UIImage imageWithData:data];
+                [self.pics addObject:img];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+            }
+        }];
+    }
+
 }
 
 - (void)parseErrorOccurred:(FlickrImageParser *)parser{

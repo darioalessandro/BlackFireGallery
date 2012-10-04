@@ -31,13 +31,13 @@
     -(void)showGalleryDetailWithIndex:(NSInteger)index fromView:(UIView *)originView;
     -(id)initWithMediaProvider:(BFGAssetsManagerProvider)mediaProvider;
     -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil mediaProvider:(BFGAssetsManagerProvider)mediaProvider;
+
 @property (strong, nonatomic) NSIndexPath * lastSelectedRow;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingPicsIndicator;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic, assign) BOOL isShowingFullSizeGallery;
 @property(nonatomic, strong) NSArray * productsArray;
 @property(nonatomic,  strong) NSString * searchCriteria;
-//NOTE: This method should be defined before showing the controller.
 @property(nonatomic) BFGAssetsManagerProvider mediaProvider;
 @property (strong, nonatomic) IBOutlet UISearchBar * bar;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *tableActivityIndicator;

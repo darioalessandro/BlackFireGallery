@@ -41,6 +41,8 @@
 		EB134C3F160FDC0400C193BF /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = EB134C3E160FDC0400C193BF /* lock.png */; };
 		EB134C42160FE04900C193BF /* BFDeniedAccessToAssetsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB134C41160FE04900C193BF /* BFDeniedAccessToAssetsView.xib */; };
 		EB134C44160FE08700C193BF /* BFDeniedAccessToAssetsViewipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB134C43160FE08700C193BF /* BFDeniedAccessToAssetsViewipad.xib */; };
+		EB2126AE161D153E00BC8E81 /* FlickrImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2126AD161D153E00BC8E81 /* FlickrImage.m */; };
+		EB2126AF161D153E00BC8E81 /* FlickrImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2126AD161D153E00BC8E81 /* FlickrImage.m */; };
 		EB33F0501602FA4C001F06C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */; };
 		EB5D503F15FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */; };
 		EB5D504015FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */; };
@@ -118,6 +120,8 @@
 		EB134C3E160FDC0400C193BF /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lock.png; path = ../lock.png; sourceTree = "<group>"; };
 		EB134C41160FE04900C193BF /* BFDeniedAccessToAssetsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFDeniedAccessToAssetsView.xib; sourceTree = "<group>"; };
 		EB134C43160FE08700C193BF /* BFDeniedAccessToAssetsViewipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFDeniedAccessToAssetsViewipad.xib; sourceTree = "<group>"; };
+		EB2126AC161D153E00BC8E81 /* FlickrImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrImage.h; sourceTree = "<group>"; };
+		EB2126AD161D153E00BC8E81 /* FlickrImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrImage.m; sourceTree = "<group>"; };
 		EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EB5D503B15FF2E0800AB1CD7 /* FlickrImageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrImageParser.h; sourceTree = "<group>"; };
 		EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrImageParser.m; sourceTree = "<group>"; };
@@ -329,6 +333,8 @@
 		EB5D504415FF2E1400AB1CD7 /* FlickrBS */ = {
 			isa = PBXGroup;
 			children = (
+				EB2126AC161D153E00BC8E81 /* FlickrImage.h */,
+				EB2126AD161D153E00BC8E81 /* FlickrImage.m */,
 				EB0079EE15FF2FE700B6F742 /* SharedConstants.h */,
 				EB5D503B15FF2E0800AB1CD7 /* FlickrImageParser.h */,
 				EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */,
@@ -478,6 +484,7 @@
 				EB5D505815FF2E5100AB1CD7 /* SBJsonBase.m in Sources */,
 				EB5D505A15FF2E5100AB1CD7 /* SBJsonParser.m in Sources */,
 				EB5D505C15FF2E5100AB1CD7 /* SBJsonWriter.m in Sources */,
+				EB2126AE161D153E00BC8E81 /* FlickrImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +501,7 @@
 				EB5D505915FF2E5100AB1CD7 /* SBJsonBase.m in Sources */,
 				EB5D505B15FF2E5100AB1CD7 /* SBJsonParser.m in Sources */,
 				EB5D505D15FF2E5100AB1CD7 /* SBJsonWriter.m in Sources */,
+				EB2126AF161D153E00BC8E81 /* FlickrImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
