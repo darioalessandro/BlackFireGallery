@@ -44,6 +44,15 @@
 		EB2126AE161D153E00BC8E81 /* FlickrImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2126AD161D153E00BC8E81 /* FlickrImage.m */; };
 		EB2126AF161D153E00BC8E81 /* FlickrImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2126AD161D153E00BC8E81 /* FlickrImage.m */; };
 		EB33F0501602FA4C001F06C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */; };
+		EB390C7016226F7C00FD80AA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB390C6F16226F7C00FD80AA /* FacebookSDK.framework */; };
+		EB390C851622727300FD80AA /* InstructionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB390C821622727300FD80AA /* InstructionsView.xib */; };
+		EB390C861622727300FD80AA /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB390C841622727300FD80AA /* InstructionsViewController.m */; };
+		EB390CA1162278FB00FD80AA /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB390CA0162278FB00FD80AA /* libsqlite3.0.dylib */; };
+		EB390CA31622791700FD80AA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB390CA21622791700FD80AA /* Accounts.framework */; };
+		EB390CA51622797000FD80AA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB390CA41622797000FD80AA /* Social.framework */; };
+		EB390CA71622797D00FD80AA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB390CA61622797D00FD80AA /* AdSupport.framework */; };
+		EB390CBC1622940900FD80AA /* FBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EB390CBB1622940900FD80AA /* FBImage.m */; };
+		EB390CBD162295A000FD80AA /* FBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EB390CBB1622940900FD80AA /* FBImage.m */; };
 		EB5D503F15FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */; };
 		EB5D504015FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */; };
 		EB5D504115FF2E0800AB1CD7 /* FlickrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503E15FF2E0800AB1CD7 /* FlickrRequest.m */; };
@@ -123,6 +132,17 @@
 		EB2126AC161D153E00BC8E81 /* FlickrImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrImage.h; sourceTree = "<group>"; };
 		EB2126AD161D153E00BC8E81 /* FlickrImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrImage.m; sourceTree = "<group>"; };
 		EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		EB390C6F16226F7C00FD80AA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		EB390C791622715400FD80AA /* BFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFLog.h; path = ../../BFLog/BFLog.h; sourceTree = "<group>"; };
+		EB390C821622727300FD80AA /* InstructionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InstructionsView.xib; path = ../../iOSNotifier/iOSNotifier/iOSNotifier/InstructionsView.xib; sourceTree = "<group>"; };
+		EB390C831622727300FD80AA /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructionsViewController.h; path = ../../iOSNotifier/iOSNotifier/iOSNotifier/InstructionsViewController.h; sourceTree = "<group>"; };
+		EB390C841622727300FD80AA /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstructionsViewController.m; path = ../../iOSNotifier/iOSNotifier/iOSNotifier/InstructionsViewController.m; sourceTree = "<group>"; };
+		EB390CA0162278FB00FD80AA /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		EB390CA21622791700FD80AA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		EB390CA41622797000FD80AA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		EB390CA61622797D00FD80AA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		EB390CBA1622940900FD80AA /* FBImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBImage.h; sourceTree = "<group>"; };
+		EB390CBB1622940900FD80AA /* FBImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBImage.m; sourceTree = "<group>"; };
 		EB5D503B15FF2E0800AB1CD7 /* FlickrImageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrImageParser.h; sourceTree = "<group>"; };
 		EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrImageParser.m; sourceTree = "<group>"; };
 		EB5D503D15FF2E0800AB1CD7 /* FlickrRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrRequest.h; sourceTree = "<group>"; };
@@ -147,10 +167,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB390CA71622797D00FD80AA /* AdSupport.framework in Frameworks */,
+				EB390CA51622797000FD80AA /* Social.framework in Frameworks */,
+				EB390CA31622791700FD80AA /* Accounts.framework in Frameworks */,
+				EB390CA1162278FB00FD80AA /* libsqlite3.0.dylib in Frameworks */,
 				87CE42291571A8490011E130 /* AssetsLibrary.framework in Frameworks */,
 				87CE41C41571A6300011E130 /* UIKit.framework in Frameworks */,
 				87CE41C61571A6300011E130 /* Foundation.framework in Frameworks */,
 				87CE41C81571A6300011E130 /* CoreGraphics.framework in Frameworks */,
+				EB390C7016226F7C00FD80AA /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +224,10 @@
 		87CE41B41571A6300011E130 = {
 			isa = PBXGroup;
 			children = (
+				EB390CA61622797D00FD80AA /* AdSupport.framework */,
+				EB390CA41622797000FD80AA /* Social.framework */,
+				EB390CA21622791700FD80AA /* Accounts.framework */,
+				EB390CA0162278FB00FD80AA /* libsqlite3.0.dylib */,
 				EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */,
 				87CE41C91571A6300011E130 /* BFGallery */,
 				87CE41EC1571A6320011E130 /* BFGalleryTests */,
@@ -219,6 +248,10 @@
 		87CE41C21571A6300011E130 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB390CB9162293D300FD80AA /* FacebookAdditions */,
+				EB390C871622727B00FD80AA /* Notifier */,
+				EB390C791622715400FD80AA /* BFLog.h */,
+				EB390C6D16226EF500FD80AA /* Facebook */,
 				EB33F05216043E55001F06C2 /* JSON */,
 				EB5D504415FF2E1400AB1CD7 /* FlickrBS */,
 				87CE42281571A8490011E130 /* AssetsLibrary.framework */,
@@ -328,6 +361,33 @@
 				EB5D505115FF2E5100AB1CD7 /* SBJsonWriter.m */,
 			);
 			name = JSON;
+			sourceTree = "<group>";
+		};
+		EB390C6D16226EF500FD80AA /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				EB390C6F16226F7C00FD80AA /* FacebookSDK.framework */,
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
+		EB390C871622727B00FD80AA /* Notifier */ = {
+			isa = PBXGroup;
+			children = (
+				EB390C821622727300FD80AA /* InstructionsView.xib */,
+				EB390C831622727300FD80AA /* InstructionsViewController.h */,
+				EB390C841622727300FD80AA /* InstructionsViewController.m */,
+			);
+			name = Notifier;
+			sourceTree = "<group>";
+		};
+		EB390CB9162293D300FD80AA /* FacebookAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				EB390CBA1622940900FD80AA /* FBImage.h */,
+				EB390CBB1622940900FD80AA /* FBImage.m */,
+			);
+			name = FacebookAdditions;
 			sourceTree = "<group>";
 		};
 		EB5D504415FF2E1400AB1CD7 /* FlickrBS */ = {
@@ -442,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87CE41F11571A6320011E130 /* InfoPlist.strings in Resources */,
+				EB390C851622727300FD80AA /* InstructionsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +546,7 @@
 				EB5D505A15FF2E5100AB1CD7 /* SBJsonParser.m in Sources */,
 				EB5D505C15FF2E5100AB1CD7 /* SBJsonWriter.m in Sources */,
 				EB2126AE161D153E00BC8E81 /* FlickrImage.m in Sources */,
+				EB390CBD162295A000FD80AA /* FBImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +564,8 @@
 				EB5D505B15FF2E5100AB1CD7 /* SBJsonParser.m in Sources */,
 				EB5D505D15FF2E5100AB1CD7 /* SBJsonWriter.m in Sources */,
 				EB2126AF161D153E00BC8E81 /* FlickrImage.m in Sources */,
+				EB390C861622727300FD80AA /* InstructionsViewController.m in Sources */,
+				EB390CBC1622940900FD80AA /* FBImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,9 +654,15 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BFGallery/BFGallery-Prefix.pch";
 				INFOPLIST_FILE = "BFGallery/BFGallery-Info.plist";
+				OTHER_CFLAGS = "-DDEBUGLOGMODE";
+				OTHER_LDFLAGS = "-DDEBUGLOGMODE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -604,9 +674,14 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BFGallery/BFGallery-Prefix.pch";
 				INFOPLIST_FILE = "BFGallery/BFGallery-Info.plist";
+				OTHER_LDFLAGS = "-DDEBUGLOGMODE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -620,6 +695,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../../FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BFGallery/BFGallery-Prefix.pch";
@@ -638,6 +714,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../../FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BFGallery/BFGallery-Prefix.pch";

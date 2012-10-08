@@ -16,6 +16,7 @@
 #import "BFGalleryViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "FlickrImage.h"
+#import "FBImage.h"
 
 @implementation BFGalleryViewController
 @synthesize loadingPicsIndicator;
@@ -95,7 +96,7 @@
         if([[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPad){
             nibName= [NSString stringWithFormat:@"%@ipad", nibName];
         }
-        self.noAccessToCamView= [[[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil] objectAtIndex:0];
+        self.noAccessToCamView= [[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil][0];
     }
     [self.loadingPicsIndicator stopAnimating];
     [self.view addSubview:self.noAccessToCamView];
@@ -177,7 +178,7 @@
     BFGFullSizeCell * cell= (BFGFullSizeCell *)[self.tableView dequeueReusableCellWithIdentifier:@"ff"
                                                 ];
     if(cell==nil){
-        cell= [[[NSBundle mainBundle] loadNibNamed:fileName owner:nil options:nil] objectAtIndex:0];
+        cell= [[NSBundle mainBundle] loadNibNamed:fileName owner:nil options:nil][0];
         [cell setSelectedBackgroundView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)]];
     }
     return cell;
@@ -196,25 +197,28 @@
             UIImage * thumbnail=nil;
             
             if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary){
-                image= [self.productsArray objectAtIndex:index0+j];
+                image= (self.productsArray)[index0+j];
                 thumbnail= [UIImage imageWithCGImage:[image thumbnail]];
-            }else{
-                FlickrImage * image=[self.productsArray objectAtIndex:index0+j];
+            }else if(self.mediaProvider==BFGAssetsManagerProviderFlickr){
+                FlickrImage * image=(self.productsArray)[index0+j];
+                thumbnail= [image thumbnail];
+            }else if(self.mediaProvider==BFGAssetsManagerProviderFacebook){
+                FBImage * image=(self.productsArray)[index0+j];
                 thumbnail= [image thumbnail];
             }
             
             UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectedImage:)];            
-            [[[cell imageViews] objectAtIndex:j] addGestureRecognizer:tap];            
+            [[cell imageViews][j] addGestureRecognizer:tap];            
             
-            [[[cell imageViews] objectAtIndex:j] setImage:thumbnail];
+            [[cell imageViews][j] setImage:thumbnail];
             
-            [[[cell imageViews] objectAtIndex:j] setImage:thumbnail];
-            [[[cell imageViews] objectAtIndex:j] setTag:index0+j];
+            [[cell imageViews][j] setImage:thumbnail];
+            [[cell imageViews][j] setTag:index0+j];
             
             UIPinchGestureRecognizer * pinch= [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchSelectedImage:)];            
-            [[[cell imageViews] objectAtIndex:j] addGestureRecognizer:pinch];            
+            [[cell imageViews][j] addGestureRecognizer:pinch];            
         }else{
-            [[[cell imageViews] objectAtIndex:j] setHidden:TRUE];
+            [[cell imageViews][j] setHidden:TRUE];
         }
 
     }
@@ -300,7 +304,7 @@
 #pragma mark - SRMenuDetailViewControllerDelegate
 
 -(NSDictionary *)menuDetailViewController:(BFGFullSizeViewController *)menuDetailViewController assetAtIndex:(NSInteger)index{
-    return [productsArray objectAtIndex:index];
+    return productsArray[index];
 }
 
 -(NSInteger)numberOfViewsInMenuDetailViewController:(BFGFullSizeViewController *)menuDetailViewController{

@@ -8,6 +8,7 @@
 
 #import "FlickrRequest.h"
 #import "SharedConstants.h"
+#import "BFLog.h"
 
 
 @implementation FlickrRequest
@@ -23,10 +24,10 @@
 
 -(void)getNextPageIfNeeded{
     if (self.queue && self.queue.operationCount>0) {
-        NSLog(@"there's an operation in progress");
+        BFLog(@"there's an operation in progress");
     }else if(self.queue && self.queue.operationCount==0){
         [self getNextPage];
-        NSLog(@"downloading more stuff");
+        BFLog(@"downloading more stuff");
     }
 }
 
@@ -71,7 +72,7 @@
 													   code:statusCode
 												   userInfo:nil];
 			
-			NSLog(@"Error with %d", statusCode);
+			BFLog(@"Error with %d", statusCode);
 			[self connection:connection didFailWithError:statusError];
         }
     }

@@ -16,6 +16,8 @@
 #import "BFGAssetsManager.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "FlickrImage.h"
+#import "FBImage.h"
+#import "BFLog.h"
 
 static BFGAssetsManager * _hiddenInstance= nil;
 
@@ -56,8 +58,67 @@ static BFGAssetsManager * _hiddenInstance= nil;
         self.pics= [NSMutableArray array];
         flickr=[FlickrRequest new];
         [flickr performFlickrRequestWithCriteria:self.searchCriteria delegate:self];
+    }else if (provider==BFGAssetsManagerProviderFacebook){
+        if ([FBSession activeSession].isOpen) {
+            [self loadFBImages];
+            
+        } else {
+            [FBSession openActiveSessionWithReadPermissions:[self fbPermissions] allowLoginUI:TRUE completionHandler:^(FBSession * session,FBSessionState state, NSError *error) {
+                    if(!error){
+                        [self loadFBImages];
+                    }else{
+                        NSLog(@"error %@", error);
+                    }
+            }];
+        }
+
     }
     _provider=provider;
+}
+
+-(NSArray *)fbPermissions{
+    return @[@"user_photos",
+    @"user_photo_video_tags",@"friends_photos"];
+}
+
+-(void)loadFBImages{
+    NSOperationQueue * queue= [NSOperationQueue new];
+    [FBRequestConnection startWithGraphPath:@"/me/albums"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              if(error) {
+                                  BFLog(@"error %@", error);
+                                return;
+                              }
+                              
+                              NSArray* collection = (NSArray*)[result data];
+                              BFLog(@"You have %d albums", [collection count]);
+                              
+                              for(NSDictionary * album in collection){
+                                  NSString* photos = [NSString stringWithFormat:@"%@/photos", [album objectForKey:@"id"]];
+                                  [FBRequestConnection startWithGraphPath:photos
+                                                        completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                                            NSArray* photos = (NSArray*)[result data];
+                                                            for(NSDictionary * photo in photos){
+                                                                NSArray * images=[photo objectForKey:@"images"];
+                                                                NSDictionary * dict=images[4];
+                                                                NSString * url=[dict objectForKey:@"source"];
+                                                                NSURLRequest * req= [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+                                                                [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse * resp, NSData * img, NSError * error){
+                                                                    if(!error){
+                                                                        FBImage * fbImg= [FBImage new];
+                                                                        [fbImg setThumbnail:[UIImage imageWithData:img]];
+                                                                        [fbImg setFullSizeImage:fbImg.thumbnail];
+                                                                        [self.pics addObject:fbImg];
+                                                                        [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+                                                                    }else{
+                                                                        BFLog(@"error %@", error);
+                                                                    }
+                                                                }];
+                                                            }
+                                }];
+                              }
+                          }];
+                          
 }
 
 -(void)getMoreImages{
@@ -125,5 +186,12 @@ static BFGAssetsManager * _hiddenInstance= nil;
 - (void)parseErrorOccurred:(FlickrImageParser *)parser{
     UIAlertView * alert= [[UIAlertView alloc] initWithTitle:@"FLickr" message:parser.error.description delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
     [alert show];
+}
+
+#pragma mark -
+#pragma Facebook
+
+-(BOOL)handleOpenURL:(NSURL *)url{
+    return [[FBSession activeSession] handleOpenURL:url];
 }
 @end

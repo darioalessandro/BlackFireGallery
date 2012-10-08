@@ -9,6 +9,7 @@
 #import "FlickrImageParser.h"
 #import "SharedConstants.h"
 #import "FlickrImage.h"
+#import "BFLog.h"
 
 @implementation FlickrImageParser
 
@@ -32,18 +33,18 @@ NSString * responseString = [[NSString alloc] initWithData:self.dataToParse enco
 		NSMutableArray * mutableImagesArray= [NSMutableArray array];
 		for(NSDictionary * photoDict in queryResult){
 			NSString * fullSizeImageURL = [NSString stringWithFormat:mediumImagesURLFormat, 
-										 [photoDict objectForKey:@"farm"], [photoDict objectForKey:@"server"], 
-										 [photoDict objectForKey:@"id"], [photoDict objectForKey:@"secret"]];
+										 photoDict[@"farm"], photoDict[@"server"], 
+										 photoDict[@"id"], photoDict[@"secret"]];
             
             NSString * thumbnailURL= [NSString stringWithFormat:littleImagesURLFormat,
-                                      [photoDict objectForKey:@"farm"], [photoDict objectForKey:@"server"],
-                                      [photoDict objectForKey:@"id"], [photoDict objectForKey:@"secret"]];
+                                      photoDict[@"farm"], photoDict[@"server"],
+                                      photoDict[@"id"], photoDict[@"secret"]];
             
             FlickrImage * flickrImage= [FlickrImage new];
             [flickrImage setThumbnailServerPath:[NSURL URLWithString:thumbnailURL]];
             [flickrImage setFullSizeImageServerPath:[NSURL URLWithString:fullSizeImageURL]];
             [flickrImage setSearchCriteria:self.searchCriteria];
-            [flickrImage setTitle:[photoDict objectForKey:@"title"]];
+            [flickrImage setTitle:photoDict[@"title"]];
 			if(flickrImage){
 				[mutableImagesArray addObject:flickrImage];
                 if(delegate){
@@ -85,15 +86,15 @@ NSString * responseString = [[NSString alloc] initWithData:self.dataToParse enco
 		[self.delegate performSelectorOnMainThread:@selector(parseErrorOccurred:)withObject:self waitUntilDone:FALSE];
 		return nil;
 	}
-	NSDictionary *ResultSet = [parsedJSON objectForKey:@"photos"];
+	NSDictionary *ResultSet = parsedJSON[@"photos"];
 	if(ResultSet==nil){
 		self.error= [NSError errorWithDomain:NSLocalizedString(@"JSON mal formado ResultSet=nil",@"JSON mal formado") code:401 userInfo:nil];
 		[self.delegate performSelectorOnMainThread:@selector(parseErrorOccurred:)withObject:self waitUntilDone:FALSE];
 		return nil;
 	}
-	NSLog(@"totalResultsReturned: %@", [ResultSet objectForKey:@"total"]);
-	NSArray* Result = [ResultSet objectForKey:@"photo"];
-	NSLog(@"did download resource %@", Result);
+	BFLog(@"totalResultsReturned: %@", [ResultSet objectForKey:@"total"]);
+	NSArray* Result = ResultSet[@"photo"];
+	BFLog(@"did download resource %@", Result);
 	return Result;
 }
 

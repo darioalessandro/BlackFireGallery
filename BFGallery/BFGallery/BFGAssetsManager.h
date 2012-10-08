@@ -14,6 +14,7 @@
  */
 
 #import "FlickrRequest.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 static NSString * const kAddedAssetsToLibrary= @"AddedAssetsToLibrary";
 static NSString * const kUserDeniedAccessToPics= @"kUserDeniedAccessToPics";
@@ -21,6 +22,7 @@ static NSString * const kUserDeniedAccessToPics= @"kUserDeniedAccessToPics";
 typedef enum{
     BFGAssetsManagerProviderPhotoLibrary=0,
     BFGAssetsManagerProviderFlickr,
+    BFGAssetsManagerProviderFacebook
 }BFGAssetsManagerProvider;
 
 @interface BFGAssetsManager : NSObject <FlickrImageParserDelegate>{
@@ -28,8 +30,10 @@ typedef enum{
     BFGAssetsManagerProvider _provider;
 }
 @property(strong)NSString * searchCriteria;
+@property(strong) FBSession * session;
 -(void)readImagesFromProvider:(BFGAssetsManagerProvider)provider;
 -(void)getMoreImages;
 +(BFGAssetsManager *)sharedInstance;
+-(BOOL)handleOpenURL:(NSURL *)url;
 @property(nonatomic, strong) NSMutableArray * pics;
 @end
