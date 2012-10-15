@@ -65,14 +65,14 @@ static BFGAssetsManager * _hiddenInstance= nil;
             
         } else {
             [FBSession openActiveSessionWithReadPermissions:[self fbPermissions] allowLoginUI:TRUE completionHandler:^(FBSession * session,FBSessionState state, NSError *error) {
-                    if(!error){
-                        [self loadFBImages];
-                    }else{
-                        NSLog(@"error %@", error);
-                    }
+                if(!error){
+                    [self loadFBImages];
+                }else{
+                    NSLog(@"error %@", error);
+                }
             }];
         }
-
+        
     }
     _provider=provider;
 }
@@ -85,7 +85,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
 -(void)loadFBImages{
     FBUserPicturesParser * parser= [FBUserPicturesParser new];
     [parser setDelegate:self];
-    [parser start];                          
+    [parser start];
 }
 
 #pragma mark -
@@ -109,7 +109,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
 
 -(void)getMoreImages{
     if(_provider==BFGAssetsManagerProviderPhotoLibrary){
-    
+        
     }else if(_provider==BFGAssetsManagerProviderFlickr){
         [flickr getNextPageIfNeeded];
     }
@@ -124,7 +124,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
     ALAssetsLibrary *al = [BFGAssetsManager defaultAssetsLibrary];
     
     self.pics= nil;
-    [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos | ALAssetsGroupLibrary 
+    [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos | ALAssetsGroupLibrary
                       usingBlock:^(ALAssetsGroup *group, BOOL *stop)
      {
          if(!self.pics){
@@ -137,12 +137,12 @@ static BFGAssetsManager * _hiddenInstance= nil;
               }
           }];
          if(group==nil){
-            [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+             [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
          }
      }
-            failureBlock:^(NSError *error) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:kUserDeniedAccessToPics object:self];
-            }
+                    failureBlock:^(NSError *error) {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:kUserDeniedAccessToPics object:self];
+                    }
      ];
 }
 
@@ -150,11 +150,11 @@ static BFGAssetsManager * _hiddenInstance= nil;
 #pragma Flickr
 
 - (void)parserDidDownloadImage:(FlickrImageParser *)parser{
-
+    
 }
 
 - (void)didFinishParsing:(FlickrImageParser *)parser{
-//    [self.pics addObject:parser.images];
+    //    [self.pics addObject:parser.images];
     NSOperationQueue * queue = [[NSOperationQueue alloc] init];
     for (FlickrImage * img in parser.images){
         NSURLRequest * request= [NSURLRequest requestWithURL:img.thumbnailServerPath];
@@ -166,7 +166,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
             }
         }];
     }
-
+    
 }
 
 - (void)parseErrorOccurred:(FlickrImageParser *)parser{
