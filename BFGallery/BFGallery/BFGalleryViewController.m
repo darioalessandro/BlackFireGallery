@@ -62,7 +62,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary){
+    if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary || self.mediaProvider==BFGAssetsManagerProviderFacebook){
         [self.bar setHidden:TRUE];
         [self.tableActivityIndicator setHidden:TRUE];
     }else if(self.mediaProvider==BFGAssetsManagerProviderFlickr){

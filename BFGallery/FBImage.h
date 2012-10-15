@@ -6,8 +6,10 @@
 //  Copyright (c) 2012 Dario Lencina. All rights reserved.
 //
 
-#import "FlickrImage.h"
+#import "BFImage.h"
 
-@interface FBImage : FlickrImage
+@interface FBImage : BFImage
+
+@property (nonatomic, strong) NSDictionary * album;
 
 @end

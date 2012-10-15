@@ -18,6 +18,7 @@
 #import "FlickrImage.h"
 #import "FBImage.h"
 #import "BFLog.h"
+#import "FBUserPictures.h"
 
 static BFGAssetsManager * _hiddenInstance= nil;
 
@@ -82,43 +83,28 @@ static BFGAssetsManager * _hiddenInstance= nil;
 }
 
 -(void)loadFBImages{
-    NSOperationQueue * queue= [NSOperationQueue new];
-    [FBRequestConnection startWithGraphPath:@"/me/albums"
-                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                              if(error) {
-                                  BFLog(@"error %@", error);
-                                return;
-                              }
-                              
-                              NSArray* collection = (NSArray*)[result data];
-                              BFLog(@"You have %d albums", [collection count]);
-                              
-                              for(NSDictionary * album in collection){
-                                  NSString* photos = [NSString stringWithFormat:@"%@/photos", [album objectForKey:@"id"]];
-                                  [FBRequestConnection startWithGraphPath:photos
-                                                        completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                                                            NSArray* photos = (NSArray*)[result data];
-                                                            for(NSDictionary * photo in photos){
-                                                                NSArray * images=[photo objectForKey:@"images"];
-                                                                NSDictionary * dict=images[4];
-                                                                NSString * url=[dict objectForKey:@"source"];
-                                                                NSURLRequest * req= [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-                                                                [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse * resp, NSData * img, NSError * error){
-                                                                    if(!error){
-                                                                        FBImage * fbImg= [FBImage new];
-                                                                        [fbImg setThumbnail:[UIImage imageWithData:img]];
-                                                                        [fbImg setFullSizeImage:fbImg.thumbnail];
-                                                                        [self.pics addObject:fbImg];
-                                                                        [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
-                                                                    }else{
-                                                                        BFLog(@"error %@", error);
-                                                                    }
-                                                                }];
-                                                            }
-                                }];
-                              }
-                          }];
-                          
+    FBUserPicturesParser * parser= [FBUserPicturesParser new];
+    [parser setDelegate:self];
+    [parser start];                          
+}
+
+#pragma mark -
+#pragma FBUserPicturesParser
+
+-(void)parser:(FBUserPicturesParser *)fbParser didFinishDownloadingAlbum:(NSDictionary *)album{
+    BFLog(@"parser did finish %@", album);
+    if(!self.pics){
+        self.pics= [NSMutableArray array];
+    }
+    [self.pics addObjectsFromArray:[album objectForKey:@"photos"]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+}
+
+-(void)parser:(FBUserPicturesParser *)fbParser failedToLoadAlbum:(NSDictionary *)album withError:(NSError *)error{
+    if(!self.pics){
+        self.pics= [NSMutableArray array];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
 }
 
 -(void)getMoreImages{
