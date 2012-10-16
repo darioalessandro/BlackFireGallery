@@ -1,6 +1,6 @@
 /*
- *  DarioSharedPreprocessorDirectives.h
- *  TelcelRockampeonato2010
+ *  BFLog.h
+ *  Fuck
  *
  *  Created by Dario Lencina on 6/23/10.
  *  Copyright 2010 __MyCompanyName__. All rights reserved.
