@@ -31,8 +31,13 @@
     }
 }
 
+-(NSString *)flickrKey{
+    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"OBJECTIVE_FLICKR_API_KEY"];
+}
+
 -(void)getNextPage{
     self.page++;
+    NSString * OBJECTIVE_FLICKR_API_KEY= [self flickrKey];
     NSString * flickrURLRequest=[NSString stringWithFormat:flickrSearchMethodString, OBJECTIVE_FLICKR_API_KEY, searchCriteria, self.page];
     
     NSString * encodedReq=[flickrURLRequest stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];

@@ -10,16 +10,5 @@
 
 @implementation FlickrImage
 
--(void)loadFullSizeImageWithQueue:(NSOperationQueue *)queue setResultInImageView:(UIImageView *)imageView{
-    NSURLRequest * req= [NSURLRequest requestWithURL:self.fullSizeImageServerPath];
-    [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler: ^(NSURLResponse * response, NSData * data, NSError * error){
-        if(!error){
-            self.fullSizeImage= [UIImage imageWithData:data];
-            if(imageView){
-                imageView.image=self.fullSizeImage;
-            }
-        }
-    }];
-}
 
 @end

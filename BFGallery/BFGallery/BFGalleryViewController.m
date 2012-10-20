@@ -55,7 +55,10 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [loadingPicsIndicator startAnimating];
+    if(self.mediaProvider==BFGAssetsManagerProviderFacebook){
+        [loadingPicsIndicator startAnimating];
+        [loadingPicsIndicator setHidden:NO];
+    }
     [[BFGAssetsManager sharedInstance] setSearchCriteria:self.searchCriteria];
     [[BFGAssetsManager sharedInstance] readImagesFromProvider:self.mediaProvider];
 }
@@ -113,9 +116,10 @@
     [self dismissDeniedAccessToAssetsView];
     id array= [notif object];
     self.productsArray=array;
-    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
-
-    [self.loadingPicsIndicator stopAnimating];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self.tableView reloadData];
+        [self.loadingPicsIndicator stopAnimating];
+    }];
 }
 
 - (void)viewDidUnload

@@ -11,8 +11,6 @@
 
 @interface FlickrImage : BFImage
 
--(void)loadFullSizeImageWithQueue:(NSOperationQueue *)queue setResultInImageView:(UIImageView *)imageView;
-
 @property(nonatomic, strong) UIImage * thumbnail;
 @property(nonatomic, strong) UIImage * fullSizeImage;
 @property(nonatomic, strong) NSURL * thumbnailServerPath;

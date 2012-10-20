@@ -15,9 +15,11 @@
     [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler: ^(NSURLResponse * response, NSData * data, NSError * error){
         if(!error){
             self.fullSizeImage= [UIImage imageWithData:data];
-            if(imageView){
-                imageView.image=self.fullSizeImage;
-            }
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                if(imageView){
+                    imageView.image=self.fullSizeImage;
+                }
+            }];
         }
     }];
 }

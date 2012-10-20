@@ -78,8 +78,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
 }
 
 -(NSArray *)fbPermissions{
-    return @[@"user_photos",
-    @"user_photo_video_tags",@"friends_photos"];
+    return @[@"user_photos", @"user_photo_video_tags", @"friends_photos"];
 }
 
 -(void)loadFBImages{
