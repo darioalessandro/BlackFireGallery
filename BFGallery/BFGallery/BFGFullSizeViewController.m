@@ -19,6 +19,7 @@
 #define kTransitionDuration 0.5
 #import "FlickrImage.h"
 #import "FBImage.h"
+#import "BFLog.h"
 
 @implementation BFGFullSizeViewController{
     UIImage * initialImage;
@@ -94,6 +95,7 @@
 
 -(void)presentFullScreenImageFromView:(UIView *)baseView
 {
+    BFLog(@"frame %@", NSStringFromCGRect(self.view.frame));
     self.originView=baseView;
    self.originView.alpha=0.01;
     [UIView animateWithDuration:kTransitionDuration/1.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -107,7 +109,7 @@
             [UIView animateWithDuration:kTransitionDuration/2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.imageView.transform = CGAffineTransformMakeScale( 1.0, 1.0);
             }completion:^(BOOL finished){
-                
+                BFLog(@"frame %@", NSStringFromCGRect(self.view.frame));
             }];
         }];
     }];

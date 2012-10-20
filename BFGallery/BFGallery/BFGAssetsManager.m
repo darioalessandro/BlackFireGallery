@@ -68,7 +68,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
                 if(!error){
                     [self loadFBImages];
                 }else{
-                    NSLog(@"error %@", error);
+                    BFLog(@"error %@", error);
                 }
             }];
         }

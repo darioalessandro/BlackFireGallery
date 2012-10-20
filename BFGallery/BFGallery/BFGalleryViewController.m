@@ -273,9 +273,9 @@
     [self addChildViewController:controller];
     self.lastSelectedRow= [NSIndexPath indexPathForRow:index inSection:0];
     [self.view addSubview:controller.view];
-    if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
-        controller.view.frame= self.tableView.frame;
-    }
+    CGRect rect= self.view.frame;
+    controller.view.frame= rect;
+
     [controller setDelegate:self];
     [controller setInitialRowToShow:[NSIndexPath indexPathForRow:index inSection:0]];
     dispatch_async(dispatch_get_current_queue(), ^{

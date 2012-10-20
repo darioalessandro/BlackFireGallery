@@ -670,7 +670,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dario Lencina (B7LQ9NTG5B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dario Lencina (B7LQ9NTG5B)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../FacebookSDK\"",
@@ -681,7 +682,8 @@
 				OTHER_CFLAGS = "-DDEBUGLOGMODE";
 				OTHER_LDFLAGS = "-DDEBUGLOGMODE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "BC336283-F239-4DDB-96C5-BC91BEB5660D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BC336283-F239-4DDB-96C5-BC91BEB5660D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
