@@ -14,7 +14,6 @@
  */
 
 #import "BFGAssetsManager.h"
-#import <AssetsLibrary/AssetsLibrary.h>
 #import "FlickrImage.h"
 #import "FBImage.h"
 #import "BFLog.h"
@@ -121,7 +120,6 @@ static BFGAssetsManager * _hiddenInstance= nil;
 -(void)readUserImagesFromLibrary{
     
     ALAssetsLibrary *al = [BFGAssetsManager defaultAssetsLibrary];
-    
     self.pics= nil;
     [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos | ALAssetsGroupLibrary
                       usingBlock:^(ALAssetsGroup *group, BOOL *stop)
@@ -165,12 +163,74 @@ static BFGAssetsManager * _hiddenInstance= nil;
             }
         }];
     }
-    
 }
 
 - (void)parseErrorOccurred:(FlickrImageParser *)parser{
     UIAlertView * alert= [[UIAlertView alloc] initWithTitle:@"FLickr" message:parser.error.description delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
     [alert show];
+}
+
+#pragma mark -
+#pragma mark CameraRollSharing
+#define kShouldShareToCameraRoll @"kShouldShareToCameraRoll"
+
+-(BOOL)cameraRollAuthorizationStatus{
+    return [ALAssetsLibrary authorizationStatus];
+}
+
+-(BOOL)shouldSharePicsToCameraRoll{
+    NSUserDefaults * defaults= [NSUserDefaults standardUserDefaults];
+    BOOL shouldShare=NO;
+    id cam= [defaults objectForKey:kShouldShareToCameraRoll];
+    if(cam){
+        shouldShare= [defaults boolForKey:kShouldShareToCameraRoll];
+    }else{
+        shouldShare=NO;
+    }
+    shouldShare= [self cameraRollAuthorizationStatus]?shouldShare:NO;
+    return shouldShare;
+}
+
+-(void)setShouldSharePicsToCameraRoll:(BOOL)shouldShare handler:(BFGAssetsManagerShareHandler)handler{
+    NSUserDefaults * defaults= [NSUserDefaults standardUserDefaults];
+    NSError * error=nil;
+    if(!shouldShare){
+        [defaults setBool:shouldShare forKey:kShouldShareToCameraRoll];
+        [defaults synchronize];
+        handler(shouldShare, error);
+    }else{
+        if([self cameraRollAuthorizationStatus]== ALAuthorizationStatusAuthorized){
+            [defaults setBool:shouldShare forKey:kShouldShareToCameraRoll];
+            [defaults synchronize];
+            handler(shouldShare, error);
+        }else if([self cameraRollAuthorizationStatus]==ALAuthorizationStatusDenied){
+            NSError * error= [NSError errorWithDomain:@"User denied access to the pics." code:404 userInfo:nil];
+            shouldShare=NO;
+            [defaults setBool:shouldShare forKey:kShouldShareToCameraRoll];
+            [defaults synchronize];
+            handler(shouldShare, error);
+        }else{
+            ALAssetsLibrary *al = [BFGAssetsManager defaultAssetsLibrary];
+            [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos | ALAssetsGroupLibrary
+                              usingBlock:^(ALAssetsGroup *group, BOOL *stop)
+             {
+                 [defaults setBool:shouldShare forKey:kShouldShareToCameraRoll];
+                 [defaults synchronize];
+                 handler(shouldShare, error);
+             }
+             failureBlock:^(NSError *error) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:kUserDeniedAccessToPics object:self];
+                 [defaults setBool:shouldShare forKey:kShouldShareToCameraRoll];
+                 [defaults synchronize];
+                 handler(shouldShare, error);
+             }];
+        }
+    }
+}
+
+-(void)savePicToCameraRoll:(UIImage *)image completionBlock:(ALAssetsLibraryWriteImageCompletionBlock)block{
+    NSDictionary * dict= @{@"app" : @"LeRandomMe"};
+    [[BFGAssetsManager defaultAssetsLibrary] writeImageDataToSavedPhotosAlbum: UIImagePNGRepresentation(image)  metadata:dict completionBlock:block];
 }
 
 #pragma mark -
