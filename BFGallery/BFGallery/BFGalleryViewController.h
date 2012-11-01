@@ -30,6 +30,7 @@
     -(id)initWithMediaProvider:(BFGAssetsManagerProvider)mediaProvider;
     -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil mediaProvider:(BFGAssetsManagerProvider)mediaProvider;
 
+@property(weak, nonatomic) id delegate;
 @property (strong, nonatomic) NSIndexPath * lastSelectedRow;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingPicsIndicator;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

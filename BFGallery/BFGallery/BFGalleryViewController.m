@@ -211,7 +211,7 @@
                 thumbnail= [image thumbnail];
             }
             
-            UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectedImage:)];            
+            UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectImage:)];            
             [[cell imageViews][j] addGestureRecognizer:tap];            
             
             [[cell imageViews][j] setImage:thumbnail];
@@ -294,7 +294,7 @@
     [self showGalleryDetailWithIndex:index fromView:imageView];
 }
 
--(void)didSelectedImage:(UITapGestureRecognizer *)tap{
+-(void)didSelectImage:(UITapGestureRecognizer *)tap{
     [self showFullSizeGalleryWithImageSelected:(UIImageView *)[tap view]];
 }
 

@@ -18,6 +18,7 @@
 #define kMustDismissGalleryDetails @"MustDismissGalleryDetails"
 
 @class BFGFullSizeViewController;
+
 @protocol BFGFullSizeViewControllerDelegate <NSObject>
 -(NSInteger)numberOfViewsInMenuDetailViewController:(BFGFullSizeViewController *)menuDetailViewController;
 -(void)didKilledDetailViewController:(BFGFullSizeViewController *)menu;
