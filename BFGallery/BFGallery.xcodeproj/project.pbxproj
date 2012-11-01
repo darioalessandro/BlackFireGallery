@@ -237,10 +237,6 @@
 		87CE41B41571A6300011E130 = {
 			isa = PBXGroup;
 			children = (
-				EB390CA61622797D00FD80AA /* AdSupport.framework */,
-				EB390CA41622797000FD80AA /* Social.framework */,
-				EB390CA21622791700FD80AA /* Accounts.framework */,
-				EB390CA0162278FB00FD80AA /* libsqlite3.0.dylib */,
 				EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */,
 				87CE41C91571A6300011E130 /* BFGallery */,
 				87CE41EC1571A6320011E130 /* BFGalleryTests */,
@@ -261,6 +257,10 @@
 		87CE41C21571A6300011E130 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB390CA61622797D00FD80AA /* AdSupport.framework */,
+				EB390CA41622797000FD80AA /* Social.framework */,
+				EB390CA21622791700FD80AA /* Accounts.framework */,
+				EB390CA0162278FB00FD80AA /* libsqlite3.0.dylib */,
 				067869B9162B951600B4AD46 /* BFLog.h */,
 				EB390C871622727B00FD80AA /* Notifier */,
 				EB390C6D16226EF500FD80AA /* Facebook */,
