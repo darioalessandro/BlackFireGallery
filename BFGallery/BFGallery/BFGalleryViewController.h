@@ -15,12 +15,10 @@
 
 #import <UIKit/UIKit.h>
 #import "BFGFullSizeViewController.h"
-#import "BFViewControllerSectionSelectorDelegate.h"
-#import "BFViewController.h"
 #import "BFGFullSizeCell.h"
 #import "BFGAssetsManager.h"
 
-@interface BFGalleryViewController : BFViewController <BFGFullSizeViewControllerDelegate, UIScrollViewDelegate, UISearchBarDelegate>{
+@interface BFGalleryViewController : UIViewController <BFGFullSizeViewControllerDelegate, UIScrollViewDelegate, UISearchBarDelegate>{
     NSArray * productsArray;
     BOOL isShowingFullSizeGallery;
     NSIndexPath * lastSelectedRow;

@@ -29,7 +29,6 @@
 		87CE421C1571A74A0011E130 /* BFGFullSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE42091571A74A0011E130 /* BFGFullSizeViewController.m */; };
 		87CE421F1571A74A0011E130 /* BFGCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE420D1571A74A0011E130 /* BFGCell.m */; };
 		87CE42201571A74A0011E130 /* BFGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE420F1571A74A0011E130 /* BFGalleryViewController.m */; };
-		87CE42221571A74A0011E130 /* BFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE42121571A74A0011E130 /* BFViewController.m */; };
 		87CE42291571A8490011E130 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE42281571A8490011E130 /* AssetsLibrary.framework */; };
 		87CE422B1571B12F0011E130 /* flechas.png in Resources */ = {isa = PBXBuildFile; fileRef = 87CE422A1571B12F0011E130 /* flechas.png */; };
 		87CE423C1571B5C10011E130 /* BFGFullSizeCell_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42331571B5C10011E130 /* BFGFullSizeCell_ipad.xib */; };
@@ -118,9 +117,6 @@
 		87CE420D1571A74A0011E130 /* BFGCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGCell.m; sourceTree = "<group>"; };
 		87CE420E1571A74A0011E130 /* BFGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGalleryViewController.h; sourceTree = "<group>"; };
 		87CE420F1571A74A0011E130 /* BFGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGalleryViewController.m; sourceTree = "<group>"; };
-		87CE42111571A74A0011E130 /* BFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
-		87CE42121571A74A0011E130 /* BFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFViewController.m; sourceTree = "<group>"; };
-		87CE42131571A74A0011E130 /* BFViewControllerSectionSelectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewControllerSectionSelectorDelegate.h; sourceTree = "<group>"; };
 		87CE42281571A8490011E130 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		87CE422A1571B12F0011E130 /* flechas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flechas.png; sourceTree = "<group>"; };
 		87CE42331571B5C10011E130 /* BFGFullSizeCell_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGFullSizeCell_ipad.xib; path = assets/BFGFullSizeCell_ipad.xib; sourceTree = "<group>"; };
@@ -220,9 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				EB33F05116043E1E001F06C2 /* GalleryViewController */,
-				87CE42131571A74A0011E130 /* BFViewControllerSectionSelectorDelegate.h */,
-				87CE42111571A74A0011E130 /* BFViewController.h */,
-				87CE42121571A74A0011E130 /* BFViewController.m */,
 				8717826B15C385C30068C775 /* GalleryDetailsViewController */,
 			);
 			name = Controllers;
@@ -568,7 +561,6 @@
 				87CE421C1571A74A0011E130 /* BFGFullSizeViewController.m in Sources */,
 				87CE421F1571A74A0011E130 /* BFGCell.m in Sources */,
 				87CE42201571A74A0011E130 /* BFGalleryViewController.m in Sources */,
-				87CE42221571A74A0011E130 /* BFViewController.m in Sources */,
 				EB5D503F15FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */,
 				EB5D504115FF2E0800AB1CD7 /* FlickrRequest.m in Sources */,
 				EB5D505215FF2E5100AB1CD7 /* NSObject+SBJSON.m in Sources */,
