@@ -195,11 +195,11 @@
 		066303AE1642435A00B29F70 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				87CE41FE1571A74A0011E130 /* BFGAssetsManager.h */,
+				87CE41FF1571A74A0011E130 /* BFGAssetsManager.m */,
 				EB5D504415FF2E1400AB1CD7 /* FlickrConsumer */,
 				067869C0162B9D6900B4AD46 /* FacebookConsumer */,
 				EB390CB9162293D300FD80AA /* Images */,
-				87CE41FE1571A74A0011E130 /* BFGAssetsManager.h */,
-				87CE41FF1571A74A0011E130 /* BFGAssetsManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";

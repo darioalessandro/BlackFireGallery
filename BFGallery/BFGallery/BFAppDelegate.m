@@ -53,7 +53,6 @@
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
-    // attempt to extract a token from the url
     return [[BFGAssetsManager sharedInstance] handleOpenURL:url];
 }
 @end

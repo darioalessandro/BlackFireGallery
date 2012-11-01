@@ -30,8 +30,6 @@ typedef enum{
     FlickrRequest * flickr;
     BFGAssetsManagerProvider _provider;
 }
-@property(strong)NSString * searchCriteria;
-@property(strong) FBSession * session;
 -(void)readImagesFromProvider:(BFGAssetsManagerProvider)provider;
 -(void)getMoreImages;
 +(BFGAssetsManager *)sharedInstance;
@@ -40,5 +38,7 @@ typedef enum{
 -(BOOL)shouldSharePicsToCameraRoll;
 -(void)setShouldSharePicsToCameraRoll:(BOOL)shouldShare handler:(BFGAssetsManagerShareHandler)handler;
 -(void)savePicToCameraRoll:(UIImage *)image completionBlock:(ALAssetsLibraryWriteImageCompletionBlock)block;
+@property(strong)NSString * searchCriteria;
+@property(strong) FBSession * session;
 @property(nonatomic, strong) NSMutableArray * pics;
 @end
