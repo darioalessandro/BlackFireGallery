@@ -216,7 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				EB33F05116043E1E001F06C2 /* GalleryViewController */,
-				8717826B15C385C30068C775 /* GalleryDetailsViewController */,
+				8717826B15C385C30068C775 /* FullSizeViewController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		8717826B15C385C30068C775 /* GalleryDetailsViewController */ = {
+		8717826B15C385C30068C775 /* FullSizeViewController */ = {
 			isa = PBXGroup;
 			children = (
 				87CE42081571A74A0011E130 /* BFGFullSizeViewController.h */,
@@ -256,7 +256,7 @@
 				8784BE1315C5FE68004F6FEA /* BFGFullSizeViewController_ipad.xib */,
 				8717826C15C3ABA80068C775 /* BFGFullSizeViewController.xib */,
 			);
-			name = GalleryDetailsViewController;
+			name = FullSizeViewController;
 			sourceTree = "<group>";
 		};
 		87CE41B41571A6300011E130 = {
