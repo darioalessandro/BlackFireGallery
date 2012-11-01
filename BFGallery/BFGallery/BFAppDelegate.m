@@ -19,6 +19,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFlickr];
+    self.viewController.searchCriteria=@"Chicago";
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
