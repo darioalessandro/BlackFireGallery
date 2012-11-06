@@ -267,7 +267,12 @@
     [self addChildViewController:controller];
     self.lastSelectedRow= [NSIndexPath indexPathForRow:index inSection:0];
     [self.view addSubview:controller.view];
-    CGRect rect= self.tableView.frame;
+    CGRect rect= CGRectZero;
+    if(self.navigationController==nil){
+        rect= self.tableView.frame;
+    }else{
+        rect=self.view.frame;
+    }
     rect.origin.y=0;
     controller.view.frame= rect;
 
