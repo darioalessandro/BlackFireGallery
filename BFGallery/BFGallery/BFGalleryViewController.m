@@ -131,12 +131,6 @@
     [super viewDidUnload];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    
-	return TRUE;
-}
-
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     [self.tableView reloadData];
 }
@@ -273,7 +267,8 @@
     [self addChildViewController:controller];
     self.lastSelectedRow= [NSIndexPath indexPathForRow:index inSection:0];
     [self.view addSubview:controller.view];
-    CGRect rect= self.view.frame;
+    CGRect rect= self.tableView.frame;
+    rect.origin.y=0;
     controller.view.frame= rect;
 
     [controller setDelegate:self];
