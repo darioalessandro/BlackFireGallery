@@ -1,13 +1,13 @@
 //
 //  SharedConstants.h
-//  lerandomme
+//  LeRandomizer
 //
 //  Created by Dario Lencina on 5/19/12.
 //  Copyright (c) 2012 Dario Lencina. All rights reserved.
 //
 
-#ifndef lerandomme_SharedConstants_h
-#define lerandomme_SharedConstants_h
+#ifndef LeRandomizer_SharedConstants_h
+#define LeRandomizer_SharedConstants_h
 
 
 #define flickrSearchMethodString  @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&tags=%@&per_page=50&format=json&nojsoncallback=1&page=%d"

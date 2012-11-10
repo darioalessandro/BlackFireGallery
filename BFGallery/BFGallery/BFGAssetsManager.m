@@ -59,6 +59,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
         flickr=[FlickrRequest new];
         [flickr performFlickrRequestWithCriteria:self.searchCriteria delegate:self];
     }else if (provider==BFGAssetsManagerProviderFacebook){
+        self.pics= [NSMutableArray array];
         if ([FBSession activeSession].isOpen) {
             [self loadFBImages];
             
@@ -67,11 +68,12 @@ static BFGAssetsManager * _hiddenInstance= nil;
                 if(!error){
                     [self loadFBImages];
                 }else{
+                    UIAlertView * alert= [[UIAlertView alloc] initWithTitle:@"Facebook:" message:@"We can not access your account, make sure that this App is enabled to access your Facebook accounts in Privacy Settings." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    [alert show];
                     BFLog(@"error %@", error);
                 }
             }];
         }
-        
     }
     _provider=provider;
 }
@@ -166,7 +168,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
 }
 
 - (void)parseErrorOccurred:(FlickrImageParser *)parser{
-    UIAlertView * alert= [[UIAlertView alloc] initWithTitle:@"FLickr" message:parser.error.description delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+    UIAlertView * alert= [[UIAlertView alloc] initWithTitle:@"Flickr" message:[[parser error] localizedDescription] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
     [alert show];
 }
 
@@ -204,7 +206,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
             [defaults synchronize];
             handler(shouldShare, error);
         }else if([self cameraRollAuthorizationStatus]==ALAuthorizationStatusDenied){
-            NSError * error= [NSError errorWithDomain:@"User denied access to the pics." code:404 userInfo:nil];
+            NSError * error= [NSError errorWithDomain:@"In order to save your pics to the camera roll, please adjust your Privacy Settings." code:404 userInfo:nil];
             shouldShare=NO;
             [defaults setBool:shouldShare forKey:kShouldShareToCameraRoll];
             [defaults synchronize];
@@ -229,7 +231,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
 }
 
 -(void)savePicToCameraRoll:(UIImage *)image completionBlock:(ALAssetsLibraryWriteImageCompletionBlock)block{
-    NSDictionary * dict= @{@"app" : @"LeRandomMe"};
+    NSDictionary * dict= @{@"app" : @"LeRandomizer"};
     [[BFGAssetsManager defaultAssetsLibrary] writeImageDataToSavedPhotosAlbum: UIImagePNGRepresentation(image)  metadata:dict completionBlock:block];
 }
 

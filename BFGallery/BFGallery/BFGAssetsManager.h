@@ -40,5 +40,5 @@ typedef enum{
 -(void)savePicToCameraRoll:(UIImage *)image completionBlock:(ALAssetsLibraryWriteImageCompletionBlock)block;
 @property(strong)NSString * searchCriteria;
 @property(strong) FBSession * session;
-@property(nonatomic, strong) NSMutableArray * pics;
+@property(atomic, strong) NSMutableArray * pics;
 @end

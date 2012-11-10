@@ -56,4 +56,5 @@
          annotation:(id)annotation {
     return [[BFGAssetsManager sharedInstance] handleOpenURL:url];
 }
+
 @end
