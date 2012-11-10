@@ -289,6 +289,9 @@
     if(isShowingFullSizeGallery==TRUE)
         return;
     
+    if([self.bar isFirstResponder]){
+        [self.bar resignFirstResponder];
+    }
     isShowingFullSizeGallery=TRUE;
     NSInteger index= [imageView tag];
     [self showGalleryDetailWithIndex:index fromView:imageView];
