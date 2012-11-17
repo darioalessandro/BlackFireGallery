@@ -102,7 +102,8 @@
         self.noAccessToCamView= [[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil][0];
     }
     [self.loadingPicsIndicator stopAnimating];
-    [self.view addSubview:self.noAccessToCamView];
+    [self.noAccessToCamView setFrame:self.view.window.bounds];
+    [self.view.window addSubview:self.noAccessToCamView];
 }
 
 -(void)dismissDeniedAccessToAssetsView{
