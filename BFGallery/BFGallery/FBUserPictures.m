@@ -46,7 +46,7 @@
 }
 
 -(void)getPicturesFromAlbum:(NSMutableDictionary *)album{
-    if([[album objectForKey:@"name"] hasPrefix:@"LeRandomMe"]){
+    if([[album objectForKey:@"name"] hasPrefix:@"LeRandomMe"] || [[album objectForKey:@"name"] hasPrefix:@"GraphicTweets"]){
         BFLog(@"filtering out LeRandomMe album");
         return;
     }
