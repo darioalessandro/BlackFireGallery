@@ -91,6 +91,14 @@ static BFGAssetsManager * _hiddenInstance= nil;
 #pragma mark -
 #pragma FBUserPicturesParser
 
+-(void)parser:(FBUserPicturesParser *)fbParser didFinishDownloadingImage:(FBImage *)image{
+    if(!self.pics){
+        self.pics= [NSMutableArray array];
+    }
+    [self.pics addObject:image];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];    
+}
+
 -(void)parser:(FBUserPicturesParser *)fbParser didFinishDownloadingAlbum:(NSDictionary *)album{
     BFLog(@"parser did finish %@", album);
     if(!self.pics){
@@ -153,7 +161,6 @@ static BFGAssetsManager * _hiddenInstance= nil;
 }
 
 - (void)didFinishParsing:(FlickrImageParser *)parser{
-    //    [self.pics addObject:parser.images];
     NSOperationQueue * queue = [[NSOperationQueue alloc] init];
     for (FlickrImage * img in parser.images){
         NSURLRequest * request= [NSURLRequest requestWithURL:img.thumbnailServerPath];
@@ -231,7 +238,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
 }
 
 -(void)savePicToCameraRoll:(UIImage *)image completionBlock:(ALAssetsLibraryWriteImageCompletionBlock)block{
-    NSDictionary * dict= @{@"app" : @"LeRandomizer"};
+    NSDictionary * dict= @{@"app" : @"Graphic tweets"};
     [[BFGAssetsManager defaultAssetsLibrary] writeImageDataToSavedPhotosAlbum: UIImagePNGRepresentation(image)  metadata:dict completionBlock:block];
 }
 

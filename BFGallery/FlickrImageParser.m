@@ -70,7 +70,7 @@ NSString * responseString = [[NSString alloc] initWithData:self.dataToParse enco
 		if(self.images!=nil && ![self.images isMemberOfClass:[NSNull class]])
 			[self.delegate performSelectorOnMainThread:@selector(didFinishParsing:) withObject:self waitUntilDone:FALSE];
 		else {
-			self.error= [NSError errorWithDomain:[NSString stringWithFormat:@"No matches for criteria"]  code:401 userInfo:nil];
+			self.error= [NSError errorWithDomain:[NSString stringWithFormat:@"No matches for given criteria."]  code:401 userInfo:nil];
 			[self.delegate performSelectorOnMainThread:@selector(parseErrorOccurred:)withObject:self waitUntilDone:FALSE];
 		}
     }

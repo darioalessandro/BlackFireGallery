@@ -18,8 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFlickr];
-    self.viewController.searchCriteria=@"Chicago";
+    self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFacebook];
+//    self.viewController.searchCriteria=@"Chicago";
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

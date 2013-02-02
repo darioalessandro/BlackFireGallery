@@ -279,11 +279,9 @@
 
     [controller setDelegate:self];
     [controller setInitialRowToShow:[NSIndexPath indexPathForRow:index inSection:0]];
-    dispatch_async(dispatch_get_current_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         [controller showFromCoordinatesInView:originView];
     });
-    
-
 }
 
 -(void)showFullSizeGalleryWithImageSelected:(UIImageView *)imageView{

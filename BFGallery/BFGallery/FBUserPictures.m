@@ -93,9 +93,7 @@
 }
 
 -(void)didFinishLoadingImage:(FBImage *)image{
-    if(self.queue.operationCount==1){
-        [self.delegate  parser:self didFinishDownloadingAlbum:image.album];
-    }
+    [self.delegate  parser:self didFinishDownloadingImage:image];
 }
 
 

@@ -1,6 +1,6 @@
 //
 //  FlickrRequest.m
-//  LeRandomizer
+//  Graphic tweets
 //
 //  Created by Dario Lencina on 5/19/12.
 //  Copyright (c) 2012 Dario Lencina. All rights reserved.
@@ -90,8 +90,8 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-	UIAlertView * alert= [[UIAlertView alloc] initWithTitle:@"Connection did fail:" 
-													message:[error description]
+	UIAlertView * alert= [[UIAlertView alloc] initWithTitle:@"Flickr:" 
+													message:[error localizedDescription]
 												   delegate:self
 										  cancelButtonTitle:@"OK" otherButtonTitles:nil];
 	[alert show];

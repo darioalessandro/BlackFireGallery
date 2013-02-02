@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #define kFBUserPicturesKey @"photos"
-
+@class FBImage;
 @interface FBUserPicturesParser : NSObject
     -(void)start;
     @property (nonatomic, strong) NSMutableArray * albums;
@@ -19,6 +19,7 @@
 @protocol FBUserPicturesParserDelegate <NSObject>
 @required
     -(void)parser:(FBUserPicturesParser *)fbParser didFinishDownloadingAlbum:(NSDictionary *)album;
--(void)parser:(FBUserPicturesParser *)fbParser failedToLoadAlbum:(NSDictionary *)album withError:(NSError *)error;
+    -(void)parser:(FBUserPicturesParser *)fbParser failedToLoadAlbum:(NSDictionary *)album withError:(NSError *)error;
+-(void)parser:(FBUserPicturesParser *)fbParser didFinishDownloadingImage:(FBImage *)image;
 
 @end
