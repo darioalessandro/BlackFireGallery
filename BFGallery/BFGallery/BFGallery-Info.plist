@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.blackfireapps.lerandomme</string>
+	<string>com.blackfireapps.lerandomizer</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -33,10 +33,10 @@
 	<string>1.0</string>
 	<key>FacebookAppID</key>
 	<string>152112384933781</string>
-	<key>OBJECTIVE_FLICKR_API_KEY</key>
-	<string>2d3ef1e69f5909f748d29655dab13745</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>OBJECTIVE_FLICKR_API_KEY</key>
+	<string>2d3ef1e69f5909f748d29655dab13745</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		067869BC162B9BD400B4AD46 /* BFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 067869BB162B9BD400B4AD46 /* BFImage.m */; };
 		067869BF162B9CD800B4AD46 /* FBUserPictures.m in Sources */ = {isa = PBXBuildFile; fileRef = 067869BE162B9CD800B4AD46 /* FBUserPictures.m */; };
+		0685AAA916D477C400381C64 /* FBAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 0685AAA816D477C400381C64 /* FBAlbum.m */; };
 		8717826D15C3ABA80068C775 /* BFGFullSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717826C15C3ABA80068C775 /* BFGFullSizeViewController.xib */; };
 		8717827115C3C1670068C775 /* BFGCell_iphone_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717827015C3C1670068C775 /* BFGCell_iphone_landscape.xib */; };
 		8784BE1415C5FE68004F6FEA /* BFGFullSizeViewController_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8784BE1315C5FE68004F6FEA /* BFGFullSizeViewController_ipad.xib */; };
@@ -87,6 +88,8 @@
 		067869BB162B9BD400B4AD46 /* BFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFImage.m; path = BFGallery/BFImage.m; sourceTree = "<group>"; };
 		067869BD162B9CD800B4AD46 /* FBUserPictures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUserPictures.h; sourceTree = "<group>"; };
 		067869BE162B9CD800B4AD46 /* FBUserPictures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUserPictures.m; sourceTree = "<group>"; };
+		0685AAA716D477C400381C64 /* FBAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAlbum.h; sourceTree = "<group>"; };
+		0685AAA816D477C400381C64 /* FBAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAlbum.m; sourceTree = "<group>"; };
 		8717826C15C3ABA80068C775 /* BFGFullSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFGFullSizeViewController.xib; sourceTree = "<group>"; };
 		8717827015C3C1670068C775 /* BFGCell_iphone_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGCell_iphone_landscape.xib; path = assets/BFGCell_iphone_landscape.xib; sourceTree = "<group>"; };
 		8784BE1315C5FE68004F6FEA /* BFGFullSizeViewController_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFGFullSizeViewController_ipad.xib; sourceTree = "<group>"; };
@@ -406,12 +409,14 @@
 		EB390CB9162293D300FD80AA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EB390CBA1622940900FD80AA /* FBImage.h */,
+				EB390CBB1622940900FD80AA /* FBImage.m */,
 				067869BA162B9BD400B4AD46 /* BFImage.h */,
 				067869BB162B9BD400B4AD46 /* BFImage.m */,
 				EB2126AC161D153E00BC8E81 /* FlickrImage.h */,
 				EB2126AD161D153E00BC8E81 /* FlickrImage.m */,
-				EB390CBA1622940900FD80AA /* FBImage.h */,
-				EB390CBB1622940900FD80AA /* FBImage.m */,
+				0685AAA716D477C400381C64 /* FBAlbum.h */,
+				0685AAA816D477C400381C64 /* FBAlbum.m */,
 			);
 			name = Images;
 			path = ..;
@@ -573,6 +578,7 @@
 				EB390CBD162295A000FD80AA /* FBImage.m in Sources */,
 				067869BC162B9BD400B4AD46 /* BFImage.m in Sources */,
 				067869BF162B9CD800B4AD46 /* FBUserPictures.m in Sources */,
+				0685AAA916D477C400381C64 /* FBAlbum.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

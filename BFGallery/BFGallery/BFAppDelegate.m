@@ -18,9 +18,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFacebook];
+    self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFacebookAlbums];
 //    self.viewController.searchCriteria=@"Chicago";
-    self.window.rootViewController = self.viewController;
+    UINavigationController * controllert= [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    self.window.rootViewController = controllert;
     [self.window makeKeyAndVisible];
     return YES;
 }

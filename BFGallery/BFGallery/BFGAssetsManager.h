@@ -16,6 +16,7 @@
 #import "FlickrRequest.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "FBUserPictures.h"
 
 static NSString * const kAddedAssetsToLibrary= @"AddedAssetsToLibrary";
 static NSString * const kUserDeniedAccessToPics= @"kUserDeniedAccessToPics";
@@ -23,14 +24,15 @@ typedef void(^BFGAssetsManagerShareHandler)(BOOL enabled, NSError *error);
 typedef enum{
     BFGAssetsManagerProviderPhotoLibrary=0,
     BFGAssetsManagerProviderFlickr,
-    BFGAssetsManagerProviderFacebook
+    BFGAssetsManagerProviderFacebookAlbums,
+    BFGAssetsManagerProviderFacebookPictures
 }BFGAssetsManagerProvider;
 
-@interface BFGAssetsManager : NSObject <FlickrImageParserDelegate>{
+@interface BFGAssetsManager : NSObject <FlickrImageParserDelegate, FBUserPicturesParserDelegate>{
     FlickrRequest * flickr;
     BFGAssetsManagerProvider _provider;
 }
--(void)readImagesFromProvider:(BFGAssetsManagerProvider)provider;
+-(void)readImagesFromProvider:(BFGAssetsManagerProvider)provider withContext:(id)context;
 -(void)getMoreImages;
 +(BFGAssetsManager *)sharedInstance;
 -(BOOL)handleOpenURL:(NSURL *)url;

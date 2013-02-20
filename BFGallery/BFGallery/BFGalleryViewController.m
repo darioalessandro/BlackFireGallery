@@ -17,6 +17,13 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "FlickrImage.h"
 #import "FBImage.h"
+#import "FBAlbum.h"
+
+@interface BFGalleryViewController ()
+    -(BFGFullSizeCell *)getCell;
+    -(void)showFullSizeGalleryWithImageSelected:(UIImageView *)imageView;
+    -(void)showLastPic:(id)caller;
+@end
 
 @implementation BFGalleryViewController
 @synthesize loadingPicsIndicator;
@@ -42,8 +49,7 @@
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         if(!productsArray){
@@ -55,17 +61,22 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    if(self.mediaProvider==BFGAssetsManagerProviderFacebook){
+    id context=nil;
+    if(self.mediaProvider==BFGAssetsManagerProviderFacebookPictures || self.mediaProvider==BFGAssetsManagerProviderFacebookAlbums){
         [loadingPicsIndicator startAnimating];
         [loadingPicsIndicator setHidden:NO];
+        context=[self.facebookAlbum albumInfo];
     }
     [[BFGAssetsManager sharedInstance] setSearchCriteria:self.searchCriteria];
-    [[BFGAssetsManager sharedInstance] readImagesFromProvider:self.mediaProvider];
+    [[BFGAssetsManager sharedInstance] readImagesFromProvider:self.mediaProvider withContext:context];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary || self.mediaProvider==BFGAssetsManagerProviderFacebook){
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAddedAssets:) name:kAddedAssetsToLibrary object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDeniedAccessToAssets:) name:kUserDeniedAccessToPics object:nil];
+    
+    if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary || self.mediaProvider==BFGAssetsManagerProviderFacebookPictures){
         [self.bar setHidden:TRUE];
         [self.tableActivityIndicator setHidden:TRUE];
     }else if(self.mediaProvider==BFGAssetsManagerProviderFlickr){
@@ -84,11 +95,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAddedAssets:) name:kAddedAssetsToLibrary object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDeniedAccessToAssets:) name:kUserDeniedAccessToPics object:nil];
     [[self tableView] setHidden:NO];
+    [[self tableView] setCanCancelContentTouches:YES];    
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 -(void)userDeniedAccessToAssets:(NSNotification *)notif{
     [self showDeniedAccessToAssetsView];
 }
@@ -147,6 +160,9 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(self.mediaProvider==BFGAssetsManagerProviderFacebookAlbums){
+        return [self.productsArray count]-1;
+    }
     NSInteger numberOfImages= [[[self getCell] imageViews] count];
     float modulo= [self.productsArray count]%numberOfImages;
     float numberOfCells= [self.productsArray count]/numberOfImages;
@@ -174,16 +190,26 @@
         fileName= [NSString stringWithFormat:@"%@_landscape", fileName];
     }
     
-    BFGFullSizeCell * cell= (BFGFullSizeCell *)[self.tableView dequeueReusableCellWithIdentifier:@"ff"
-                                                ];
+    BFGFullSizeCell * cell= (BFGFullSizeCell *)[self.tableView dequeueReusableCellWithIdentifier:@"ff"];
     if(cell==nil){
         cell= [[NSBundle mainBundle] loadNibNamed:fileName owner:nil options:nil][0];
         [cell setSelectedBackgroundView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)]];
+        [cell setBackgroundView:[[UIView alloc] init]];
+        [[cell backgroundView] setBackgroundColor:[UIColor blackColor]];
     }
     return cell;
 }
                                                                                         
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(self.mediaProvider==BFGAssetsManagerProviderFacebookAlbums){
+        UITableViewCell * cell= [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
+        FBAlbum * album=self.productsArray[indexPath.row];
+        [cell.textLabel setText:[[album albumInfo] objectForKey:@"name"]];
+        [[cell textLabel] setTextColor:[UIColor whiteColor]];
+        [cell.imageView setImage:[album thumbnail]];
+        return cell;
+    }
+    
     BFGFullSizeCell * cell= [self getCell];
     int numberOfImageViewsInCell= [[cell imageViews] count];
     int index0= indexPath.row * numberOfImageViewsInCell;
@@ -201,21 +227,17 @@
             }else if(self.mediaProvider==BFGAssetsManagerProviderFlickr){
                 FlickrImage * image=(self.productsArray)[index0+j];
                 thumbnail= [image thumbnail];
-            }else if(self.mediaProvider==BFGAssetsManagerProviderFacebook){
+            }else if(self.mediaProvider==BFGAssetsManagerProviderFacebookPictures){
                 FBImage * image=(self.productsArray)[index0+j];
                 thumbnail= [image thumbnail];
             }
             
-            UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectImage:)];            
-            [[cell imageViews][j] addGestureRecognizer:tap];            
-            
-            [[cell imageViews][j] setImage:thumbnail];
-            
+            UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectImage:)];
+            [tap setNumberOfTapsRequired:1];
+            [[cell imageViews][j] addGestureRecognizer:tap];
             [[cell imageViews][j] setImage:thumbnail];
             [[cell imageViews][j] setTag:index0+j];
-            
-            UIPinchGestureRecognizer * pinch= [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchSelectedImage:)];            
-            [[cell imageViews][j] addGestureRecognizer:pinch];            
+            [[cell imageViews][j] setUserInteractionEnabled:TRUE];
         }else{
             [[cell imageViews][j] setHidden:TRUE];
         }
@@ -304,7 +326,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableView deselectRowAtIndexPath:indexPath animated:TRUE];
-    
+    if (self.mediaProvider==BFGAssetsManagerProviderFacebookAlbums) {
+        BFGalleryViewController * galleryViewController=[[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFacebookPictures];
+        galleryViewController.facebookAlbum=self.productsArray[indexPath.row];
+        [[BFGAssetsManager sharedInstance] setPics:nil];
+        [self.navigationController pushViewController:galleryViewController animated:TRUE];
+    }
 }
 
 #pragma mark - SRMenuDetailViewControllerDelegate
@@ -331,12 +358,12 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
     [[BFGAssetsManager sharedInstance] setSearchCriteria:[searchBar text]];
-    [[BFGAssetsManager sharedInstance] readImagesFromProvider:BFGAssetsManagerProviderFlickr];
+    [[BFGAssetsManager sharedInstance] readImagesFromProvider:BFGAssetsManagerProviderFlickr withContext:nil];
 }
 
--(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
 }
+
 
 @end

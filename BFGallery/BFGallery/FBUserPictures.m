@@ -10,6 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "BFLog.h"
 #import "FBImage.h"
+#import "FBAlbum.h"
 
 @implementation FBUserPicturesParser
 
@@ -35,22 +36,18 @@
 -(void)parseAlbums:(NSArray *)rawAlbums{
     //TODO add the case when there are no pics.
     self.albums= [NSMutableArray array];
-    for(NSDictionary * album in rawAlbums){
-        [self.albums addObject:[NSMutableDictionary dictionaryWithDictionary:album]];
-    }
     
-    NSArray* collection= self.albums;
-    for(NSMutableDictionary * album in collection){
-        [self getPicturesFromAlbum:album];
-    }                                 
+    for(NSDictionary * album in rawAlbums){
+       // UIImage * image= [self getPictureForAlbum:album];
+        FBAlbum * fbAlbum= [[FBAlbum alloc] init];
+        //fbAlbum.thumbnail=image;
+        fbAlbum.albumInfo=[album mutableCopy];
+        [self.albums addObject:fbAlbum];
+    }
+    [[self delegate] parser:self didFinishDownloadingAlbums:self.albums];
 }
 
--(void)getPicturesFromAlbum:(NSMutableDictionary *)album{
-    if([[album objectForKey:@"name"] hasPrefix:@"LeRandomMe"] || [[album objectForKey:@"name"] hasPrefix:@"GraphicTweets"]){
-        BFLog(@"filtering out LeRandomMe album");
-        return;
-    }
-    
+-(void)picturesFromAlbum:(NSMutableDictionary *)album{    
     NSString* photosGraphPath = [NSString stringWithFormat:@"%@/photos", [album objectForKey:@"id"]];
     [FBRequestConnection startWithGraphPath:photosGraphPath
                           completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -60,6 +57,12 @@
                                   [self parsePhotosFromConnection:connection withResult:result intoAlbum:album];
                               }
     }];
+}
+
+-(UIImage *)getPictureForAlbum:(NSDictionary *)album{
+    NSString * photoGraphPath=[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture", [album objectForKey:@"cover_photo"]];
+    NSData * data=[NSData dataWithContentsOfURL:[NSURL URLWithString:photoGraphPath]];
+    return [UIImage imageWithData:data];
 }
 
 -(void)parsingAlbum:(NSDictionary *)album failedWithError:(NSError *)error{

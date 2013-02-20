@@ -17,7 +17,6 @@
 #import "FlickrImage.h"
 #import "FBImage.h"
 #import "BFLog.h"
-#import "FBUserPictures.h"
 
 static BFGAssetsManager * _hiddenInstance= nil;
 
@@ -48,7 +47,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
     return _hiddenInstance;
 }
 
--(void)readImagesFromProvider:(BFGAssetsManagerProvider)provider{
+-(void)readImagesFromProvider:(BFGAssetsManagerProvider)provider withContext:(id)context{
     if(provider==BFGAssetsManagerProviderPhotoLibrary){
         [self readUserImagesFromLibrary];
     }else if(provider==BFGAssetsManagerProviderFlickr){
@@ -58,7 +57,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
         self.pics= [NSMutableArray array];
         flickr=[FlickrRequest new];
         [flickr performFlickrRequestWithCriteria:self.searchCriteria delegate:self];
-    }else if (provider==BFGAssetsManagerProviderFacebook){
+    }else if (provider==BFGAssetsManagerProviderFacebookAlbums){
         self.pics= [NSMutableArray array];
         if ([FBSession activeSession].isOpen) {
             [self loadFBImages];
@@ -74,6 +73,11 @@ static BFGAssetsManager * _hiddenInstance= nil;
                 }
             }];
         }
+    }else if(provider==BFGAssetsManagerProviderFacebookPictures){
+        self.pics=nil;
+            FBUserPicturesParser * parser= [FBUserPicturesParser new];
+            [parser setDelegate:self];
+        [parser picturesFromAlbum:context];
     }
     _provider=provider;
 }
@@ -90,6 +94,12 @@ static BFGAssetsManager * _hiddenInstance= nil;
 
 #pragma mark -
 #pragma FBUserPicturesParser
+
+-(void)parser:(FBUserPicturesParser *)fbParser didFinishDownloadingAlbums:(NSArray *)albums{
+    self.pics= [NSMutableArray array];
+    [self.pics addObjectsFromArray:albums];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];    
+}
 
 -(void)parser:(FBUserPicturesParser *)fbParser didFinishDownloadingImage:(FBImage *)image{
     if(!self.pics){
