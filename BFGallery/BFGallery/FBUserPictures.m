@@ -85,10 +85,11 @@
         [NSURLConnection sendAsynchronousRequest:req queue:self.queue completionHandler:^(NSURLResponse * resp, NSData * img, NSError * error){
             if(!error){
                 image.thumbnail= [UIImage imageWithData:img];
+                [self didFinishLoadingImage:image];
             }else{
                 BFLog(@"error %@", error);
             }
-            [self didFinishLoadingImage:image];
+            
         }];
     }
 }

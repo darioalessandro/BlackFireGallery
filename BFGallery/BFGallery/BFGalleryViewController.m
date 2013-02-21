@@ -21,7 +21,6 @@
 
 @interface BFGalleryViewController ()
     -(BFGFullSizeCell *)getCell;
-    -(void)showFullSizeGalleryWithImageSelected:(UIImageView *)imageView;
     -(void)showLastPic:(id)caller;
 @end
 

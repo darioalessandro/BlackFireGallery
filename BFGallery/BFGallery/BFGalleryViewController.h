@@ -27,7 +27,7 @@
     -(void)showGalleryDetailWithIndex:(NSInteger)index fromView:(UIView *)originView;
     -(id)initWithMediaProvider:(BFGAssetsManagerProvider)mediaProvider;
     -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil mediaProvider:(BFGAssetsManagerProvider)mediaProvider;
-
+    -(void)showFullSizeGalleryWithImageSelected:(UIImageView *)imageView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingPicsIndicator;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UISearchBar * bar;
@@ -37,7 +37,7 @@
 @property (strong, nonatomic) FBAlbum * facebookAlbum;
 @property (nonatomic, assign) BOOL isShowingFullSizeGallery;
 @property (weak, nonatomic) id delegate;
-@property (nonatomic, strong) NSArray * productsArray;
+@property (atomic, strong) NSArray * productsArray;
 @property (nonatomic,  strong) NSString * searchCriteria;
 @property (nonatomic) BFGAssetsManagerProvider mediaProvider;
 

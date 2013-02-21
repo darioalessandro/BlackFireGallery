@@ -18,8 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFacebookAlbums];
-//    self.viewController.searchCriteria=@"Chicago";
+    self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFlickr];
+    self.viewController.searchCriteria=@"Chicago";
     UINavigationController * controllert= [[UINavigationController alloc] initWithRootViewController:self.viewController];
     [controllert.navigationBar setBarStyle:UIBarStyleBlack];
     [controllert setTitle:@"Facebook"];
