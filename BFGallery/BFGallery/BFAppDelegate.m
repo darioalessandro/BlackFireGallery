@@ -21,6 +21,8 @@
     self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFacebookAlbums];
 //    self.viewController.searchCriteria=@"Chicago";
     UINavigationController * controllert= [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    [controllert.navigationBar setBarStyle:UIBarStyleBlack];
+    [controllert setTitle:@"Facebook"];
     self.window.rootViewController = controllert;
     [self.window makeKeyAndVisible];
     return YES;

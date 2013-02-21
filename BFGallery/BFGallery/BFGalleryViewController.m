@@ -60,7 +60,29 @@
     return self;
 }
 
--(void)viewDidAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self addAllNotifications];    
+    [self configureUI];
+    [self startLoadingContent];
+}
+
+-(void)configureUI{
+    if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary || self.mediaProvider==BFGAssetsManagerProviderFacebookPictures || self.mediaProvider==BFGAssetsManagerProviderFacebookAlbums){
+        [self.tableView setContentInset:UIEdgeInsetsMake(-40, 0, 0, 0)];
+        [self.bar setHidden:TRUE];
+        [self.tableActivityIndicator setHidden:TRUE];
+    }else if(self.mediaProvider==BFGAssetsManagerProviderFlickr){
+        self.bar.text= self.searchCriteria;
+    }
+}
+
+-(void)addAllNotifications{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAddedAssets:) name:kAddedAssetsToLibrary object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDeniedAccessToAssets:) name:kUserDeniedAccessToPics object:nil];
+}
+
+-(void)startLoadingContent{
     id context=nil;
     if(self.mediaProvider==BFGAssetsManagerProviderFacebookPictures || self.mediaProvider==BFGAssetsManagerProviderFacebookAlbums){
         [loadingPicsIndicator startAnimating];
@@ -71,19 +93,6 @@
     [[BFGAssetsManager sharedInstance] readImagesFromProvider:self.mediaProvider withContext:context];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAddedAssets:) name:kAddedAssetsToLibrary object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDeniedAccessToAssets:) name:kUserDeniedAccessToPics object:nil];
-    
-    if(self.mediaProvider==BFGAssetsManagerProviderPhotoLibrary || self.mediaProvider==BFGAssetsManagerProviderFacebookPictures){
-        [self.bar setHidden:TRUE];
-        [self.tableActivityIndicator setHidden:TRUE];
-    }else if(self.mediaProvider==BFGAssetsManagerProviderFlickr){
-        self.bar.text= self.searchCriteria;
-    }
-}
-
 -(void)showLastPic:(id)caller{
     if(![[self productsArray] count]>0)
         return;
@@ -92,16 +101,24 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     [[self tableView] setHidden:NO];
     [[self tableView] setCanCancelContentTouches:YES];    
 }
 
+- (void)viewDidUnload{
+    [self setTableView:nil];
+    [self setLoadingPicsIndicator:nil];
+    [self setTableActivityIndicator:nil];
+    [self setNoAccessToCamView:nil];
+    [super viewDidUnload];
+}
+
 -(void)viewWillDisappear:(BOOL)animated{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
 -(void)userDeniedAccessToAssets:(NSNotification *)notif{
     [self showDeniedAccessToAssetsView];
 }
@@ -136,15 +153,6 @@
     }];
 }
 
-- (void)viewDidUnload
-{
-    [self setTableView:nil];
-    [self setLoadingPicsIndicator:nil];
-    [self setTableActivityIndicator:nil];
-    [self setNoAccessToCamView:nil];
-    [super viewDidUnload];
-}
-
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     [self.tableView reloadData];
 }
@@ -152,8 +160,8 @@
 #pragma mark - UITableViewDataSource & scrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if(scrollView.contentOffset.y + scrollView.frame.size.height>=scrollView.contentSize.height){
-        if(self.mediaProvider==BFGAssetsManagerProviderFlickr){
+    if(self.mediaProvider==BFGAssetsManagerProviderFlickr){
+        if(scrollView.contentOffset.y + scrollView.frame.size.height>=scrollView.contentSize.height){
             [[BFGAssetsManager sharedInstance] getMoreImages];
         }
     }
@@ -172,6 +180,9 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(self.mediaProvider==BFGAssetsManagerProviderFacebookAlbums){
+        return 50;
+    }
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {        
         return 79;
     }
@@ -247,7 +258,11 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 44;
+    CGFloat height=0;
+    if(self.mediaProvider==BFGAssetsManagerProviderFlickr){
+        height=44;
+    }
+    return height;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
