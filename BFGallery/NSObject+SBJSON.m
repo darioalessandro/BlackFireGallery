@@ -38,7 +38,7 @@
     if (!json)
 		NSLog(@"-JSONFragment failed. Error trace is: %@", [jsonWriter errorTrace]);
     
-    return json;
+    return [json autorelease];
 }
 
 - (NSString *)JSONRepresentation {
@@ -47,7 +47,7 @@
     if (!json)
         NSLog(@"-JSONRepresentation failed. Error trace is: %@", [jsonWriter errorTrace]);
 
-    return json;
+    return [json autorelease];
 }
 
 @end

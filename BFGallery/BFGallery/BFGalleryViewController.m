@@ -60,9 +60,29 @@
     return self;
 }
 
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    [[self tableView] setHidden:NO];
+    [[self tableView] setCanCancelContentTouches:YES];    
+}
+
+- (void)viewDidUnload{
+    [self setTableView:nil];
+    [self setLoadingPicsIndicator:nil];
+    [self setTableActivityIndicator:nil];
+    [self setNoAccessToCamView:nil];
+    [super viewDidUnload];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self addAllNotifications];    
+    [self addAllNotifications];
     [self configureUI];
     [self startLoadingContent];
 }
@@ -96,27 +116,7 @@
 -(void)showLastPic:(id)caller{
     if(![[self productsArray] count]>0)
         return;
-
-}
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad{
-    [super viewDidLoad];
-    [[self tableView] setHidden:NO];
-    [[self tableView] setCanCancelContentTouches:YES];    
-}
-
-- (void)viewDidUnload{
-    [self setTableView:nil];
-    [self setLoadingPicsIndicator:nil];
-    [self setTableActivityIndicator:nil];
-    [self setNoAccessToCamView:nil];
-    [super viewDidUnload];
-}
-
--(void)viewWillDisappear:(BOOL)animated{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
 
 -(void)userDeniedAccessToAssets:(NSNotification *)notif{

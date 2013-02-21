@@ -10,6 +10,6 @@
 
 @interface FBImage : BFImage
 
-@property (nonatomic, strong) NSDictionary * album;
+@property (nonatomic, weak) NSDictionary * album;
 
 @end

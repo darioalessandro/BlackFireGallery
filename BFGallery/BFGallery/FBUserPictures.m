@@ -28,7 +28,7 @@
                                   BFLog(@"error %@", error);
                                   return;
                               }else{
-                                  [self parseAlbums:(NSArray *)[result data]];
+                                  [self parseAlbums:[(NSArray *)[result data] copy]];
                               }
     }];
 }
@@ -36,25 +36,23 @@
 -(void)parseAlbums:(NSArray *)rawAlbums{
     //TODO add the case when there are no pics.
     self.albums= [NSMutableArray array];
-    
     for(NSDictionary * album in rawAlbums){
-       // UIImage * image= [self getPictureForAlbum:album];
         FBAlbum * fbAlbum= [[FBAlbum alloc] init];
-        //fbAlbum.thumbnail=image;
         fbAlbum.albumInfo=[album mutableCopy];
         [self.albums addObject:fbAlbum];
     }
     [[self delegate] parser:self didFinishDownloadingAlbums:self.albums];
 }
 
--(void)picturesFromAlbum:(NSMutableDictionary *)album{    
+-(void)picturesFromAlbum:(NSMutableDictionary *)album{
     NSString* photosGraphPath = [NSString stringWithFormat:@"%@/photos", [album objectForKey:@"id"]];
     [FBRequestConnection startWithGraphPath:photosGraphPath
                           completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                               if(error){                                  
                                   [self parsingAlbum:album failedWithError:error];
                               }else{
-                                  [self parsePhotosFromConnection:connection withResult:result intoAlbum:album];
+                                  NSArray* photos = [(NSArray*)[result data] copy];
+                                  [self parsePhotos:photos fromConnection:connection intoAlbum:album];
                               }
     }];
 }
@@ -70,10 +68,10 @@
      [self.delegate parser:self failedToLoadAlbum:album withError:error];
 }
 
--(void)parsePhotosFromConnection:(FBRequestConnection *)connection withResult:(id)result intoAlbum:(NSMutableDictionary *)album{
-    NSArray* photos = (NSArray*)[result data];
+-(void)parsePhotos:(NSArray *)photos fromConnection:(FBRequestConnection *)connection intoAlbum:(NSMutableDictionary *)album{
     NSMutableArray * mutablePhotos= [NSMutableArray array];
     [album setObject:mutablePhotos forKey:kFBUserPicturesKey];
+    
     for(NSDictionary * photo in photos){
         NSArray * images=[photo objectForKey:@"images"];
         FBImage * image= [FBImage new];

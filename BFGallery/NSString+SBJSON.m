@@ -38,7 +38,7 @@
     id repr = [jsonParser fragmentWithString:self];    
     if (!repr)
         NSLog(@"-JSONFragmentValue failed. Error trace is: %@", [jsonParser errorTrace]);
-    return repr;
+    return [repr autorelease];
 }
 
 - (id)JSONValue
@@ -47,7 +47,7 @@
     id repr = [jsonParser objectWithString:self];
     if (!repr)
         NSLog(@"-JSONValue failed. Error trace is: %@", [jsonParser errorTrace]);
-    return repr;
+    return [repr autorelease];
 }
 
 @end
