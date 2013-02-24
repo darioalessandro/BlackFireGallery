@@ -26,6 +26,7 @@
                           completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                               if(error) {
                                   BFLog(@"error %@", error);
+                                  [self parsingAlbum:nil failedWithError:error];
                                   return;
                               }else{
                                   [self parseAlbums:[(NSArray *)[result data] copy]];

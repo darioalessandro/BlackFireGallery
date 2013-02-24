@@ -82,13 +82,13 @@ NSString * responseString = [[NSString alloc] initWithData:self.dataToParse enco
 	
 	NSDictionary *parsedJSON = [json objectWithString:string error:&_error];
 	if(parsedJSON==nil){
-		self.error= [NSError errorWithDomain:NSLocalizedString(@"JSON mal formado",@"JSON mal formado") code:401 userInfo:nil];
+		self.error= [NSError errorWithDomain:NSLocalizedStringFromTable(@"JSON mal formado", @"Localizable", @"JSON mal formado") code:401 userInfo:nil];
 		[self.delegate performSelectorOnMainThread:@selector(parseErrorOccurred:)withObject:self waitUntilDone:FALSE];
 		return nil;
 	}
 	NSDictionary *ResultSet = parsedJSON[@"photos"];
 	if(ResultSet==nil){
-		self.error= [NSError errorWithDomain:NSLocalizedString(@"JSON mal formado ResultSet=nil",@"JSON mal formado") code:401 userInfo:nil];
+		self.error= [NSError errorWithDomain:NSLocalizedStringFromTable(@"JSON mal formado ResultSet=nil",@"Localizable", @"JSON mal formado") code:401 userInfo:nil];
 		[self.delegate performSelectorOnMainThread:@selector(parseErrorOccurred:)withObject:self waitUntilDone:FALSE];
 		return nil;
 	}

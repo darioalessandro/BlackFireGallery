@@ -98,7 +98,9 @@ static BFGAssetsManager * _hiddenInstance= nil;
 -(void)parser:(FBUserPicturesParser *)fbParser didFinishDownloadingAlbums:(NSArray *)albums{
     self.pics= [NSMutableArray array];
     [self.pics addObjectsFromArray:albums];
-    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];    
+    if(_provider==BFGAssetsManagerProviderFacebookAlbums){
+        [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+    }
 }
 
 -(void)parser:(FBUserPicturesParser *)fbParser didFinishDownloadingImage:(FBImage *)image{
@@ -106,7 +108,9 @@ static BFGAssetsManager * _hiddenInstance= nil;
         self.pics= [NSMutableArray array];
     }
     [self.pics addObject:image];
-    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];    
+    if(_provider==BFGAssetsManagerProviderFacebookPictures){
+        [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+    }
 }
 
 -(void)parser:(FBUserPicturesParser *)fbParser didFinishDownloadingAlbum:(NSDictionary *)album{
@@ -122,6 +126,8 @@ static BFGAssetsManager * _hiddenInstance= nil;
     if(!self.pics){
         self.pics= [NSMutableArray array];
     }
+    UIAlertView * alertView=[[UIAlertView alloc] initWithTitle:@"Facebook" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alertView show];
     [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
 }
 
@@ -154,7 +160,9 @@ static BFGAssetsManager * _hiddenInstance= nil;
               }
           }];
          if(group==nil){
-             [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+             if(_provider==BFGAssetsManagerProviderPhotoLibrary){
+                 [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+             }
          }
      }
                     failureBlock:^(NSError *error) {
@@ -178,7 +186,9 @@ static BFGAssetsManager * _hiddenInstance= nil;
             if(!error){
                 img.thumbnail=[UIImage imageWithData:data];
                 [self.pics addObject:img];
-                [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+                if(_provider==BFGAssetsManagerProviderFlickr){
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
+                }
             }
         }];
     }
