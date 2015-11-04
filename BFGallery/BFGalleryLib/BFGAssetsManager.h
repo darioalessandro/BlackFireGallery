@@ -15,6 +15,7 @@
 
 #import "FlickrRequest.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <UIKit/UIKit.h>
 //#import "FBUserPictures.h"
 
 static NSString * const kAddedAssetsToLibrary= @"AddedAssetsToLibrary";

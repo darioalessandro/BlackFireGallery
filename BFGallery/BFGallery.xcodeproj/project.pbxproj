@@ -7,134 +7,180 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06B6CDCC1BE98C4500F5B5B7 /* BFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 067869BB162B9BD400B4AD46 /* BFImage.m */; };
-		8717826D15C3ABA80068C775 /* BFGFullSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717826C15C3ABA80068C775 /* BFGFullSizeViewController.xib */; };
-		8717827115C3C1670068C775 /* BFGCell_iphone_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8717827015C3C1670068C775 /* BFGCell_iphone_landscape.xib */; };
-		8784BE1415C5FE68004F6FEA /* BFGFullSizeViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8784BE1315C5FE68004F6FEA /* BFGFullSizeViewController~ipad.xib */; };
+		06B6CDD51BE98E7D00F5B5B7 /* BFGalleryLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CDD41BE98E7D00F5B5B7 /* BFGalleryLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06B6CDD91BE98E7D00F5B5B7 /* BFGalleryLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B6CDD21BE98E7D00F5B5B7 /* BFGalleryLib.framework */; };
+		06B6CDDA1BE98E7D00F5B5B7 /* BFGalleryLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06B6CDD21BE98E7D00F5B5B7 /* BFGalleryLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06B6CE431BE9928300F5B5B7 /* .DS_Store in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE101BE9928200F5B5B7 /* .DS_Store */; };
+		06B6CE441BE9928300F5B5B7 /* BFDeniedAccessToAssetsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE111BE9928200F5B5B7 /* BFDeniedAccessToAssetsView.xib */; };
+		06B6CE451BE9928300F5B5B7 /* BFDeniedAccessToAssetsView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE121BE9928200F5B5B7 /* BFDeniedAccessToAssetsView~ipad.xib */; };
+		06B6CE461BE9928300F5B5B7 /* BFGalleryLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE131BE9928200F5B5B7 /* BFGalleryLib.h */; };
+		06B6CE471BE9928300F5B5B7 /* BFGalleryViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE141BE9928200F5B5B7 /* BFGalleryViewController.h */; };
+		06B6CE481BE9928300F5B5B7 /* BFGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE151BE9928200F5B5B7 /* BFGalleryViewController.m */; };
+		06B6CE491BE9928300F5B5B7 /* BFGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE161BE9928200F5B5B7 /* BFGalleryViewController.xib */; };
+		06B6CE4A1BE9928300F5B5B7 /* BFGAssetsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE171BE9928200F5B5B7 /* BFGAssetsManager.h */; };
+		06B6CE4B1BE9928300F5B5B7 /* BFGAssetsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE181BE9928300F5B5B7 /* BFGAssetsManager.m */; };
+		06B6CE4C1BE9928300F5B5B7 /* BFGCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE191BE9928300F5B5B7 /* BFGCell~ipad.xib */; };
+		06B6CE4D1BE9928300F5B5B7 /* BFGCell_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE1A1BE9928300F5B5B7 /* BFGCell_landscape.xib */; };
+		06B6CE4E1BE9928300F5B5B7 /* BFGCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE1B1BE9928300F5B5B7 /* BFGCell.xib */; };
+		06B6CE4F1BE9928300F5B5B7 /* BFGCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE1C1BE9928300F5B5B7 /* BFGCell.h */; };
+		06B6CE501BE9928300F5B5B7 /* BFGCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE1D1BE9928300F5B5B7 /* BFGCell.m */; };
+		06B6CE511BE9928300F5B5B7 /* BFGFullSizeCell_landscape~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE1E1BE9928300F5B5B7 /* BFGFullSizeCell_landscape~ipad.xib */; };
+		06B6CE521BE9928300F5B5B7 /* BFGFullSizeCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE1F1BE9928300F5B5B7 /* BFGFullSizeCell~ipad.xib */; };
+		06B6CE531BE9928300F5B5B7 /* BFGFullSizeCell_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE201BE9928300F5B5B7 /* BFGFullSizeCell_landscape.xib */; };
+		06B6CE541BE9928300F5B5B7 /* BFGFullSizeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE211BE9928300F5B5B7 /* BFGFullSizeCell.xib */; };
+		06B6CE551BE9928300F5B5B7 /* BFGFullSizeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE221BE9928300F5B5B7 /* BFGFullSizeCell.h */; };
+		06B6CE561BE9928300F5B5B7 /* BFGFullSizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE231BE9928300F5B5B7 /* BFGFullSizeCell.m */; };
+		06B6CE571BE9928300F5B5B7 /* BFGFullSizeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE241BE9928300F5B5B7 /* BFGFullSizeViewController.h */; };
+		06B6CE581BE9928300F5B5B7 /* BFGFullSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE251BE9928300F5B5B7 /* BFGFullSizeViewController.m */; };
+		06B6CE591BE9928300F5B5B7 /* BFGFullSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE261BE9928300F5B5B7 /* BFGFullSizeViewController.xib */; };
+		06B6CE5A1BE9928300F5B5B7 /* BFGFullSizeViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE271BE9928300F5B5B7 /* BFGFullSizeViewController~ipad.xib */; };
+		06B6CE5B1BE9928300F5B5B7 /* BFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE281BE9928300F5B5B7 /* BFImage.h */; };
+		06B6CE5C1BE9928300F5B5B7 /* BFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE291BE9928300F5B5B7 /* BFImage.m */; };
+		06B6CE5D1BE9928300F5B5B7 /* BFMenuDetailViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE2A1BE9928300F5B5B7 /* BFMenuDetailViewController~ipad.xib */; };
+		06B6CE5E1BE9928300F5B5B7 /* BFMenuDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE2B1BE9928300F5B5B7 /* BFMenuDetailViewController.xib */; };
+		06B6CE5F1BE9928300F5B5B7 /* flechas.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE2C1BE9928300F5B5B7 /* flechas.png */; };
+		06B6CE601BE9928300F5B5B7 /* FlickrImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE2D1BE9928300F5B5B7 /* FlickrImage.h */; };
+		06B6CE611BE9928300F5B5B7 /* FlickrImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE2E1BE9928300F5B5B7 /* FlickrImage.m */; };
+		06B6CE621BE9928300F5B5B7 /* FlickrImageParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE2F1BE9928300F5B5B7 /* FlickrImageParser.h */; };
+		06B6CE631BE9928300F5B5B7 /* FlickrImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE301BE9928300F5B5B7 /* FlickrImageParser.m */; };
+		06B6CE641BE9928300F5B5B7 /* FlickrRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE311BE9928300F5B5B7 /* FlickrRequest.h */; };
+		06B6CE651BE9928300F5B5B7 /* FlickrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE321BE9928300F5B5B7 /* FlickrRequest.m */; };
+		06B6CE661BE9928300F5B5B7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE331BE9928300F5B5B7 /* Info.plist */; };
+		06B6CE671BE9928300F5B5B7 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE341BE9928300F5B5B7 /* JSON.h */; };
+		06B6CE681BE9928300F5B5B7 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE351BE9928300F5B5B7 /* lock.png */; };
+		06B6CE691BE9928300F5B5B7 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE361BE9928300F5B5B7 /* NSObject+SBJSON.h */; };
+		06B6CE6A1BE9928300F5B5B7 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE371BE9928300F5B5B7 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06B6CE6B1BE9928300F5B5B7 /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE381BE9928300F5B5B7 /* NSString+SBJSON.h */; };
+		06B6CE6C1BE9928300F5B5B7 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE391BE9928300F5B5B7 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06B6CE6D1BE9928300F5B5B7 /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE3A1BE9928300F5B5B7 /* SBJSON.h */; };
+		06B6CE6E1BE9928300F5B5B7 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE3B1BE9928300F5B5B7 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06B6CE6F1BE9928300F5B5B7 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE3C1BE9928300F5B5B7 /* SBJsonBase.h */; };
+		06B6CE701BE9928300F5B5B7 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE3D1BE9928300F5B5B7 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06B6CE711BE9928300F5B5B7 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE3E1BE9928300F5B5B7 /* SBJsonParser.h */; };
+		06B6CE721BE9928300F5B5B7 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE3F1BE9928300F5B5B7 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06B6CE731BE9928300F5B5B7 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE401BE9928300F5B5B7 /* SBJsonWriter.h */; };
+		06B6CE741BE9928300F5B5B7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE411BE9928300F5B5B7 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06B6CE751BE9928300F5B5B7 /* SharedConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE421BE9928300F5B5B7 /* SharedConstants.h */; };
 		87CE41C41571A6300011E130 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C31571A6300011E130 /* UIKit.framework */; };
 		87CE41C61571A6300011E130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C51571A6300011E130 /* Foundation.framework */; };
 		87CE41C81571A6300011E130 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C71571A6300011E130 /* CoreGraphics.framework */; };
-		87CE41CE1571A6300011E130 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87CE41CC1571A6300011E130 /* InfoPlist.strings */; };
 		87CE41D01571A6300011E130 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE41CF1571A6300011E130 /* main.m */; };
 		87CE41D41571A6300011E130 /* BFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE41D31571A6300011E130 /* BFAppDelegate.m */; };
-		87CE41D61571A6300011E130 /* BFGallery.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 87CE41D51571A6300011E130 /* BFGallery.entitlements */; };
-		87CE42141571A74A0011E130 /* BFGAssetsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE41FF1571A74A0011E130 /* BFGAssetsManager.m */; };
-		87CE42191571A74A0011E130 /* BFGFullSizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE42051571A74A0011E130 /* BFGFullSizeCell.m */; };
-		87CE421C1571A74A0011E130 /* BFGFullSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE42091571A74A0011E130 /* BFGFullSizeViewController.m */; };
-		87CE421F1571A74A0011E130 /* BFGCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE420D1571A74A0011E130 /* BFGCell.m */; };
-		87CE42201571A74A0011E130 /* BFGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CE420F1571A74A0011E130 /* BFGalleryViewController.m */; };
 		87CE42291571A8490011E130 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE42281571A8490011E130 /* AssetsLibrary.framework */; };
-		87CE422B1571B12F0011E130 /* flechas.png in Resources */ = {isa = PBXBuildFile; fileRef = 87CE422A1571B12F0011E130 /* flechas.png */; };
-		87CE423C1571B5C10011E130 /* BFGFullSizeCell_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42331571B5C10011E130 /* BFGFullSizeCell_ipad.xib */; };
-		87CE423D1571B5C10011E130 /* BFGFullSizeCell_ipad_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42341571B5C10011E130 /* BFGFullSizeCell_ipad_landscape.xib */; };
-		87CE423E1571B5C10011E130 /* BFGFullSizeCell_iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42351571B5C10011E130 /* BFGFullSizeCell_iphone.xib */; };
-		87CE423F1571B5C10011E130 /* BFGFullSizeCell_iphone_landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42361571B5C10011E130 /* BFGFullSizeCell_iphone_landscape.xib */; };
-		87CE42421571B5C10011E130 /* BFGCell_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE42391571B5C10011E130 /* BFGCell_ipad.xib */; };
-		87CE42431571B5C10011E130 /* BFGCell_iphone_portrait.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE423A1571B5C10011E130 /* BFGCell_iphone_portrait.xib */; };
-		87CE42441571B5C10011E130 /* BFGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CE423B1571B5C10011E130 /* BFGalleryViewController.xib */; };
-		EB134C3F160FDC0400C193BF /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = EB134C3E160FDC0400C193BF /* lock.png */; };
-		EB134C42160FE04900C193BF /* BFDeniedAccessToAssetsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB134C41160FE04900C193BF /* BFDeniedAccessToAssetsView.xib */; };
-		EB134C44160FE08700C193BF /* BFDeniedAccessToAssetsView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB134C43160FE08700C193BF /* BFDeniedAccessToAssetsView~ipad.xib */; };
-		EB2126AE161D153E00BC8E81 /* FlickrImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2126AD161D153E00BC8E81 /* FlickrImage.m */; };
-		EB33F0501602FA4C001F06C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */; };
 		EB390CA31622791700FD80AA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB390CA21622791700FD80AA /* Accounts.framework */; };
 		EB390CA51622797000FD80AA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB390CA41622797000FD80AA /* Social.framework */; };
 		EB390CA71622797D00FD80AA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB390CA61622797D00FD80AA /* AdSupport.framework */; };
-		EB5D503F15FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */; };
-		EB5D504115FF2E0800AB1CD7 /* FlickrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D503E15FF2E0800AB1CD7 /* FlickrRequest.m */; };
-		EB5D505215FF2E5100AB1CD7 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D504715FF2E5100AB1CD7 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EB5D505415FF2E5100AB1CD7 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D504915FF2E5100AB1CD7 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EB5D505615FF2E5100AB1CD7 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D504B15FF2E5100AB1CD7 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EB5D505815FF2E5100AB1CD7 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D504D15FF2E5100AB1CD7 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EB5D505A15FF2E5100AB1CD7 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D504F15FF2E5100AB1CD7 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EB5D505C15FF2E5100AB1CD7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5D505115FF2E5100AB1CD7 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06B6CDD71BE98E7D00F5B5B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87CE41B61571A6300011E130 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06B6CDD11BE98E7D00F5B5B7;
+			remoteInfo = BFGalleryLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		06B6CDDE1BE98E7D00F5B5B7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				06B6CDDA1BE98E7D00F5B5B7 /* BFGalleryLib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		067869B9162B951600B4AD46 /* BFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLog.h; sourceTree = "<group>"; };
-		067869BA162B9BD400B4AD46 /* BFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFImage.h; path = BFGallery/BFImage.h; sourceTree = "<group>"; };
-		067869BB162B9BD400B4AD46 /* BFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFImage.m; path = BFGallery/BFImage.m; sourceTree = "<group>"; };
-		067869BD162B9CD800B4AD46 /* FBUserPictures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUserPictures.h; sourceTree = "<group>"; };
-		067869BE162B9CD800B4AD46 /* FBUserPictures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUserPictures.m; sourceTree = "<group>"; };
-		0685AAA716D477C400381C64 /* FBAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAlbum.h; sourceTree = "<group>"; };
-		0685AAA816D477C400381C64 /* FBAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAlbum.m; sourceTree = "<group>"; };
-		8717826C15C3ABA80068C775 /* BFGFullSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFGFullSizeViewController.xib; sourceTree = "<group>"; };
-		8717827015C3C1670068C775 /* BFGCell_iphone_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGCell_iphone_landscape.xib; path = assets/BFGCell_iphone_landscape.xib; sourceTree = "<group>"; };
-		8784BE1315C5FE68004F6FEA /* BFGFullSizeViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "BFGFullSizeViewController~ipad.xib"; sourceTree = "<group>"; };
+		06B6CDD21BE98E7D00F5B5B7 /* BFGalleryLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFGalleryLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B6CDD41BE98E7D00F5B5B7 /* BFGalleryLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFGalleryLib.h; sourceTree = "<group>"; };
+		06B6CDD61BE98E7D00F5B5B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06B6CE101BE9928200F5B5B7 /* .DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = .DS_Store; sourceTree = "<group>"; };
+		06B6CE111BE9928200F5B5B7 /* BFDeniedAccessToAssetsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFDeniedAccessToAssetsView.xib; sourceTree = "<group>"; };
+		06B6CE121BE9928200F5B5B7 /* BFDeniedAccessToAssetsView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "BFDeniedAccessToAssetsView~ipad.xib"; sourceTree = "<group>"; };
+		06B6CE131BE9928200F5B5B7 /* BFGalleryLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGalleryLib.h; sourceTree = "<group>"; };
+		06B6CE141BE9928200F5B5B7 /* BFGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGalleryViewController.h; sourceTree = "<group>"; };
+		06B6CE151BE9928200F5B5B7 /* BFGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGalleryViewController.m; sourceTree = "<group>"; };
+		06B6CE161BE9928200F5B5B7 /* BFGalleryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFGalleryViewController.xib; sourceTree = "<group>"; };
+		06B6CE171BE9928200F5B5B7 /* BFGAssetsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGAssetsManager.h; sourceTree = "<group>"; };
+		06B6CE181BE9928300F5B5B7 /* BFGAssetsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGAssetsManager.m; sourceTree = "<group>"; };
+		06B6CE191BE9928300F5B5B7 /* BFGCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "BFGCell~ipad.xib"; sourceTree = "<group>"; };
+		06B6CE1A1BE9928300F5B5B7 /* BFGCell_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFGCell_landscape.xib; sourceTree = "<group>"; };
+		06B6CE1B1BE9928300F5B5B7 /* BFGCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFGCell.xib; sourceTree = "<group>"; };
+		06B6CE1C1BE9928300F5B5B7 /* BFGCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGCell.h; sourceTree = "<group>"; };
+		06B6CE1D1BE9928300F5B5B7 /* BFGCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGCell.m; sourceTree = "<group>"; };
+		06B6CE1E1BE9928300F5B5B7 /* BFGFullSizeCell_landscape~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "BFGFullSizeCell_landscape~ipad.xib"; sourceTree = "<group>"; };
+		06B6CE1F1BE9928300F5B5B7 /* BFGFullSizeCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "BFGFullSizeCell~ipad.xib"; sourceTree = "<group>"; };
+		06B6CE201BE9928300F5B5B7 /* BFGFullSizeCell_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFGFullSizeCell_landscape.xib; sourceTree = "<group>"; };
+		06B6CE211BE9928300F5B5B7 /* BFGFullSizeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFGFullSizeCell.xib; sourceTree = "<group>"; };
+		06B6CE221BE9928300F5B5B7 /* BFGFullSizeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGFullSizeCell.h; sourceTree = "<group>"; };
+		06B6CE231BE9928300F5B5B7 /* BFGFullSizeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGFullSizeCell.m; sourceTree = "<group>"; };
+		06B6CE241BE9928300F5B5B7 /* BFGFullSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGFullSizeViewController.h; sourceTree = "<group>"; };
+		06B6CE251BE9928300F5B5B7 /* BFGFullSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGFullSizeViewController.m; sourceTree = "<group>"; };
+		06B6CE261BE9928300F5B5B7 /* BFGFullSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFGFullSizeViewController.xib; sourceTree = "<group>"; };
+		06B6CE271BE9928300F5B5B7 /* BFGFullSizeViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "BFGFullSizeViewController~ipad.xib"; sourceTree = "<group>"; };
+		06B6CE281BE9928300F5B5B7 /* BFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFImage.h; sourceTree = "<group>"; };
+		06B6CE291BE9928300F5B5B7 /* BFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFImage.m; sourceTree = "<group>"; };
+		06B6CE2A1BE9928300F5B5B7 /* BFMenuDetailViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "BFMenuDetailViewController~ipad.xib"; sourceTree = "<group>"; };
+		06B6CE2B1BE9928300F5B5B7 /* BFMenuDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFMenuDetailViewController.xib; sourceTree = "<group>"; };
+		06B6CE2C1BE9928300F5B5B7 /* flechas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flechas.png; sourceTree = "<group>"; };
+		06B6CE2D1BE9928300F5B5B7 /* FlickrImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrImage.h; sourceTree = "<group>"; };
+		06B6CE2E1BE9928300F5B5B7 /* FlickrImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrImage.m; sourceTree = "<group>"; };
+		06B6CE2F1BE9928300F5B5B7 /* FlickrImageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrImageParser.h; sourceTree = "<group>"; };
+		06B6CE301BE9928300F5B5B7 /* FlickrImageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrImageParser.m; sourceTree = "<group>"; };
+		06B6CE311BE9928300F5B5B7 /* FlickrRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrRequest.h; sourceTree = "<group>"; };
+		06B6CE321BE9928300F5B5B7 /* FlickrRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrRequest.m; sourceTree = "<group>"; };
+		06B6CE331BE9928300F5B5B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06B6CE341BE9928300F5B5B7 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		06B6CE351BE9928300F5B5B7 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		06B6CE361BE9928300F5B5B7 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		06B6CE371BE9928300F5B5B7 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		06B6CE381BE9928300F5B5B7 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		06B6CE391BE9928300F5B5B7 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		06B6CE3A1BE9928300F5B5B7 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		06B6CE3B1BE9928300F5B5B7 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		06B6CE3C1BE9928300F5B5B7 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		06B6CE3D1BE9928300F5B5B7 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		06B6CE3E1BE9928300F5B5B7 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		06B6CE3F1BE9928300F5B5B7 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		06B6CE401BE9928300F5B5B7 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		06B6CE411BE9928300F5B5B7 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		06B6CE421BE9928300F5B5B7 /* SharedConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedConstants.h; sourceTree = "<group>"; };
 		87CE41BF1571A6300011E130 /* BFGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CE41C31571A6300011E130 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87CE41C51571A6300011E130 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		87CE41C71571A6300011E130 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		87CE41CB1571A6300011E130 /* BFGallery-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BFGallery-Info.plist"; sourceTree = "<group>"; };
-		87CE41CD1571A6300011E130 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		87CE41CF1571A6300011E130 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		87CE41D11571A6300011E130 /* BFGallery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BFGallery-Prefix.pch"; sourceTree = "<group>"; };
 		87CE41D21571A6300011E130 /* BFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFAppDelegate.h; sourceTree = "<group>"; };
 		87CE41D31571A6300011E130 /* BFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BFAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		87CE41D51571A6300011E130 /* BFGallery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BFGallery.entitlements; sourceTree = "<group>"; };
-		87CE41EE1571A6320011E130 /* BFGalleryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BFGalleryTests-Info.plist"; sourceTree = "<group>"; };
-		87CE41F01571A6320011E130 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		87CE41F21571A6320011E130 /* BFGalleryTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFGalleryTests.h; sourceTree = "<group>"; };
-		87CE41F31571A6320011E130 /* BFGalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFGalleryTests.m; sourceTree = "<group>"; };
-		87CE41FE1571A74A0011E130 /* BFGAssetsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BFGAssetsManager.h; sourceTree = "<group>"; };
-		87CE41FF1571A74A0011E130 /* BFGAssetsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGAssetsManager.m; sourceTree = "<group>"; };
-		87CE42041571A74A0011E130 /* BFGFullSizeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGFullSizeCell.h; sourceTree = "<group>"; };
-		87CE42051571A74A0011E130 /* BFGFullSizeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGFullSizeCell.m; sourceTree = "<group>"; };
-		87CE42081571A74A0011E130 /* BFGFullSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGFullSizeViewController.h; sourceTree = "<group>"; };
-		87CE42091571A74A0011E130 /* BFGFullSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGFullSizeViewController.m; sourceTree = "<group>"; };
-		87CE420C1571A74A0011E130 /* BFGCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGCell.h; sourceTree = "<group>"; };
-		87CE420D1571A74A0011E130 /* BFGCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGCell.m; sourceTree = "<group>"; };
-		87CE420E1571A74A0011E130 /* BFGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGalleryViewController.h; sourceTree = "<group>"; };
-		87CE420F1571A74A0011E130 /* BFGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGalleryViewController.m; sourceTree = "<group>"; };
 		87CE42281571A8490011E130 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		87CE422A1571B12F0011E130 /* flechas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flechas.png; sourceTree = "<group>"; };
-		87CE42331571B5C10011E130 /* BFGFullSizeCell_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGFullSizeCell_ipad.xib; path = assets/BFGFullSizeCell_ipad.xib; sourceTree = "<group>"; };
-		87CE42341571B5C10011E130 /* BFGFullSizeCell_ipad_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGFullSizeCell_ipad_landscape.xib; path = assets/BFGFullSizeCell_ipad_landscape.xib; sourceTree = "<group>"; };
-		87CE42351571B5C10011E130 /* BFGFullSizeCell_iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGFullSizeCell_iphone.xib; path = assets/BFGFullSizeCell_iphone.xib; sourceTree = "<group>"; };
-		87CE42361571B5C10011E130 /* BFGFullSizeCell_iphone_landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGFullSizeCell_iphone_landscape.xib; path = assets/BFGFullSizeCell_iphone_landscape.xib; sourceTree = "<group>"; };
-		87CE42391571B5C10011E130 /* BFGCell_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGCell_ipad.xib; path = assets/BFGCell_ipad.xib; sourceTree = "<group>"; };
-		87CE423A1571B5C10011E130 /* BFGCell_iphone_portrait.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGCell_iphone_portrait.xib; path = assets/BFGCell_iphone_portrait.xib; sourceTree = "<group>"; };
-		87CE423B1571B5C10011E130 /* BFGalleryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFGalleryViewController.xib; path = assets/BFGalleryViewController.xib; sourceTree = "<group>"; };
-		EB0079EE15FF2FE700B6F742 /* SharedConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedConstants.h; sourceTree = "<group>"; };
-		EB134C3E160FDC0400C193BF /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
-		EB134C41160FE04900C193BF /* BFDeniedAccessToAssetsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFDeniedAccessToAssetsView.xib; sourceTree = "<group>"; };
-		EB134C43160FE08700C193BF /* BFDeniedAccessToAssetsView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "BFDeniedAccessToAssetsView~ipad.xib"; sourceTree = "<group>"; };
-		EB2126AC161D153E00BC8E81 /* FlickrImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrImage.h; sourceTree = "<group>"; };
-		EB2126AD161D153E00BC8E81 /* FlickrImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrImage.m; sourceTree = "<group>"; };
-		EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		EB390C821622727300FD80AA /* InstructionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InstructionsView.xib; path = ../../iOSNotifier/iOSNotifier/iOSNotifier/InstructionsView.xib; sourceTree = "<group>"; };
-		EB390C831622727300FD80AA /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructionsViewController.h; path = ../../iOSNotifier/iOSNotifier/iOSNotifier/InstructionsViewController.h; sourceTree = "<group>"; };
-		EB390C841622727300FD80AA /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstructionsViewController.m; path = ../../iOSNotifier/iOSNotifier/iOSNotifier/InstructionsViewController.m; sourceTree = "<group>"; };
 		EB390CA21622791700FD80AA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		EB390CA41622797000FD80AA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		EB390CA61622797D00FD80AA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		EB390CBA1622940900FD80AA /* FBImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBImage.h; sourceTree = "<group>"; };
-		EB390CBB1622940900FD80AA /* FBImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBImage.m; sourceTree = "<group>"; };
-		EB5D503B15FF2E0800AB1CD7 /* FlickrImageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrImageParser.h; sourceTree = "<group>"; };
-		EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrImageParser.m; sourceTree = "<group>"; };
-		EB5D503D15FF2E0800AB1CD7 /* FlickrRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrRequest.h; sourceTree = "<group>"; };
-		EB5D503E15FF2E0800AB1CD7 /* FlickrRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrRequest.m; sourceTree = "<group>"; };
-		EB5D504515FF2E5100AB1CD7 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		EB5D504615FF2E5100AB1CD7 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		EB5D504715FF2E5100AB1CD7 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		EB5D504815FF2E5100AB1CD7 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		EB5D504915FF2E5100AB1CD7 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		EB5D504A15FF2E5100AB1CD7 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		EB5D504B15FF2E5100AB1CD7 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
-		EB5D504C15FF2E5100AB1CD7 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		EB5D504D15FF2E5100AB1CD7 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
-		EB5D504E15FF2E5100AB1CD7 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		EB5D504F15FF2E5100AB1CD7 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		EB5D505015FF2E5100AB1CD7 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		EB5D505115FF2E5100AB1CD7 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		06B6CDCE1BE98E7D00F5B5B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87CE41BC1571A6300011E130 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EB390CA71622797D00FD80AA /* AdSupport.framework in Frameworks */,
+				06B6CDD91BE98E7D00F5B5B7 /* BFGalleryLib.framework in Frameworks */,
 				EB390CA51622797000FD80AA /* Social.framework in Frameworks */,
 				EB390CA31622791700FD80AA /* Accounts.framework in Frameworks */,
 				87CE42291571A8490011E130 /* AssetsLibrary.framework in Frameworks */,
@@ -147,79 +193,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		066303AE1642435A00B29F70 /* Model */ = {
+		06B6CDD31BE98E7D00F5B5B7 /* BFGalleryLib */ = {
 			isa = PBXGroup;
 			children = (
-				87CE41FE1571A74A0011E130 /* BFGAssetsManager.h */,
-				87CE41FF1571A74A0011E130 /* BFGAssetsManager.m */,
-				EB5D504415FF2E1400AB1CD7 /* FlickrConsumer */,
-				067869C0162B9D6900B4AD46 /* FacebookConsumer */,
-				EB390CB9162293D300FD80AA /* Images */,
+				06B6CE101BE9928200F5B5B7 /* .DS_Store */,
+				06B6CE111BE9928200F5B5B7 /* BFDeniedAccessToAssetsView.xib */,
+				06B6CE121BE9928200F5B5B7 /* BFDeniedAccessToAssetsView~ipad.xib */,
+				06B6CE131BE9928200F5B5B7 /* BFGalleryLib.h */,
+				06B6CE141BE9928200F5B5B7 /* BFGalleryViewController.h */,
+				06B6CE151BE9928200F5B5B7 /* BFGalleryViewController.m */,
+				06B6CE161BE9928200F5B5B7 /* BFGalleryViewController.xib */,
+				06B6CE171BE9928200F5B5B7 /* BFGAssetsManager.h */,
+				06B6CE181BE9928300F5B5B7 /* BFGAssetsManager.m */,
+				06B6CE191BE9928300F5B5B7 /* BFGCell~ipad.xib */,
+				06B6CE1A1BE9928300F5B5B7 /* BFGCell_landscape.xib */,
+				06B6CE1B1BE9928300F5B5B7 /* BFGCell.xib */,
+				06B6CE1C1BE9928300F5B5B7 /* BFGCell.h */,
+				06B6CE1D1BE9928300F5B5B7 /* BFGCell.m */,
+				06B6CE1E1BE9928300F5B5B7 /* BFGFullSizeCell_landscape~ipad.xib */,
+				06B6CE1F1BE9928300F5B5B7 /* BFGFullSizeCell~ipad.xib */,
+				06B6CE201BE9928300F5B5B7 /* BFGFullSizeCell_landscape.xib */,
+				06B6CE211BE9928300F5B5B7 /* BFGFullSizeCell.xib */,
+				06B6CE221BE9928300F5B5B7 /* BFGFullSizeCell.h */,
+				06B6CE231BE9928300F5B5B7 /* BFGFullSizeCell.m */,
+				06B6CE241BE9928300F5B5B7 /* BFGFullSizeViewController.h */,
+				06B6CE251BE9928300F5B5B7 /* BFGFullSizeViewController.m */,
+				06B6CE261BE9928300F5B5B7 /* BFGFullSizeViewController.xib */,
+				06B6CE271BE9928300F5B5B7 /* BFGFullSizeViewController~ipad.xib */,
+				06B6CE281BE9928300F5B5B7 /* BFImage.h */,
+				06B6CE291BE9928300F5B5B7 /* BFImage.m */,
+				06B6CE2A1BE9928300F5B5B7 /* BFMenuDetailViewController~ipad.xib */,
+				06B6CE2B1BE9928300F5B5B7 /* BFMenuDetailViewController.xib */,
+				06B6CE2C1BE9928300F5B5B7 /* flechas.png */,
+				06B6CE2D1BE9928300F5B5B7 /* FlickrImage.h */,
+				06B6CE2E1BE9928300F5B5B7 /* FlickrImage.m */,
+				06B6CE2F1BE9928300F5B5B7 /* FlickrImageParser.h */,
+				06B6CE301BE9928300F5B5B7 /* FlickrImageParser.m */,
+				06B6CE311BE9928300F5B5B7 /* FlickrRequest.h */,
+				06B6CE321BE9928300F5B5B7 /* FlickrRequest.m */,
+				06B6CE331BE9928300F5B5B7 /* Info.plist */,
+				06B6CE341BE9928300F5B5B7 /* JSON.h */,
+				06B6CE351BE9928300F5B5B7 /* lock.png */,
+				06B6CE361BE9928300F5B5B7 /* NSObject+SBJSON.h */,
+				06B6CE371BE9928300F5B5B7 /* NSObject+SBJSON.m */,
+				06B6CE381BE9928300F5B5B7 /* NSString+SBJSON.h */,
+				06B6CE391BE9928300F5B5B7 /* NSString+SBJSON.m */,
+				06B6CE3A1BE9928300F5B5B7 /* SBJSON.h */,
+				06B6CE3B1BE9928300F5B5B7 /* SBJSON.m */,
+				06B6CE3C1BE9928300F5B5B7 /* SBJsonBase.h */,
+				06B6CE3D1BE9928300F5B5B7 /* SBJsonBase.m */,
+				06B6CE3E1BE9928300F5B5B7 /* SBJsonParser.h */,
+				06B6CE3F1BE9928300F5B5B7 /* SBJsonParser.m */,
+				06B6CE401BE9928300F5B5B7 /* SBJsonWriter.h */,
+				06B6CE411BE9928300F5B5B7 /* SBJsonWriter.m */,
+				06B6CE421BE9928300F5B5B7 /* SharedConstants.h */,
+				06B6CDD41BE98E7D00F5B5B7 /* BFGalleryLib.h */,
+				06B6CDD61BE98E7D00F5B5B7 /* Info.plist */,
 			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		066303AF1642436100B29F70 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8717826915C3857D0068C775 /* Cells */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		066303B01642436B00B29F70 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				EB33F05116043E1E001F06C2 /* GalleryViewController */,
-				8717826B15C385C30068C775 /* FullSizeViewController */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		067869C0162B9D6900B4AD46 /* FacebookConsumer */ = {
-			isa = PBXGroup;
-			children = (
-				067869BD162B9CD800B4AD46 /* FBUserPictures.h */,
-				067869BE162B9CD800B4AD46 /* FBUserPictures.m */,
-			);
-			name = FacebookConsumer;
-			sourceTree = "<group>";
-		};
-		8717826915C3857D0068C775 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				87CE420C1571A74A0011E130 /* BFGCell.h */,
-				87CE420D1571A74A0011E130 /* BFGCell.m */,
-				87CE42391571B5C10011E130 /* BFGCell_ipad.xib */,
-				87CE423A1571B5C10011E130 /* BFGCell_iphone_portrait.xib */,
-				8717827015C3C1670068C775 /* BFGCell_iphone_landscape.xib */,
-				87CE42041571A74A0011E130 /* BFGFullSizeCell.h */,
-				87CE42051571A74A0011E130 /* BFGFullSizeCell.m */,
-				87CE42331571B5C10011E130 /* BFGFullSizeCell_ipad.xib */,
-				87CE42351571B5C10011E130 /* BFGFullSizeCell_iphone.xib */,
-				87CE42341571B5C10011E130 /* BFGFullSizeCell_ipad_landscape.xib */,
-				87CE42361571B5C10011E130 /* BFGFullSizeCell_iphone_landscape.xib */,
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
-		8717826B15C385C30068C775 /* FullSizeViewController */ = {
-			isa = PBXGroup;
-			children = (
-				87CE42081571A74A0011E130 /* BFGFullSizeViewController.h */,
-				87CE42091571A74A0011E130 /* BFGFullSizeViewController.m */,
-				8784BE1315C5FE68004F6FEA /* BFGFullSizeViewController~ipad.xib */,
-				8717826C15C3ABA80068C775 /* BFGFullSizeViewController.xib */,
-			);
-			name = FullSizeViewController;
+			path = BFGalleryLib;
 			sourceTree = "<group>";
 		};
 		87CE41B41571A6300011E130 = {
 			isa = PBXGroup;
 			children = (
-				EB33F04F1602FA4B001F06C2 /* Default-568h@2x.png */,
 				87CE41C91571A6300011E130 /* BFGallery */,
-				87CE41EC1571A6320011E130 /* BFGalleryTests */,
+				06B6CDD31BE98E7D00F5B5B7 /* BFGalleryLib */,
 				87CE41C21571A6300011E130 /* Frameworks */,
 				87CE41C01571A6300011E130 /* Products */,
 			);
@@ -229,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				87CE41BF1571A6300011E130 /* BFGallery.app */,
+				06B6CDD21BE98E7D00F5B5B7 /* BFGalleryLib.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,9 +279,6 @@
 				EB390CA41622797000FD80AA /* Social.framework */,
 				EB390CA21622791700FD80AA /* Accounts.framework */,
 				067869B9162B951600B4AD46 /* BFLog.h */,
-				EB390C871622727B00FD80AA /* Notifier */,
-				EB390C6D16226EF500FD80AA /* Facebook */,
-				EB33F05216043E55001F06C2 /* JSON */,
 				87CE42281571A8490011E130 /* AssetsLibrary.framework */,
 				87CE41C31571A6300011E130 /* UIKit.framework */,
 				87CE41C51571A6300011E130 /* Foundation.framework */,
@@ -255,9 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				87CE41FD1571A6FC0011E130 /* Delegate */,
-				066303B01642436B00B29F70 /* Controllers */,
-				066303AF1642436100B29F70 /* Views */,
-				066303AE1642435A00B29F70 /* Model */,
 				87CE41CA1571A6300011E130 /* Supporting Files */,
 			);
 			path = BFGallery;
@@ -266,32 +299,9 @@
 		87CE41CA1571A6300011E130 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EB134C3E160FDC0400C193BF /* lock.png */,
-				87CE422A1571B12F0011E130 /* flechas.png */,
 				87CE41CB1571A6300011E130 /* BFGallery-Info.plist */,
-				87CE41CC1571A6300011E130 /* InfoPlist.strings */,
 				87CE41CF1571A6300011E130 /* main.m */,
 				87CE41D11571A6300011E130 /* BFGallery-Prefix.pch */,
-				87CE41D51571A6300011E130 /* BFGallery.entitlements */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		87CE41EC1571A6320011E130 /* BFGalleryTests */ = {
-			isa = PBXGroup;
-			children = (
-				87CE41F21571A6320011E130 /* BFGalleryTests.h */,
-				87CE41F31571A6320011E130 /* BFGalleryTests.m */,
-				87CE41ED1571A6320011E130 /* Supporting Files */,
-			);
-			path = BFGalleryTests;
-			sourceTree = "<group>";
-		};
-		87CE41ED1571A6320011E130 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				87CE41EE1571A6320011E130 /* BFGalleryTests-Info.plist */,
-				87CE41EF1571A6320011E130 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -305,87 +315,56 @@
 			name = Delegate;
 			sourceTree = "<group>";
 		};
-		EB33F05116043E1E001F06C2 /* GalleryViewController */ = {
-			isa = PBXGroup;
-			children = (
-				87CE420E1571A74A0011E130 /* BFGalleryViewController.h */,
-				87CE420F1571A74A0011E130 /* BFGalleryViewController.m */,
-				87CE423B1571B5C10011E130 /* BFGalleryViewController.xib */,
-				EB134C41160FE04900C193BF /* BFDeniedAccessToAssetsView.xib */,
-				EB134C43160FE08700C193BF /* BFDeniedAccessToAssetsView~ipad.xib */,
-			);
-			name = GalleryViewController;
-			sourceTree = "<group>";
-		};
-		EB33F05216043E55001F06C2 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				EB5D504515FF2E5100AB1CD7 /* JSON.h */,
-				EB5D504615FF2E5100AB1CD7 /* NSObject+SBJSON.h */,
-				EB5D504715FF2E5100AB1CD7 /* NSObject+SBJSON.m */,
-				EB5D504815FF2E5100AB1CD7 /* NSString+SBJSON.h */,
-				EB5D504915FF2E5100AB1CD7 /* NSString+SBJSON.m */,
-				EB5D504A15FF2E5100AB1CD7 /* SBJSON.h */,
-				EB5D504B15FF2E5100AB1CD7 /* SBJSON.m */,
-				EB5D504C15FF2E5100AB1CD7 /* SBJsonBase.h */,
-				EB5D504D15FF2E5100AB1CD7 /* SBJsonBase.m */,
-				EB5D504E15FF2E5100AB1CD7 /* SBJsonParser.h */,
-				EB5D504F15FF2E5100AB1CD7 /* SBJsonParser.m */,
-				EB5D505015FF2E5100AB1CD7 /* SBJsonWriter.h */,
-				EB5D505115FF2E5100AB1CD7 /* SBJsonWriter.m */,
-			);
-			name = JSON;
-			sourceTree = "<group>";
-		};
-		EB390C6D16226EF500FD80AA /* Facebook */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Facebook;
-			sourceTree = "<group>";
-		};
-		EB390C871622727B00FD80AA /* Notifier */ = {
-			isa = PBXGroup;
-			children = (
-				EB390C821622727300FD80AA /* InstructionsView.xib */,
-				EB390C831622727300FD80AA /* InstructionsViewController.h */,
-				EB390C841622727300FD80AA /* InstructionsViewController.m */,
-			);
-			name = Notifier;
-			sourceTree = "<group>";
-		};
-		EB390CB9162293D300FD80AA /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				EB390CBA1622940900FD80AA /* FBImage.h */,
-				EB390CBB1622940900FD80AA /* FBImage.m */,
-				067869BA162B9BD400B4AD46 /* BFImage.h */,
-				067869BB162B9BD400B4AD46 /* BFImage.m */,
-				EB2126AC161D153E00BC8E81 /* FlickrImage.h */,
-				EB2126AD161D153E00BC8E81 /* FlickrImage.m */,
-				0685AAA716D477C400381C64 /* FBAlbum.h */,
-				0685AAA816D477C400381C64 /* FBAlbum.m */,
-			);
-			name = Images;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		EB5D504415FF2E1400AB1CD7 /* FlickrConsumer */ = {
-			isa = PBXGroup;
-			children = (
-				EB0079EE15FF2FE700B6F742 /* SharedConstants.h */,
-				EB5D503B15FF2E0800AB1CD7 /* FlickrImageParser.h */,
-				EB5D503C15FF2E0800AB1CD7 /* FlickrImageParser.m */,
-				EB5D503D15FF2E0800AB1CD7 /* FlickrRequest.h */,
-				EB5D503E15FF2E0800AB1CD7 /* FlickrRequest.m */,
-			);
-			name = FlickrConsumer;
-			path = ..;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		06B6CDCF1BE98E7D00F5B5B7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B6CE641BE9928300F5B5B7 /* FlickrRequest.h in Headers */,
+				06B6CE6B1BE9928300F5B5B7 /* NSString+SBJSON.h in Headers */,
+				06B6CE621BE9928300F5B5B7 /* FlickrImageParser.h in Headers */,
+				06B6CE691BE9928300F5B5B7 /* NSObject+SBJSON.h in Headers */,
+				06B6CE471BE9928300F5B5B7 /* BFGalleryViewController.h in Headers */,
+				06B6CE4A1BE9928300F5B5B7 /* BFGAssetsManager.h in Headers */,
+				06B6CE731BE9928300F5B5B7 /* SBJsonWriter.h in Headers */,
+				06B6CE5B1BE9928300F5B5B7 /* BFImage.h in Headers */,
+				06B6CE601BE9928300F5B5B7 /* FlickrImage.h in Headers */,
+				06B6CE711BE9928300F5B5B7 /* SBJsonParser.h in Headers */,
+				06B6CE671BE9928300F5B5B7 /* JSON.h in Headers */,
+				06B6CE551BE9928300F5B5B7 /* BFGFullSizeCell.h in Headers */,
+				06B6CE571BE9928300F5B5B7 /* BFGFullSizeViewController.h in Headers */,
+				06B6CDD51BE98E7D00F5B5B7 /* BFGalleryLib.h in Headers */,
+				06B6CE6F1BE9928300F5B5B7 /* SBJsonBase.h in Headers */,
+				06B6CE461BE9928300F5B5B7 /* BFGalleryLib.h in Headers */,
+				06B6CE4F1BE9928300F5B5B7 /* BFGCell.h in Headers */,
+				06B6CE751BE9928300F5B5B7 /* SharedConstants.h in Headers */,
+				06B6CE6D1BE9928300F5B5B7 /* SBJSON.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		06B6CDD11BE98E7D00F5B5B7 /* BFGalleryLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06B6CDDB1BE98E7D00F5B5B7 /* Build configuration list for PBXNativeTarget "BFGalleryLib" */;
+			buildPhases = (
+				06B6CDCD1BE98E7D00F5B5B7 /* Sources */,
+				06B6CDCE1BE98E7D00F5B5B7 /* Frameworks */,
+				06B6CDCF1BE98E7D00F5B5B7 /* Headers */,
+				06B6CDD01BE98E7D00F5B5B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BFGalleryLib;
+			productName = BFGalleryLib;
+			productReference = 06B6CDD21BE98E7D00F5B5B7 /* BFGalleryLib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		87CE41BE1571A6300011E130 /* BFGallery */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87CE41F71571A6320011E130 /* Build configuration list for PBXNativeTarget "BFGallery" */;
@@ -393,10 +372,12 @@
 				87CE41BB1571A6300011E130 /* Sources */,
 				87CE41BC1571A6300011E130 /* Frameworks */,
 				87CE41BD1571A6300011E130 /* Resources */,
+				06B6CDDE1BE98E7D00F5B5B7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				06B6CDD81BE98E7D00F5B5B7 /* PBXTargetDependency */,
 			);
 			name = BFGallery;
 			productName = BFGallery;
@@ -413,6 +394,11 @@
 				LastTestingUpgradeCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Dario Lencina";
+				TargetAttributes = {
+					06B6CDD11BE98E7D00F5B5B7 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
 			};
 			buildConfigurationList = 87CE41B91571A6300011E130 /* Build configuration list for PBXProject "BFGallery" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -427,84 +413,151 @@
 			projectRoot = "";
 			targets = (
 				87CE41BE1571A6300011E130 /* BFGallery */,
+				06B6CDD11BE98E7D00F5B5B7 /* BFGalleryLib */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		06B6CDD01BE98E7D00F5B5B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B6CE5E1BE9928300F5B5B7 /* BFMenuDetailViewController.xib in Resources */,
+				06B6CE541BE9928300F5B5B7 /* BFGFullSizeCell.xib in Resources */,
+				06B6CE681BE9928300F5B5B7 /* lock.png in Resources */,
+				06B6CE451BE9928300F5B5B7 /* BFDeniedAccessToAssetsView~ipad.xib in Resources */,
+				06B6CE5D1BE9928300F5B5B7 /* BFMenuDetailViewController~ipad.xib in Resources */,
+				06B6CE5F1BE9928300F5B5B7 /* flechas.png in Resources */,
+				06B6CE431BE9928300F5B5B7 /* .DS_Store in Resources */,
+				06B6CE4D1BE9928300F5B5B7 /* BFGCell_landscape.xib in Resources */,
+				06B6CE511BE9928300F5B5B7 /* BFGFullSizeCell_landscape~ipad.xib in Resources */,
+				06B6CE4C1BE9928300F5B5B7 /* BFGCell~ipad.xib in Resources */,
+				06B6CE441BE9928300F5B5B7 /* BFDeniedAccessToAssetsView.xib in Resources */,
+				06B6CE661BE9928300F5B5B7 /* Info.plist in Resources */,
+				06B6CE531BE9928300F5B5B7 /* BFGFullSizeCell_landscape.xib in Resources */,
+				06B6CE4E1BE9928300F5B5B7 /* BFGCell.xib in Resources */,
+				06B6CE521BE9928300F5B5B7 /* BFGFullSizeCell~ipad.xib in Resources */,
+				06B6CE5A1BE9928300F5B5B7 /* BFGFullSizeViewController~ipad.xib in Resources */,
+				06B6CE591BE9928300F5B5B7 /* BFGFullSizeViewController.xib in Resources */,
+				06B6CE491BE9928300F5B5B7 /* BFGalleryViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87CE41BD1571A6300011E130 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87CE41CE1571A6300011E130 /* InfoPlist.strings in Resources */,
-				87CE41D61571A6300011E130 /* BFGallery.entitlements in Resources */,
-				87CE422B1571B12F0011E130 /* flechas.png in Resources */,
-				87CE423C1571B5C10011E130 /* BFGFullSizeCell_ipad.xib in Resources */,
-				87CE423D1571B5C10011E130 /* BFGFullSizeCell_ipad_landscape.xib in Resources */,
-				87CE423E1571B5C10011E130 /* BFGFullSizeCell_iphone.xib in Resources */,
-				87CE423F1571B5C10011E130 /* BFGFullSizeCell_iphone_landscape.xib in Resources */,
-				87CE42421571B5C10011E130 /* BFGCell_ipad.xib in Resources */,
-				87CE42431571B5C10011E130 /* BFGCell_iphone_portrait.xib in Resources */,
-				87CE42441571B5C10011E130 /* BFGalleryViewController.xib in Resources */,
-				8717826D15C3ABA80068C775 /* BFGFullSizeViewController.xib in Resources */,
-				8717827115C3C1670068C775 /* BFGCell_iphone_landscape.xib in Resources */,
-				8784BE1415C5FE68004F6FEA /* BFGFullSizeViewController~ipad.xib in Resources */,
-				EB33F0501602FA4C001F06C2 /* Default-568h@2x.png in Resources */,
-				EB134C3F160FDC0400C193BF /* lock.png in Resources */,
-				EB134C42160FE04900C193BF /* BFDeniedAccessToAssetsView.xib in Resources */,
-				EB134C44160FE08700C193BF /* BFDeniedAccessToAssetsView~ipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		06B6CDCD1BE98E7D00F5B5B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B6CE6A1BE9928300F5B5B7 /* NSObject+SBJSON.m in Sources */,
+				06B6CE741BE9928300F5B5B7 /* SBJsonWriter.m in Sources */,
+				06B6CE581BE9928300F5B5B7 /* BFGFullSizeViewController.m in Sources */,
+				06B6CE631BE9928300F5B5B7 /* FlickrImageParser.m in Sources */,
+				06B6CE611BE9928300F5B5B7 /* FlickrImage.m in Sources */,
+				06B6CE701BE9928300F5B5B7 /* SBJsonBase.m in Sources */,
+				06B6CE4B1BE9928300F5B5B7 /* BFGAssetsManager.m in Sources */,
+				06B6CE561BE9928300F5B5B7 /* BFGFullSizeCell.m in Sources */,
+				06B6CE721BE9928300F5B5B7 /* SBJsonParser.m in Sources */,
+				06B6CE6E1BE9928300F5B5B7 /* SBJSON.m in Sources */,
+				06B6CE481BE9928300F5B5B7 /* BFGalleryViewController.m in Sources */,
+				06B6CE501BE9928300F5B5B7 /* BFGCell.m in Sources */,
+				06B6CE651BE9928300F5B5B7 /* FlickrRequest.m in Sources */,
+				06B6CE5C1BE9928300F5B5B7 /* BFImage.m in Sources */,
+				06B6CE6C1BE9928300F5B5B7 /* NSString+SBJSON.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87CE41BB1571A6300011E130 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				87CE41D01571A6300011E130 /* main.m in Sources */,
 				87CE41D41571A6300011E130 /* BFAppDelegate.m in Sources */,
-				87CE42141571A74A0011E130 /* BFGAssetsManager.m in Sources */,
-				87CE42191571A74A0011E130 /* BFGFullSizeCell.m in Sources */,
-				87CE421C1571A74A0011E130 /* BFGFullSizeViewController.m in Sources */,
-				06B6CDCC1BE98C4500F5B5B7 /* BFImage.m in Sources */,
-				87CE421F1571A74A0011E130 /* BFGCell.m in Sources */,
-				87CE42201571A74A0011E130 /* BFGalleryViewController.m in Sources */,
-				EB5D503F15FF2E0800AB1CD7 /* FlickrImageParser.m in Sources */,
-				EB5D504115FF2E0800AB1CD7 /* FlickrRequest.m in Sources */,
-				EB5D505215FF2E5100AB1CD7 /* NSObject+SBJSON.m in Sources */,
-				EB5D505415FF2E5100AB1CD7 /* NSString+SBJSON.m in Sources */,
-				EB5D505615FF2E5100AB1CD7 /* SBJSON.m in Sources */,
-				EB5D505815FF2E5100AB1CD7 /* SBJsonBase.m in Sources */,
-				EB5D505A15FF2E5100AB1CD7 /* SBJsonParser.m in Sources */,
-				EB5D505C15FF2E5100AB1CD7 /* SBJsonWriter.m in Sources */,
-				EB2126AE161D153E00BC8E81 /* FlickrImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		87CE41CC1571A6300011E130 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				87CE41CD1571A6300011E130 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		06B6CDD81BE98E7D00F5B5B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06B6CDD11BE98E7D00F5B5B7 /* BFGalleryLib */;
+			targetProxy = 06B6CDD71BE98E7D00F5B5B7 /* PBXContainerItemProxy */;
 		};
-		87CE41EF1571A6320011E130 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				87CE41F01571A6320011E130 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		06B6CDDC1BE98E7D00F5B5B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = BFGalleryLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blackfireapps.BFGalleryLib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		06B6CDDD1BE98E7D00F5B5B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = BFGalleryLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blackfireapps.BFGalleryLib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		87CE41F51571A6320011E130 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -588,6 +641,7 @@
 				GCC_PREFIX_HEADER = "BFGallery/BFGallery-Prefix.pch";
 				INFOPLIST_FILE = "BFGallery/BFGallery-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "-DDEBUGLOGMODE";
 				OTHER_LDFLAGS = "-DDEBUGLOGMODE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blackfireapps.gallery;
@@ -608,6 +662,7 @@
 				GCC_PREFIX_HEADER = "BFGallery/BFGallery-Prefix.pch";
 				INFOPLIST_FILE = "BFGallery/BFGallery-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-DDEBUGLOGMODE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blackfireapps.gallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -618,6 +673,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		06B6CDDB1BE98E7D00F5B5B7 /* Build configuration list for PBXNativeTarget "BFGalleryLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06B6CDDC1BE98E7D00F5B5B7 /* Debug */,
+				06B6CDDD1BE98E7D00F5B5B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		87CE41B91571A6300011E130 /* Build configuration list for PBXProject "BFGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

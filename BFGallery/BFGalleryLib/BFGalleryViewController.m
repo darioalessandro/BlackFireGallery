@@ -16,8 +16,8 @@
 #import "BFGalleryViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "FlickrImage.h"
-#import "FBImage.h"
-#import "FBAlbum.h"
+//#import "FBImage.h"
+//#import "FBAlbum.h"
 
 @interface BFGalleryViewController ()
     -(BFGFullSizeCell *)getCell;
@@ -106,7 +106,7 @@
     if(self.mediaProvider==BFGAssetsManagerProviderFacebookPictures || self.mediaProvider==BFGAssetsManagerProviderFacebookAlbums){
         [loadingPicsIndicator startAnimating];
         [loadingPicsIndicator setHidden:NO];
-        context=[self.facebookAlbum albumInfo];
+        //context=[self.facebookAlbum albumInfo];
     }
     [[BFGAssetsManager sharedInstance] setSearchCriteria:self.searchCriteria];
     [[BFGAssetsManager sharedInstance] readImagesFromProvider:self.mediaProvider withContext:context];
@@ -125,10 +125,8 @@
 -(void)showDeniedAccessToAssetsView{
     if(self.noAccessToCamView==nil){
         NSString * nibName=@"BFDeniedAccessToAssetsView";
-        if([[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPad){
-            nibName= [NSString stringWithFormat:@"%@ipad", nibName];
-        }
-        self.noAccessToCamView= [[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil][0];
+
+        self.noAccessToCamView= [[NSBundle bundleForClass:[BFGalleryViewController class]] loadNibNamed:nibName owner:nil options:nil][0];
     }
     [self.loadingPicsIndicator stopAnimating];
     [self.noAccessToCamView setFrame:self.view.window.bounds];
@@ -190,19 +188,14 @@
 
 -(BFGFullSizeCell *)getCell{
     NSString * fileName= @"BFGFullSizeCell";
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        fileName= [NSString stringWithFormat:@"%@_iphone", fileName];
-    }else{
-        fileName= [NSString stringWithFormat:@"%@_ipad", fileName];
-    }
-    
+        
     if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
         fileName= [NSString stringWithFormat:@"%@_landscape", fileName];
     }
     
     BFGFullSizeCell * cell= (BFGFullSizeCell *)[self.tableView dequeueReusableCellWithIdentifier:@"ff"];
     if(cell==nil){
-        cell= [[NSBundle mainBundle] loadNibNamed:fileName owner:nil options:nil][0];
+        cell= [[NSBundle bundleForClass:[BFGalleryViewController class] ] loadNibNamed:fileName owner:nil options:nil][0];
         [cell setSelectedBackgroundView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)]];
         [cell setBackgroundView:[[UIView alloc] init]];
         [[cell backgroundView] setBackgroundColor:[UIColor blackColor]];
@@ -212,12 +205,12 @@
                                                                                         
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(self.mediaProvider==BFGAssetsManagerProviderFacebookAlbums){
-        UITableViewCell * cell= [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
+       /* UITableViewCell * cell= [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
         FBAlbum * album=self.productsArray[indexPath.row];
         [cell.textLabel setText:[[album albumInfo] objectForKey:@"name"]];
         [[cell textLabel] setTextColor:[UIColor whiteColor]];
         [cell.imageView setImage:[album thumbnail]];
-        return cell;
+        return cell;*/
     }
     
     BFGFullSizeCell * cell= [self getCell];
@@ -238,8 +231,8 @@
                 FlickrImage * image=(self.productsArray)[index0+j];
                 thumbnail= [image thumbnail];
             }else if(self.mediaProvider==BFGAssetsManagerProviderFacebookPictures){
-                FBImage * image=(self.productsArray)[index0+j];
-                thumbnail= [image thumbnail];
+               // FBImage * image=(self.productsArray)[index0+j];
+               // thumbnail= [image thumbnail];
             }
             
             UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectImage:)];
@@ -295,12 +288,9 @@
     
     NSString * fileName= nil;
     fileName= @"BFGFullSizeViewController";
-    
-    if (![[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        fileName= [NSString stringWithFormat:@"%@_ipad", fileName];
-    }
+
         
-    BFGFullSizeViewController * controller= [[BFGFullSizeViewController alloc] initWithNibName:fileName bundle:nil];
+    BFGFullSizeViewController * controller= [[BFGFullSizeViewController alloc] initWithNibName:fileName bundle:[NSBundle bundleForClass:[BFGFullSizeViewController class]]];
     [self addChildViewController:controller];
     self.lastSelectedRow= [NSIndexPath indexPathForRow:index inSection:0];
     [self.view addSubview:controller.view];
@@ -342,7 +332,7 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:TRUE];
     if (self.mediaProvider==BFGAssetsManagerProviderFacebookAlbums) {
         BFGalleryViewController * galleryViewController=[[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFacebookPictures];
-        galleryViewController.facebookAlbum=self.productsArray[indexPath.row];
+        //galleryViewController.facebookAlbum=self.productsArray[indexPath.row];
         [[BFGAssetsManager sharedInstance] setPics:nil];
         [self.navigationController pushViewController:galleryViewController animated:TRUE];
     }

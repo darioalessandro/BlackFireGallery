@@ -9,6 +9,7 @@
 #import "FlickrRequest.h"
 #import "SharedConstants.h"
 #import "BFLog.h"
+#import <UIKit/UIKit.h>
 
 
 @implementation FlickrRequest

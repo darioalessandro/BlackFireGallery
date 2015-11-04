@@ -17,7 +17,7 @@
 #import "BFGFullSizeViewController.h"
 #import "BFGFullSizeCell.h"
 #import "BFGAssetsManager.h"
-#import "FBAlbum.h"
+//#import "FBAlbum.h"
 
 @interface BFGalleryViewController : UIViewController <BFGFullSizeViewControllerDelegate, UIScrollViewDelegate, UISearchBarDelegate>{
     NSArray * productsArray;
@@ -34,7 +34,7 @@
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *tableActivityIndicator;
 @property (strong, nonatomic) IBOutlet UIView *noAccessToCamView;
 @property (strong, nonatomic) NSIndexPath * lastSelectedRow;
-@property (strong, nonatomic) FBAlbum * facebookAlbum;
+//@property (strong, nonatomic) FBAlbum * facebookAlbum;
 @property (nonatomic, assign) BOOL isShowingFullSizeGallery;
 @property (weak, nonatomic) id delegate;
 @property (atomic, strong) NSArray * productsArray;

@@ -17,7 +17,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderPhotoLibrary];
+    self.viewController = [[BFGalleryViewController alloc] initWithNibName:@"BFGalleryViewController" bundle:[NSBundle bundleForClass:[BFGalleryViewController class]] mediaProvider:BFGAssetsManagerProviderPhotoLibrary];
+                                                            
     self.viewController.searchCriteria=@"Chicago";
     UINavigationController * controllert= [[UINavigationController alloc] initWithRootViewController:self.viewController];
     [controllert.navigationBar setBarStyle:UIBarStyleBlack];
