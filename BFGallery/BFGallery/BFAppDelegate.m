@@ -10,7 +10,6 @@
 
 #import "BFGalleryViewController.h"
 #import "BFGAssetsManager.h"
-#import <FacebookSDK/FacebookSDK.h>
 
 @implementation BFAppDelegate
 
@@ -18,7 +17,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderFlickr];
+    self.viewController = [[BFGalleryViewController alloc] initWithMediaProvider:BFGAssetsManagerProviderPhotoLibrary];
     self.viewController.searchCriteria=@"Chicago";
     UINavigationController * controllert= [[UINavigationController alloc] initWithRootViewController:self.viewController];
     [controllert.navigationBar setBarStyle:UIBarStyleBlack];
@@ -45,12 +44,12 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    [FBSession.activeSession handleDidBecomeActive];
+    //[FBSession.activeSession handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    [FBSession.activeSession close];
+    //[FBSession.activeSession close];
 }
 
 - (BOOL)application:(UIApplication *)application

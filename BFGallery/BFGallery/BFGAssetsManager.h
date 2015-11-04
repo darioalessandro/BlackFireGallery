@@ -14,9 +14,8 @@
  */
 
 #import "FlickrRequest.h"
-#import <FacebookSDK/FacebookSDK.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "FBUserPictures.h"
+//#import "FBUserPictures.h"
 
 static NSString * const kAddedAssetsToLibrary= @"AddedAssetsToLibrary";
 static NSString * const kUserDeniedAccessToPics= @"kUserDeniedAccessToPics";
@@ -28,7 +27,8 @@ typedef enum{
     BFGAssetsManagerProviderFacebookPictures
 }BFGAssetsManagerProvider;
 
-@interface BFGAssetsManager : NSObject <FlickrImageParserDelegate, FBUserPicturesParserDelegate>{
+//@interface BFGAssetsManager : NSObject <FlickrImageParserDelegate, FBUserPicturesParserDelegate>{
+@interface BFGAssetsManager : NSObject <FlickrImageParserDelegate>{
     FlickrRequest * flickr;
     BFGAssetsManagerProvider _provider;
 }
@@ -41,6 +41,5 @@ typedef enum{
 -(void)setShouldSharePicsToCameraRoll:(BOOL)shouldShare handler:(BFGAssetsManagerShareHandler)handler;
 -(void)savePicToCameraRoll:(UIImage *)image completionBlock:(ALAssetsLibraryWriteImageCompletionBlock)block;
 @property(strong)NSString * searchCriteria;
-@property(strong) FBSession * session;
 @property(atomic, strong) NSMutableArray * pics;
 @end

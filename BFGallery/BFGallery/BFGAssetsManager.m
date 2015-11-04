@@ -15,7 +15,7 @@
 
 #import "BFGAssetsManager.h"
 #import "FlickrImage.h"
-#import "FBImage.h"
+//#import "FBImage.h"
 #import "BFLog.h"
 
 static BFGAssetsManager * _hiddenInstance= nil;
@@ -59,7 +59,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
         [flickr performFlickrRequestWithCriteria:self.searchCriteria delegate:self];
     }else if (provider==BFGAssetsManagerProviderFacebookAlbums){
         self.pics= [NSMutableArray array];
-        if ([FBSession activeSession].isOpen) {
+        /*if ([FBSession activeSession].isOpen) {
             [self loadFBImages];
             
         } else {
@@ -72,12 +72,12 @@ static BFGAssetsManager * _hiddenInstance= nil;
                     BFLog(@"error %@", error);
                 }
             }];
-        }
+        }*/
     }else if(provider==BFGAssetsManagerProviderFacebookPictures){
-        self.pics=nil;
+       /* self.pics=nil;
             FBUserPicturesParser * parser= [FBUserPicturesParser new];
             [parser setDelegate:self];
-        [parser picturesFromAlbum:context];
+        [parser picturesFromAlbum:context];*/
     }
     _provider=provider;
 }
@@ -85,6 +85,8 @@ static BFGAssetsManager * _hiddenInstance= nil;
 -(NSArray *)fbPermissions{
     return @[@"user_photos", @"user_photo_video_tags", @"friends_photos"];
 }
+
+/*
 
 -(void)loadFBImages{
     FBUserPicturesParser * parser= [FBUserPicturesParser new];
@@ -122,6 +124,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
 }
 
+
 -(void)parser:(FBUserPicturesParser *)fbParser failedToLoadAlbum:(NSDictionary *)album withError:(NSError *)error{
     if(!self.pics){
         self.pics= [NSMutableArray array];
@@ -130,6 +133,7 @@ static BFGAssetsManager * _hiddenInstance= nil;
     [alertView show];
     [[NSNotificationCenter defaultCenter] postNotificationName:kAddedAssetsToLibrary object:self.pics];
 }
+  */
 
 -(void)getMoreImages{
     if(_provider==BFGAssetsManagerProviderPhotoLibrary){
@@ -266,6 +270,6 @@ static BFGAssetsManager * _hiddenInstance= nil;
 #pragma Facebook
 
 -(BOOL)handleOpenURL:(NSURL *)url{
-    return [[FBSession activeSession] handleOpenURL:url];
+    return false;//[[FBSession activeSession] handleOpenURL:url];
 }
 @end

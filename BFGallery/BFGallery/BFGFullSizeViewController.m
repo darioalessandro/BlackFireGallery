@@ -18,7 +18,7 @@
 #import <QuartzCore/QuartzCore.h>
 #define kTransitionDuration 0.5
 #import "FlickrImage.h"
-#import "FBImage.h"
+//#import "FBImage.h"
 #import "BFLog.h"
 
 @implementation BFGFullSizeViewController{
@@ -70,14 +70,14 @@
         }else{
             initialImage=[img fullSizeImage];
         }
-    }else if([asset isMemberOfClass:[FBImage class]]){
+    /*}else if([asset isMemberOfClass:[FBImage class]]){
         FBImage * img= asset;
         if(![img fullSizeImage]){
             initialImage=[img thumbnail];
             [img loadFullSizeImageWithQueue:queue setResultInImageView:self.imageView];
         }else{
             initialImage=[img fullSizeImage];
-        }
+        }*/
     }else{
         initialImage= [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]];
     }
