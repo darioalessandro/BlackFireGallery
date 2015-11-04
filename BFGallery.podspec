@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "https://twitter.com/darioalessandro"
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/darioalessandro/BlackFireGallery.git", :tag => s.version }
-  s.source_files  = "BFGallery/BFGalleryLib/*.{h,m}"
+  s.source_files  = "BFGallery/BFGalleryLib/*"
 
  
 end
