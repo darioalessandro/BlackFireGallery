@@ -46,21 +46,22 @@
 		06B6CE641BE9928300F5B5B7 /* FlickrRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE311BE9928300F5B5B7 /* FlickrRequest.h */; };
 		06B6CE651BE9928300F5B5B7 /* FlickrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE321BE9928300F5B5B7 /* FlickrRequest.m */; };
 		06B6CE661BE9928300F5B5B7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE331BE9928300F5B5B7 /* Info.plist */; };
-		06B6CE671BE9928300F5B5B7 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE341BE9928300F5B5B7 /* JSON.h */; };
 		06B6CE681BE9928300F5B5B7 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE351BE9928300F5B5B7 /* lock.png */; };
-		06B6CE691BE9928300F5B5B7 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE361BE9928300F5B5B7 /* NSObject+SBJSON.h */; };
-		06B6CE6A1BE9928300F5B5B7 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE371BE9928300F5B5B7 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		06B6CE6B1BE9928300F5B5B7 /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE381BE9928300F5B5B7 /* NSString+SBJSON.h */; };
-		06B6CE6C1BE9928300F5B5B7 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE391BE9928300F5B5B7 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		06B6CE6D1BE9928300F5B5B7 /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE3A1BE9928300F5B5B7 /* SBJSON.h */; };
-		06B6CE6E1BE9928300F5B5B7 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE3B1BE9928300F5B5B7 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		06B6CE6F1BE9928300F5B5B7 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE3C1BE9928300F5B5B7 /* SBJsonBase.h */; };
-		06B6CE701BE9928300F5B5B7 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE3D1BE9928300F5B5B7 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		06B6CE711BE9928300F5B5B7 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE3E1BE9928300F5B5B7 /* SBJsonParser.h */; };
-		06B6CE721BE9928300F5B5B7 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE3F1BE9928300F5B5B7 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		06B6CE731BE9928300F5B5B7 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE401BE9928300F5B5B7 /* SBJsonWriter.h */; };
-		06B6CE741BE9928300F5B5B7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE411BE9928300F5B5B7 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		06B6CE751BE9928300F5B5B7 /* SharedConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE421BE9928300F5B5B7 /* SharedConstants.h */; };
+		06B6CE781BE99BDF00F5B5B7 /* BFLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE771BE99BDF00F5B5B7 /* BFLog.h */; };
+		06B6CE861BE99F5300F5B5B7 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE791BE99F5300F5B5B7 /* JSON.h */; };
+		06B6CE871BE99F5300F5B5B7 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE7A1BE99F5300F5B5B7 /* NSObject+SBJSON.h */; };
+		06B6CE881BE99F5300F5B5B7 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE7B1BE99F5300F5B5B7 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06B6CE891BE99F5300F5B5B7 /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE7C1BE99F5300F5B5B7 /* NSString+SBJSON.h */; };
+		06B6CE8A1BE99F5300F5B5B7 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE7D1BE99F5300F5B5B7 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06B6CE8B1BE99F5300F5B5B7 /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE7E1BE99F5300F5B5B7 /* SBJSON.h */; };
+		06B6CE8C1BE99F5400F5B5B7 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE7F1BE99F5300F5B5B7 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06B6CE8D1BE99F5400F5B5B7 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE801BE99F5300F5B5B7 /* SBJsonBase.h */; };
+		06B6CE8E1BE99F5400F5B5B7 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE811BE99F5300F5B5B7 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06B6CE8F1BE99F5400F5B5B7 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE821BE99F5300F5B5B7 /* SBJsonParser.h */; };
+		06B6CE901BE99F5400F5B5B7 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE831BE99F5300F5B5B7 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		06B6CE911BE99F5400F5B5B7 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE841BE99F5300F5B5B7 /* SBJsonWriter.h */; };
+		06B6CE921BE99F5400F5B5B7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE851BE99F5300F5B5B7 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		87CE41C41571A6300011E130 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C31571A6300011E130 /* UIKit.framework */; };
 		87CE41C61571A6300011E130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C51571A6300011E130 /* Foundation.framework */; };
 		87CE41C81571A6300011E130 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CE41C71571A6300011E130 /* CoreGraphics.framework */; };
@@ -97,7 +98,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		067869B9162B951600B4AD46 /* BFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLog.h; sourceTree = "<group>"; };
 		06B6CDD21BE98E7D00F5B5B7 /* BFGalleryLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFGalleryLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B6CDD41BE98E7D00F5B5B7 /* BFGalleryLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFGalleryLib.h; sourceTree = "<group>"; };
 		06B6CDD61BE98E7D00F5B5B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,21 +137,22 @@
 		06B6CE311BE9928300F5B5B7 /* FlickrRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrRequest.h; sourceTree = "<group>"; };
 		06B6CE321BE9928300F5B5B7 /* FlickrRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrRequest.m; sourceTree = "<group>"; };
 		06B6CE331BE9928300F5B5B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06B6CE341BE9928300F5B5B7 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		06B6CE351BE9928300F5B5B7 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
-		06B6CE361BE9928300F5B5B7 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		06B6CE371BE9928300F5B5B7 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		06B6CE381BE9928300F5B5B7 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		06B6CE391BE9928300F5B5B7 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		06B6CE3A1BE9928300F5B5B7 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		06B6CE3B1BE9928300F5B5B7 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
-		06B6CE3C1BE9928300F5B5B7 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		06B6CE3D1BE9928300F5B5B7 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
-		06B6CE3E1BE9928300F5B5B7 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		06B6CE3F1BE9928300F5B5B7 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		06B6CE401BE9928300F5B5B7 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		06B6CE411BE9928300F5B5B7 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		06B6CE421BE9928300F5B5B7 /* SharedConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedConstants.h; sourceTree = "<group>"; };
+		06B6CE771BE99BDF00F5B5B7 /* BFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLog.h; sourceTree = "<group>"; };
+		06B6CE791BE99F5300F5B5B7 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = JSON/JSON.h; sourceTree = SOURCE_ROOT; };
+		06B6CE7A1BE99F5300F5B5B7 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJSON.h"; path = "JSON/NSObject+SBJSON.h"; sourceTree = SOURCE_ROOT; };
+		06B6CE7B1BE99F5300F5B5B7 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJSON.m"; path = "JSON/NSObject+SBJSON.m"; sourceTree = SOURCE_ROOT; };
+		06B6CE7C1BE99F5300F5B5B7 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SBJSON.h"; path = "JSON/NSString+SBJSON.h"; sourceTree = SOURCE_ROOT; };
+		06B6CE7D1BE99F5300F5B5B7 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SBJSON.m"; path = "JSON/NSString+SBJSON.m"; sourceTree = SOURCE_ROOT; };
+		06B6CE7E1BE99F5300F5B5B7 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJSON.h; path = JSON/SBJSON.h; sourceTree = SOURCE_ROOT; };
+		06B6CE7F1BE99F5300F5B5B7 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJSON.m; path = JSON/SBJSON.m; sourceTree = SOURCE_ROOT; };
+		06B6CE801BE99F5300F5B5B7 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonBase.h; path = JSON/SBJsonBase.h; sourceTree = SOURCE_ROOT; };
+		06B6CE811BE99F5300F5B5B7 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonBase.m; path = JSON/SBJsonBase.m; sourceTree = SOURCE_ROOT; };
+		06B6CE821BE99F5300F5B5B7 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = JSON/SBJsonParser.h; sourceTree = SOURCE_ROOT; };
+		06B6CE831BE99F5300F5B5B7 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = JSON/SBJsonParser.m; sourceTree = SOURCE_ROOT; };
+		06B6CE841BE99F5300F5B5B7 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = JSON/SBJsonWriter.h; sourceTree = SOURCE_ROOT; };
+		06B6CE851BE99F5300F5B5B7 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = JSON/SBJsonWriter.m; sourceTree = SOURCE_ROOT; };
 		87CE41BF1571A6300011E130 /* BFGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CE41C31571A6300011E130 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87CE41C51571A6300011E130 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -196,6 +197,8 @@
 		06B6CDD31BE98E7D00F5B5B7 /* BFGalleryLib */ = {
 			isa = PBXGroup;
 			children = (
+				06B6CE931BE99F6700F5B5B7 /* JSON */,
+				06B6CE771BE99BDF00F5B5B7 /* BFLog.h */,
 				06B6CE101BE9928200F5B5B7 /* .DS_Store */,
 				06B6CE111BE9928200F5B5B7 /* BFDeniedAccessToAssetsView.xib */,
 				06B6CE121BE9928200F5B5B7 /* BFDeniedAccessToAssetsView~ipad.xib */,
@@ -232,25 +235,32 @@
 				06B6CE311BE9928300F5B5B7 /* FlickrRequest.h */,
 				06B6CE321BE9928300F5B5B7 /* FlickrRequest.m */,
 				06B6CE331BE9928300F5B5B7 /* Info.plist */,
-				06B6CE341BE9928300F5B5B7 /* JSON.h */,
 				06B6CE351BE9928300F5B5B7 /* lock.png */,
-				06B6CE361BE9928300F5B5B7 /* NSObject+SBJSON.h */,
-				06B6CE371BE9928300F5B5B7 /* NSObject+SBJSON.m */,
-				06B6CE381BE9928300F5B5B7 /* NSString+SBJSON.h */,
-				06B6CE391BE9928300F5B5B7 /* NSString+SBJSON.m */,
-				06B6CE3A1BE9928300F5B5B7 /* SBJSON.h */,
-				06B6CE3B1BE9928300F5B5B7 /* SBJSON.m */,
-				06B6CE3C1BE9928300F5B5B7 /* SBJsonBase.h */,
-				06B6CE3D1BE9928300F5B5B7 /* SBJsonBase.m */,
-				06B6CE3E1BE9928300F5B5B7 /* SBJsonParser.h */,
-				06B6CE3F1BE9928300F5B5B7 /* SBJsonParser.m */,
-				06B6CE401BE9928300F5B5B7 /* SBJsonWriter.h */,
-				06B6CE411BE9928300F5B5B7 /* SBJsonWriter.m */,
 				06B6CE421BE9928300F5B5B7 /* SharedConstants.h */,
 				06B6CDD41BE98E7D00F5B5B7 /* BFGalleryLib.h */,
 				06B6CDD61BE98E7D00F5B5B7 /* Info.plist */,
 			);
 			path = BFGalleryLib;
+			sourceTree = "<group>";
+		};
+		06B6CE931BE99F6700F5B5B7 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				06B6CE791BE99F5300F5B5B7 /* JSON.h */,
+				06B6CE7A1BE99F5300F5B5B7 /* NSObject+SBJSON.h */,
+				06B6CE7B1BE99F5300F5B5B7 /* NSObject+SBJSON.m */,
+				06B6CE7C1BE99F5300F5B5B7 /* NSString+SBJSON.h */,
+				06B6CE7D1BE99F5300F5B5B7 /* NSString+SBJSON.m */,
+				06B6CE7E1BE99F5300F5B5B7 /* SBJSON.h */,
+				06B6CE7F1BE99F5300F5B5B7 /* SBJSON.m */,
+				06B6CE801BE99F5300F5B5B7 /* SBJsonBase.h */,
+				06B6CE811BE99F5300F5B5B7 /* SBJsonBase.m */,
+				06B6CE821BE99F5300F5B5B7 /* SBJsonParser.h */,
+				06B6CE831BE99F5300F5B5B7 /* SBJsonParser.m */,
+				06B6CE841BE99F5300F5B5B7 /* SBJsonWriter.h */,
+				06B6CE851BE99F5300F5B5B7 /* SBJsonWriter.m */,
+			);
+			name = JSON;
 			sourceTree = "<group>";
 		};
 		87CE41B41571A6300011E130 = {
@@ -278,7 +288,6 @@
 				EB390CA61622797D00FD80AA /* AdSupport.framework */,
 				EB390CA41622797000FD80AA /* Social.framework */,
 				EB390CA21622791700FD80AA /* Accounts.framework */,
-				067869B9162B951600B4AD46 /* BFLog.h */,
 				87CE42281571A8490011E130 /* AssetsLibrary.framework */,
 				87CE41C31571A6300011E130 /* UIKit.framework */,
 				87CE41C51571A6300011E130 /* Foundation.framework */,
@@ -323,24 +332,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				06B6CE641BE9928300F5B5B7 /* FlickrRequest.h in Headers */,
-				06B6CE6B1BE9928300F5B5B7 /* NSString+SBJSON.h in Headers */,
 				06B6CE621BE9928300F5B5B7 /* FlickrImageParser.h in Headers */,
-				06B6CE691BE9928300F5B5B7 /* NSObject+SBJSON.h in Headers */,
+				06B6CE8B1BE99F5300F5B5B7 /* SBJSON.h in Headers */,
 				06B6CE471BE9928300F5B5B7 /* BFGalleryViewController.h in Headers */,
 				06B6CE4A1BE9928300F5B5B7 /* BFGAssetsManager.h in Headers */,
-				06B6CE731BE9928300F5B5B7 /* SBJsonWriter.h in Headers */,
 				06B6CE5B1BE9928300F5B5B7 /* BFImage.h in Headers */,
+				06B6CE8D1BE99F5400F5B5B7 /* SBJsonBase.h in Headers */,
 				06B6CE601BE9928300F5B5B7 /* FlickrImage.h in Headers */,
-				06B6CE711BE9928300F5B5B7 /* SBJsonParser.h in Headers */,
-				06B6CE671BE9928300F5B5B7 /* JSON.h in Headers */,
 				06B6CE551BE9928300F5B5B7 /* BFGFullSizeCell.h in Headers */,
 				06B6CE571BE9928300F5B5B7 /* BFGFullSizeViewController.h in Headers */,
+				06B6CE8F1BE99F5400F5B5B7 /* SBJsonParser.h in Headers */,
+				06B6CE861BE99F5300F5B5B7 /* JSON.h in Headers */,
+				06B6CE891BE99F5300F5B5B7 /* NSString+SBJSON.h in Headers */,
 				06B6CDD51BE98E7D00F5B5B7 /* BFGalleryLib.h in Headers */,
-				06B6CE6F1BE9928300F5B5B7 /* SBJsonBase.h in Headers */,
+				06B6CE871BE99F5300F5B5B7 /* NSObject+SBJSON.h in Headers */,
 				06B6CE461BE9928300F5B5B7 /* BFGalleryLib.h in Headers */,
+				06B6CE911BE99F5400F5B5B7 /* SBJsonWriter.h in Headers */,
 				06B6CE4F1BE9928300F5B5B7 /* BFGCell.h in Headers */,
 				06B6CE751BE9928300F5B5B7 /* SharedConstants.h in Headers */,
-				06B6CE6D1BE9928300F5B5B7 /* SBJSON.h in Headers */,
+				06B6CE781BE99BDF00F5B5B7 /* BFLog.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,21 +468,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06B6CE6A1BE9928300F5B5B7 /* NSObject+SBJSON.m in Sources */,
-				06B6CE741BE9928300F5B5B7 /* SBJsonWriter.m in Sources */,
+				06B6CE881BE99F5300F5B5B7 /* NSObject+SBJSON.m in Sources */,
+				06B6CE921BE99F5400F5B5B7 /* SBJsonWriter.m in Sources */,
 				06B6CE581BE9928300F5B5B7 /* BFGFullSizeViewController.m in Sources */,
 				06B6CE631BE9928300F5B5B7 /* FlickrImageParser.m in Sources */,
 				06B6CE611BE9928300F5B5B7 /* FlickrImage.m in Sources */,
-				06B6CE701BE9928300F5B5B7 /* SBJsonBase.m in Sources */,
+				06B6CE8E1BE99F5400F5B5B7 /* SBJsonBase.m in Sources */,
 				06B6CE4B1BE9928300F5B5B7 /* BFGAssetsManager.m in Sources */,
 				06B6CE561BE9928300F5B5B7 /* BFGFullSizeCell.m in Sources */,
-				06B6CE721BE9928300F5B5B7 /* SBJsonParser.m in Sources */,
-				06B6CE6E1BE9928300F5B5B7 /* SBJSON.m in Sources */,
+				06B6CE901BE99F5400F5B5B7 /* SBJsonParser.m in Sources */,
+				06B6CE8C1BE99F5400F5B5B7 /* SBJSON.m in Sources */,
 				06B6CE481BE9928300F5B5B7 /* BFGalleryViewController.m in Sources */,
 				06B6CE501BE9928300F5B5B7 /* BFGCell.m in Sources */,
 				06B6CE651BE9928300F5B5B7 /* FlickrRequest.m in Sources */,
 				06B6CE5C1BE9928300F5B5B7 /* BFImage.m in Sources */,
-				06B6CE6C1BE9928300F5B5B7 /* NSString+SBJSON.m in Sources */,
+				06B6CE8A1BE99F5300F5B5B7 /* NSString+SBJSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
