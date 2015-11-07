@@ -10,7 +10,6 @@
 		06B6CDD51BE98E7D00F5B5B7 /* BFGalleryLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CDD41BE98E7D00F5B5B7 /* BFGalleryLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06B6CDD91BE98E7D00F5B5B7 /* BFGalleryLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B6CDD21BE98E7D00F5B5B7 /* BFGalleryLib.framework */; };
 		06B6CDDA1BE98E7D00F5B5B7 /* BFGalleryLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06B6CDD21BE98E7D00F5B5B7 /* BFGalleryLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		06B6CE431BE9928300F5B5B7 /* .DS_Store in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE101BE9928200F5B5B7 /* .DS_Store */; };
 		06B6CE441BE9928300F5B5B7 /* BFDeniedAccessToAssetsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE111BE9928200F5B5B7 /* BFDeniedAccessToAssetsView.xib */; };
 		06B6CE451BE9928300F5B5B7 /* BFDeniedAccessToAssetsView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE121BE9928200F5B5B7 /* BFDeniedAccessToAssetsView~ipad.xib */; };
 		06B6CE461BE9928300F5B5B7 /* BFGalleryLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE131BE9928200F5B5B7 /* BFGalleryLib.h */; };
@@ -45,7 +44,6 @@
 		06B6CE631BE9928300F5B5B7 /* FlickrImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE301BE9928300F5B5B7 /* FlickrImageParser.m */; };
 		06B6CE641BE9928300F5B5B7 /* FlickrRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE311BE9928300F5B5B7 /* FlickrRequest.h */; };
 		06B6CE651BE9928300F5B5B7 /* FlickrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B6CE321BE9928300F5B5B7 /* FlickrRequest.m */; };
-		06B6CE661BE9928300F5B5B7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE331BE9928300F5B5B7 /* Info.plist */; };
 		06B6CE681BE9928300F5B5B7 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B6CE351BE9928300F5B5B7 /* lock.png */; };
 		06B6CE751BE9928300F5B5B7 /* SharedConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE421BE9928300F5B5B7 /* SharedConstants.h */; };
 		06B6CE781BE99BDF00F5B5B7 /* BFLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B6CE771BE99BDF00F5B5B7 /* BFLog.h */; };
@@ -439,12 +437,10 @@
 				06B6CE451BE9928300F5B5B7 /* BFDeniedAccessToAssetsView~ipad.xib in Resources */,
 				06B6CE5D1BE9928300F5B5B7 /* BFMenuDetailViewController~ipad.xib in Resources */,
 				06B6CE5F1BE9928300F5B5B7 /* flechas.png in Resources */,
-				06B6CE431BE9928300F5B5B7 /* .DS_Store in Resources */,
 				06B6CE4D1BE9928300F5B5B7 /* BFGCell_landscape.xib in Resources */,
 				06B6CE511BE9928300F5B5B7 /* BFGFullSizeCell_landscape~ipad.xib in Resources */,
 				06B6CE4C1BE9928300F5B5B7 /* BFGCell~ipad.xib in Resources */,
 				06B6CE441BE9928300F5B5B7 /* BFDeniedAccessToAssetsView.xib in Resources */,
-				06B6CE661BE9928300F5B5B7 /* Info.plist in Resources */,
 				06B6CE531BE9928300F5B5B7 /* BFGFullSizeCell_landscape.xib in Resources */,
 				06B6CE4E1BE9928300F5B5B7 /* BFGCell.xib in Resources */,
 				06B6CE521BE9928300F5B5B7 /* BFGFullSizeCell~ipad.xib in Resources */,
@@ -690,6 +686,7 @@
 				06B6CDDD1BE98E7D00F5B5B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87CE41B91571A6300011E130 /* Build configuration list for PBXProject "BFGallery" */ = {
 			isa = XCConfigurationList;

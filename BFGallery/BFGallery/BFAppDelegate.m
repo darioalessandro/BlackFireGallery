@@ -21,7 +21,7 @@
                                                             
     self.viewController.searchCriteria=@"Chicago";
     UINavigationController * controllert= [[UINavigationController alloc] initWithRootViewController:self.viewController];
-    [controllert.navigationBar setBarStyle:UIBarStyleBlack];
+    [controllert.navigationBar setBarStyle:UIBarStyleBlackOpaque];
     [controllert setTitle:@"Facebook"];
     self.window.rootViewController = controllert;
     [self.window makeKeyAndVisible];
