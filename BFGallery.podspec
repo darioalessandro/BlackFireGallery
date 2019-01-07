@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
  
   s.name         = "BFGallery"
-  s.version      = "0.1.4"
+  s.version      = "0.1.5"
   s.summary      = "Objective C Gallery."
   s.description  = <<-DESC
     Objective C Gallery.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "https://twitter.com/darioalessandro"
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/darioalessandro/BlackFireGallery.git", :tag => s.version }
-  s.source_files  = "BFGallery/BFGalleryLib/*"
+  s.source_files  = "BFGallery/BFGalleryLib/*.{h,m}"
 
  
 end
