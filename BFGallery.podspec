@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
  
   s.name         = "BFGallery"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "Objective C Gallery."
   s.description  = <<-DESC
     Objective C Gallery.
